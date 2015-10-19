@@ -9,7 +9,7 @@
 	<div class="container">
 		<h1>Welcome to tnelat, a work in progress</h1>
 		<ul>
-			<li><a href="pages/writeReview.php">Write a review</a></li>
+			<li><a href="/pages/writeReview.php">Write a review</a></li>
 		</ul>
 	</div>
 
