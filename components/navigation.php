@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div classs="navbar-header">
-			<a class="navbar-brand" href="#">Tnelat</a>
+			<a class="navbar-brand" href="/tnelat/">Tnelat</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="tnelat-nav-collapse" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>

@@ -6,7 +6,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<script src="//twemoji.maxcdn.com/twemoji.min.js"></script>
 </head>
 <body>
 	<!--Navigation Bar-->
