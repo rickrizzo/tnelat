@@ -7,8 +7,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<script src="//twemoji.maxcdn.com/twemoji.min.js"></script>
+	<?php include '../components/css.php'; ?>
 </head>
 <body>
 	<!--Navigation Bar-->
@@ -36,7 +35,6 @@
 
 
 	<!--Resouces-->
-	<script src="../js/jquery-2.1.4.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
+	<?php include '../components/scripts.php'; ?>
 </body>
 </html>
