@@ -1,0 +1,24 @@
+/*
+	TNELAT CSS
+	
+	//Colors
+	Primary Colors:
+	Background: #F2F2F3
+	Titles/Imporant: #1FDA9A
+	Imporant Divs/Spans/Big Blocks: #EE4B3E
+	Sub headers, less important:#E9BC1B
+	Less important divs/spans/blocks: #F5EACD
+	All general text should be black
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #F2F2F3 !important;
+}
+nav {
+	background-color: #EE4B3E !important;
+}
+.jumbotron {
+	text-align: center;
+}
