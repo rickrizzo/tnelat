@@ -2,23 +2,41 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Tnelat</title>
-	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<?php require 'components/css.php'; ?>
 </head>
 <body>
-	<?php include 'components/navigation.php'; ?>
-	
-	<div class="container">
-		<h1>Welcome to tnelat, a work in progress</h1>
-		<ul>
-			<li><a href="pages/writeReview.php">Write a review</a></li>
-			<li><a href="pages/reviews.php">Read Reviews</a></li>
-		</ul>
-	</div>
 
+	<!--Navigation-->
+	<?php require 'components/navigation.php'; ?>
+
+	<!--Header-->
+	<header class="container-fluid">
+		<div>
+			<h1>tnelat</h1>
+			<h4>Find the team you need</h4>
+		</div>
+	</header>
+	
+	<!--Actions-->
+	<section id="actions">
+		<div>
+			<a class="btn" href="pages/writeReview.php">Review Teammates</a>
+		</div>
+		<div>
+			<a class="btn" href="pages/reviews.php">Find Teammates</a>
+		</div>
+		<div>
+			<a class="btn" href="pages/reviews.php">Learn More</a>
+		</div>
+	</section>
+
+	<!--Footer-->
+	<footer>
+		Created by Dan, Deborah, Theo and Rob
+	</footer>
 	<!--Resouces-->
-	<script src="js/jquery-2.1.4.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<?php require 'components/scripts.php'; ?>
 </body>
 </html>
