@@ -23,19 +23,27 @@
 	<section id="actions">
 		<div>
 			<a class="btn" href="pages/writeReview.php">Review Teammates</a>
+			<article>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis libero blanditiis quo deleniti. Quisquam a esse numquam, nostrum dolorem, cum repellat. Assumenda magnam et non sed voluptatibus, nihil hic tempore.
+			</article>
 		</div>
 		<div>
 			<a class="btn" href="pages/reviews.php">Find Teammates</a>
+			<article>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis libero blanditiis quo deleniti. Quisquam a esse numquam, nostrum dolorem, cum repellat. Assumenda magnam et non sed voluptatibus, nihil hic tempore.
+			</article>
 		</div>
 		<div>
-			<a class="btn" href="pages/reviews.php">Learn More</a>
+			<a class="btn" href="backend/backend.php">Learn More</a>
+			<article>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis libero blanditiis quo deleniti. Quisquam a esse numquam, nostrum dolorem, cum repellat. Assumenda magnam et non sed voluptatibus, nihil hic tempore.
+			</article>
 		</div>
 	</section>
 
 	<!--Footer-->
-	<footer>
-		Created by Dan, Deborah, Theo and Rob
-	</footer>
+	<footer>Created by Dan, Deborah, Theo and Rob</footer>
+
 	<!--Resouces-->
 	<?php require 'components/scripts.php'; ?>
 </body>

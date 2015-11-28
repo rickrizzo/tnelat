@@ -1,7 +1,7 @@
 <nav>
 	<ul>
 		<span>
-			<a href="/tnelat"><li>tnelat</li></a>
+			<a href="/tnelat"><li id="brand">tnelat</li></a>
 		</span>
 		<span id="right-menu">
 			<li>About</li>
