@@ -1,15 +1,26 @@
 <?php
-
+	
+	//Connection Data
+	require '../components/connector.php';
+	
 	class sql {
 		public static function execute ($func, $vars) {
-			$host = 'localhost';
-			$user = 'root';
-			$database = 'tnelat';
 
-			$db = new PDO("mysql:host=$host;dbname=$database;charset=utf8;", $user);
+			//Glbal Scope
+			GLOBAL $host;
+			GLOBAL $user;
+			GLOBAL $password;
+			$database = 'tnelat';
+			$db = new PDO("mysql:host=$host;", $user, $password);
+
+			//Create Database & Tables
+			$db->exec("CREATE DATABASE IF NOT EXISTS $database CHARSET utf8");
+
+			//Prepare Queries
 			$query = sql::$func();
 			$statement = $db->prepare($query);
 
+			//Bind Array Keys
 			$keys = array_keys($vars);
 			for ($x = 1; $x <= count($vars); $x++) {
 				$statement->bindValue($x, $vars[$keys[$x-1]]);
@@ -17,6 +28,7 @@
 			$statement->execute();
 		}
 
+		//Database Functions
 		private static function add_user()
 			{ return "INSERT INTO Users (Username, Password, Email) VALUES (?, ?, ?)"; }
 
