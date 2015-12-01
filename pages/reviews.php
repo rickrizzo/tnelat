@@ -10,16 +10,9 @@
 	<?php include '../components/navigation.php'; ?>
 
 	<!--Main-->
-	<main class="container">
-		<div class="jumbotron">
-			<h1>Search</h1>
-			<input type="text">
-			<button type="button" class="btn btn-primary">Go</button>
-		</div>
-		<div id="results">
-			nothing yet...
-		</div>
-	</main>
+	<form action="">
+		
+	</form>
 
 	<!--JavaScript-->
 	<?php include '../components/scripts.php'; ?>
