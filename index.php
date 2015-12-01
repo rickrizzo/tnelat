@@ -19,6 +19,11 @@
     include "pages/reviews.php";
   });
 
+  //Login
+  $app->get('/login', function() {
+    include "pages/login.php";
+  });
+
   //Sign Up
   $app->get('/signup', function() {
     include "pages/signup.php";

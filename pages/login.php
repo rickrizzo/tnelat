@@ -1,17 +1,12 @@
-<?php
-  //include 'connector.php';
-  //echo "Let's start!";
-?>
-
 <!DOCTYPE html>
 <html >
 <head>
 	<meta charset="utf-8">
-	<?php include '../components/css.php'; ?>
+	<?php include 'components/css.php'; ?>
 </head>
 <body id="lpage">
 	<!--Navigation Bar-->
-	<?php include '../components/navigation.php'; ?>
+	<?php include 'components/navigation.php'; ?>
 
 	<!--About-->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -80,7 +75,7 @@ function myFunction() {
 </script>
 
 	<!--Resouces-->
-	<?php include '../components/scripts.php'; ?>
+	<?php include 'components/scripts.php'; ?>
 
 </body>
 </html>

@@ -7,7 +7,7 @@
 		</span>
 		<span id="right-menu">
 			<li>About</li>
-			<li>Login</li>
+			<a href="/tnelat/login"><li>Login</li></a>
 			<a href="/tnelat/signup"><li>Sign Up</li></a>
 		</span>
 		<!--<span id="mobile">
