@@ -2,7 +2,7 @@
 	<ul>
 		<span>
 			<a href="/tnelat"><li id="brand">tnelat</li></a>
-			<li>Review</li>
+			<a href="pages/reviews.php"><li>Review</li></a>
 			<li>Find</li>
 		</span>
 		<span id="right-menu">

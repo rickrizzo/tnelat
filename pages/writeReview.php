@@ -27,18 +27,33 @@
 				<legend>Basic Information</legend>
 				Name: <input type="text">
 			</fieldset>
-			<fieldset>
-				<legend>Ratings</legend>
-				<p>Pick the emoji that describes your experience with this teamamte</p>
-				😍🙌😃😊😳😒😔😓😖😭😡
+			<fieldset id="rating">
+				<legend>Your Partner in One Emjoi</legend>
+
+				<ul>
+					<li><span class="emoji">😍</span><p><input type="radio" name="emoji"></p></li>
+					<li><span class="emoji">🙌</span><p><input type="radio" name="emoji"></p></li>
+					<li><span class="emoji">😃</span><p><input type="radio" name="emoji"></p></li>
+					<li><span class="emoji">😊</span><p><input type="radio" name="emoji"></p></li>
+					<li><span class="emoji">😳</span><p><input type="radio" name="emoji"></p></li>
+					<li><span class="emoji">😒</span><p><input type="radio" name="emoji"></p></li>
+					<li><span class="emoji">😔</span><p><input type="radio" name="emoji"></p></li>
+					<li><span class="emoji">😓</span><p><input type="radio" name="emoji"></p></li>
+					<li><span class="emoji">😖</span><p><input type="radio" name="emoji"></p></li>
+					<li><span class="emoji">😭</span><p><input type="radio" name="emoji"></p></li>
+					<li><span class="emoji">😡</span><p><input type="radio" name="emoji"></p></li>
+				</ul>
+
 			</fieldset>
 			<fieldset>
 				<legend>Your Review</legend>
+				Why did you choose this emoji?
 			</fieldset>
 		</form>
 	</main>
 
 	<!--Resouces-->
 	<?php include '../components/scripts.php'; ?>
+	<script src="../js/review.js"></script>
 </body>
 </html>

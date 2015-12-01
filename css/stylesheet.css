@@ -88,10 +88,10 @@ a.btn:hover{
 }
 /* - Jumbotron */
 .jumbotron {
-	font-size: 3em;
+	font-size: 1em;
 	text-align: center;
 	background-color: #cccccd;
-	padding: 0.5em 0;
+	padding: 4em 0;
 	border-radius: 5px;
 }
 .jumbotron h1 {
@@ -99,7 +99,8 @@ a.btn:hover{
 }
 @media (min-width: 600px) {
 	.jumbotron {
-		font-size: 4em;
+		font-size: 2em;
+		padding: 1em 0;
 	}
 }
 
@@ -144,6 +145,7 @@ nav a li{
 	display: block;
 }
 #hamburger ul {
+	display: none;
 	width: 2em;
 }
 #hamburger li {
@@ -255,16 +257,30 @@ form {
 
 }
 fieldset {
-	border-right: 0;
-	border-left: 0;
-	border-bottom: 0;
+	border: 0;
 	text-align: center;
-	-webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.5);
-	-moz-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.5);
-	box-shadow: 0 1px 1px 1px rgba(0,0,0,0.5);
 }
 fieldset legend {
+	font-size: 2em;
 	color: #EE4B3E;
+}
+#rating li{
+	list-style: none;
+}
+#rating li p {
+	display: none;
+}
+.emoji {
+	font-size: 3em;
+	transition: 0.2s;
+}
+span.emoji:hover {
+	font-size: 5em;
+}
+@media (min-width: 600px) {
+	#rating li{
+		display: inline-block;
+	}
 }
 
 /* Footer */
