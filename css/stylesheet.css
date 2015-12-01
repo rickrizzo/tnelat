@@ -195,6 +195,8 @@ header div {
 }
 header h1 {
 	padding-top: 30%;
+	font-size: 5em;
+	font-weight: bold;
 	margin-bottom: 0;
 }
 @media (min-width: 600px) {
@@ -204,6 +206,7 @@ header h1 {
 	}
 	header h1 {
 		padding-top: 30%;
+		font-size: 7em;	
 	}
 }
 
