@@ -1,17 +1,12 @@
-<?php
-  //include 'connector.php';
-  //echo "Let's start!";
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<?php include '../components/css.php'; ?>
+	<?php include 'components/css.php'; ?>
 </head>
 <body id="spage">
 	<!--Navigation Bar-->
-	<?php include '../components/navigation.php'; ?>
+	<?php include 'components/navigation.php'; ?>
 
 	<!--About-->
 	<div class="container">
@@ -69,7 +64,7 @@
  
 
 	<!--Resouces-->
-	<?php include '../components/scripts.php'; ?>
+	<?php include 'components/scripts.php'; ?>
 
 </body>
 </html>

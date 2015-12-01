@@ -3,11 +3,11 @@
 <html>
 <head>
 	<title>Reviews</title>
-	<?php include '../components/css.php'; ?>
+	<?php include 'components/css.php'; ?>
 </head>
 <body>
 	<!--Navigation Bar-->
-	<?php include '../components/navigation.php'; ?>
+	<?php include 'components/navigation.php'; ?>
 
 	<!--Main-->
 	<form action="">
@@ -15,6 +15,6 @@
 	</form>
 
 	<!--JavaScript-->
-	<?php include '../components/scripts.php'; ?>
+	<?php include 'components/scripts.php'; ?>
 </body>
 </html>

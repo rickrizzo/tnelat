@@ -7,11 +7,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<?php include '../components/css.php'; ?>
+	<?php include 'components/css.php'; ?>
 </head>
 <body>
 	<!--Navigation Bar-->
-	<?php include '../components/navigation.php'; ?>
+	<?php include 'components/navigation.php'; ?>
 
 	<!--Review-->
 	<main>
@@ -24,8 +24,8 @@
 		<form action="" class="pagewidth">
 			<!--Basic Information-->
 			<fieldset>
-				<legend>Basic Information</legend>
-				Name: <input type="text">
+				<legend>Who are you reviewing?</legend>
+				<input type="text">
 			</fieldset>
 			<fieldset id="rating">
 				<legend>Your Partner in One Emjoi</legend>
@@ -47,13 +47,14 @@
 			</fieldset>
 			<fieldset>
 				<legend>Your Review</legend>
-				Why did you choose this emoji?
+				<p>Why did you choose this emoji?</p>
+				<textarea name="" id="" cols="100" rows="10"></textarea>
 			</fieldset>
 		</form>
 	</main>
 
 	<!--Resouces-->
-	<?php include '../components/scripts.php'; ?>
-	<script src="../js/review.js"></script>
+	<?php include 'components/scripts.php'; ?>
+	<script src="js/review.js"></script>
 </body>
 </html>
