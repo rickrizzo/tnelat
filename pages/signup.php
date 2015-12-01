@@ -58,7 +58,7 @@
         <p><input type="text" name="lname" value="" placeholder="Last Name"> <b>Enter your last name</b></p>
          <p><input type="text" name="username" value="" placeholder="Username"> <b>Create a username</b></p>
           <p><input type="text" name="password" value="" placeholder="Password"> <b>Create a password</b></p>
-           <p><input type="text" name="password" value="" placeholder="Re-Type Password"> <b>Re-type your password</b></p>
+           <p><input type="text" name="passconf" value="" placeholder="Re-Type Password"> <b>Re-type your password</b></p>
             <p><input type="text" name="email" value="" placeholder="Email Address"> <b>Enter your email address</b></p>
              <p><input type="text" name="mobile" value="" placeholder="Phone Number"> Enter a reachable phone number</p>
         <p class="submit"><input type="submit" name="commit" value="Create Account"><i> * items in bold are required</i></p>
