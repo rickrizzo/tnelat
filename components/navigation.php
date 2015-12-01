@@ -2,8 +2,8 @@
 	<ul>
 		<span>
 			<a href="/tnelat"><li id="brand">tnelat</li></a>
-			<a href="/tnelat/review"><li>Review</li></a>
-			<a href="/tnelat/reviews"><li>Find</li></a>
+			<a href="review"><li>Review</li></a>
+			<a href="reviews"><li>Find</li></a>
 		</span>
 		<span id="right-menu">
 			<li>About</li>
