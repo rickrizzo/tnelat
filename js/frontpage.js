@@ -1,8 +1,8 @@
 //Variables
 var i = 1;
-var images = ['whiteboard.jpg', 'typing.jpg', 'entrepreneur.jpg'];
+var images = ['whiteboard.jpg', 'typing.jpg', 'entrepreneur.jpg', 'code.jpg'];
 
-//Timeout
+//Background Slider
 setInterval(function() {
   $("header").css('background-image',   'url(/tnelat/resources/' + images[i] + ')');
   i ++;
