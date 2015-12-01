@@ -1,10 +1,14 @@
+//Select Person
+$("#skills").append("Coming");
+
 //Add Emojis
-/* This should read from a JSON file and not print numbers...*/
 $("#rating").append(function() {
   var html = '<ul>';
-  for(var i = 0; i < 10; i++) {
-    html += '<li><span class="emoji">' + i + '<p><input type="radio" name="emoji"></p></li>';
-  }
+  $.getJSON("data/emoji.json", function(data) {
+    for(var i = 0; i < 10; i++) {
+      html += '<li><span class="emoji">' + data.emoji[i] + '<p><input type="radio" name="emoji"></p></li>';
+    }
+  });
   html += '</ul>';
   return html;
 });

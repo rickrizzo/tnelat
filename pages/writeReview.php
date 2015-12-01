@@ -1,8 +1,3 @@
-<?php
-  //include 'connector.php';
-  //echo "Let's start!";
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,14 +17,22 @@
 
 		<!--New Review-->
 		<form action="" class="pagewidth">
-			<!--Basic Information-->
-			<fieldset>
-				<legend>Who are you reviewing?</legend>
+			<!--Select Person-->
+			<fieldset id="person">
+				<legend>Person</legend>
 				<input type="text">
 			</fieldset>
-			<fieldset id="rating">
-				<legend>Your Partner in One Emjoi</legend>
 
+			<!--Select Skills-->
+			<fieldset id="skills">
+				<legend>Skills</legend>
+			</fieldset>
+
+			<!--Select Emoji-->
+			<fieldset id="rating">
+				<legend>Vibe</legend>
+				
+				<!--Emoji List-->
 				<ul>
 					<li><span class="emoji">😍</span><p><input type="radio" name="emoji"></p></li>
 					<li><span class="emoji">🙌</span><p><input type="radio" name="emoji"></p></li>
