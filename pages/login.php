@@ -1,3 +1,64 @@
+<?php
+  require '../components/connector.php';
+  session_start();
+  // Connect to the database
+  try {
+    $dbname = 'tnelat';
+    $dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $password);
+  }
+  catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+  }
+
+  // Check login
+  if (isset($_POST['commit']) && $_POST['commit'] == 'login') {
+
+  // If the input was a username
+    if (strpos($_POST['username'], '@') == FALSE)
+    {
+      // get the salt from the db
+      $salt_stmt = $dbconn->prepare('SELECT salt FROM Users WHERE username=:username'); 
+      $salt_stmt->execute(array(':username' => $_POST['username']));
+
+      $res = $salt_stmt->fetch();
+      $salt = ($res) ? $res['salt'] : '';
+
+      // salt the password inputted
+      $salted = hash('sha256', $salt . $_POST['password']);
+
+      // if the inputted password is correct, we can successfully select from the db
+      $login_stmt = $dbconn->prepare('SELECT username FROM Users WHERE username=:username AND pass=:pass');
+      $login_stmt->execute(array(':username' => $_POST['username'], ':pass' => $salted));
+    }
+    else if (strpos($_POST['username'], '@') == TRUE) // if the input was an email
+    {
+      // get the salt from the db using the email
+      $salt_stmt = $dbconn->prepare('SELECT salt FROM Users WHERE email=:email');
+      $salt_stmt->execute(array(':email' => $_POST['username']));
+        $res = $salt_stmt->fetch();
+      $salt = ($res) ? $res['salt'] : '';
+
+      // salt the password inputted
+      $salted = hash('sha256', $salt . $_POST['password']);
+
+      // select from the db using the inputted email and salted inputted password
+      $login_stmt = $dbconn->prepare('SELECT username FROM Users WHERE email=:email AND pass=:pass');
+      $login_stmt->execute(array(':email' => $_POST['username'], ':pass' => $salted));
+    }
+
+    // check if we are able to fetch with the salted inputted password
+    if ($user = $login_stmt->fetch()) 
+    {
+      $_SESSION['username'] = $user['username'];
+      $err = 'SUCCESS';
+    }
+    else 
+    {
+      $err = 'Incorrect username or password.';
+    }
+  echo $err;
+  }
+?>
 <!DOCTYPE html>
 <html >
 <head>
@@ -33,13 +94,13 @@
       position: {
         my: "left top",
         at: "right+5 top-5"
-      }
+    }
+  }); 
     });
   </script>
 </head>
 <body>
- 
-<form class= "log" style= " margin-left: auto; margin-right: auto; margin-top: 150px; border: double; width: 380px">
+<form class= "log"  method="post" action="login.php" style="margin-left: auto; margin-right: auto; margin-top: 150px; border: double; width: 380px">
   <div class="container">
     <h2><font color="white">Login </h2>
     <h5>Don't have an account? <b><a href="signup.php"> Sign up here. </a></b></h5>
