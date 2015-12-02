@@ -1,5 +1,5 @@
 <?php
-require '../components/connector.php';
+require 'components/connector.php';
   try {
       $database= 'tnelat';
       // connect to the database and create Users table

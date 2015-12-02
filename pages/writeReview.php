@@ -31,22 +31,8 @@
 			<!--Select Emoji-->
 			<fieldset id="rating">
 				<legend>Vibe</legend>
-				
 				<!--Emoji List-->
-				<ul>
-					<li><span class="emoji">😍</span><p><input type="radio" name="emoji"></p></li>
-					<li><span class="emoji">🙌</span><p><input type="radio" name="emoji"></p></li>
-					<li><span class="emoji">😃</span><p><input type="radio" name="emoji"></p></li>
-					<li><span class="emoji">😊</span><p><input type="radio" name="emoji"></p></li>
-					<li><span class="emoji">😳</span><p><input type="radio" name="emoji"></p></li>
-					<li><span class="emoji">😒</span><p><input type="radio" name="emoji"></p></li>
-					<li><span class="emoji">😔</span><p><input type="radio" name="emoji"></p></li>
-					<li><span class="emoji">😓</span><p><input type="radio" name="emoji"></p></li>
-					<li><span class="emoji">😖</span><p><input type="radio" name="emoji"></p></li>
-					<li><span class="emoji">😭</span><p><input type="radio" name="emoji"></p></li>
-					<li><span class="emoji">😡</span><p><input type="radio" name="emoji"></p></li>
-				</ul>
-
+				<ul></ul>
 			</fieldset>
 			<fieldset>
 				<legend>Your Review</legend>

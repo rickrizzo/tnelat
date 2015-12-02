@@ -1,14 +1,21 @@
 //Select Person
-$("#skills").append("Coming");
+$.getJSON('data/skills.json', function(data) {
+  for(var i = 0; i < data.skills.length; i++) {
+    $('#skills').append('<input type="checkbox" name="skill" value="' + data.skills[i] + '">' + data.skills[i]);
+  }
+});
+
 
 //Add Emojis
-$("#rating").append(function() {
-  var html = '<ul>';
-  $.getJSON("data/emoji.json", function(data) {
-    for(var i = 0; i < 10; i++) {
-      html += '<li><span class="emoji">' + data.emoji[i] + '<p><input type="radio" name="emoji"></p></li>';
-    }
-  });
-  html += '</ul>';
-  return html;
+$.getJSON('data/emoji.json', function(data) {
+  for(var i = 0; i < data.emoji.length; i++) {
+    //Append
+    $('#rating ul').append('<li><span id="emoji' + i + '"class="emoji">' 
+      + data.emoji[i] + '<p><input type="radio" name="emoji" value="' + i + '"></p></li>');
+  }
+  $('#rating ul li').each(function(index) {
+    $(this).click(function() {
+      $('input:radio[value="' + index + '"]').prop("checked", true);
+    });
+  })
 });
