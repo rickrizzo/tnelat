@@ -16,7 +16,7 @@
 		</div>
 
 		<!--New Review-->
-		<form action="" class="pagewidth">
+		<form action="api/review" method="post" class="pagewidth">
 			<!--Select Person-->
 			<fieldset id="person">
 				<legend>Person</legend>
@@ -39,6 +39,7 @@
 				<p>Why did you choose this emoji?</p>
 				<textarea name="" id="" cols="100" rows="10"></textarea>
 			</fieldset>
+			<input type="submit">
 		</form>
 	</main>
 

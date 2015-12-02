@@ -1,6 +1,7 @@
 <?php
-  require '../components/connector.php';
+  require 'components/connector.php';
   session_start();
+  
   // Connect to the database
   try {
     $dbname = 'tnelat';
@@ -17,7 +18,7 @@
     if (strpos($_POST['username'], '@') == FALSE)
     {
       // get the salt from the db
-      $salt_stmt = $dbconn->prepare('SELECT salt FROM Users WHERE username=:username'); 
+      $salt_stmt = $dbconn->prepare('SELECT salt FROM users WHERE username=:username'); 
       $salt_stmt->execute(array(':username' => $_POST['username']));
 
       $res = $salt_stmt->fetch();
@@ -27,13 +28,13 @@
       $salted = hash('sha256', $salt . $_POST['password']);
 
       // if the inputted password is correct, we can successfully select from the db
-      $login_stmt = $dbconn->prepare('SELECT username FROM Users WHERE username=:username AND pass=:pass');
+      $login_stmt = $dbconn->prepare('SELECT username FROM users WHERE username=:username AND pass=:pass');
       $login_stmt->execute(array(':username' => $_POST['username'], ':pass' => $salted));
     }
     else if (strpos($_POST['username'], '@') == TRUE) // if the input was an email
     {
       // get the salt from the db using the email
-      $salt_stmt = $dbconn->prepare('SELECT salt FROM Users WHERE email=:email');
+      $salt_stmt = $dbconn->prepare('SELECT salt FROM users WHERE email=:email');
       $salt_stmt->execute(array(':email' => $_POST['username']));
         $res = $salt_stmt->fetch();
       $salt = ($res) ? $res['salt'] : '';
@@ -42,7 +43,7 @@
       $salted = hash('sha256', $salt . $_POST['password']);
 
       // select from the db using the inputted email and salted inputted password
-      $login_stmt = $dbconn->prepare('SELECT username FROM Users WHERE email=:email AND pass=:pass');
+      $login_stmt = $dbconn->prepare('SELECT username FROM users WHERE email=:email AND pass=:pass');
       $login_stmt->execute(array(':email' => $_POST['username'], ':pass' => $salted));
     }
 
@@ -59,6 +60,7 @@
   echo $err;
   }
 ?>
+
 <!DOCTYPE html>
 <html >
 <head>
