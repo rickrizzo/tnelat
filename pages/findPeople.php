@@ -18,7 +18,7 @@
 	<?php
 		$dbname = 'tnelat';
    		$dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $password);		
-   		$sql = 'SELECT UID, firstname, lastname FROM users';	
+   		$sql = 'SELECT UID, first_name, last_name FROM users';	
    		$result = $dbconn->query($sql);
  		$result->setFetchMode(PDO::FETCH_NUM);
 		while($row = $result->fetch())

@@ -9,7 +9,10 @@
 
     //Variables
     $userdata = (new GetUser($UID))->execute();
-    $name = ucfirst($userdata[0]['firstname']) . " " . ucfirst($userdata[0]['lastname']);
+    echo $UID;
+    var_dump($userdata);
+    exit;
+    $name = ucfirst($userdata[0]['first_name']) . " " . ucfirst($userdata[0]['last_name']);
     $reviews = (new GetReviewsAbout($UID))->execute();
 
     //Title
@@ -20,11 +23,11 @@
     echo "<a class='btn' href='/tnelat/writereview/" . $UID . "'>Review This Person</a>";
 
     echo "<section><h2>Reviews</h2>";
-    foreach ($reviews as $review) {
+    /*foreach ($reviews as $review) {
       echo '<div class="review"><script>$.getJSON("/tnelat/data/emoji.json", function(data) {$("article").html(data.emoji[' . $review['emoji'] . ']); });</script>';
       echo "<article></article>";
-      echo "<p>" . $review['review']. "</p></div>";
-    }
+      echo "<p>" . $review['body']. "</p></div>";
+    }*/
     echo "</section></body></html>";
   }
 ?>

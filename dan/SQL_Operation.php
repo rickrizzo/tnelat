@@ -79,7 +79,7 @@
 	class AddReview extends SQL_Operation {
 		public function __construct($authorUID, $accountUID, $emoji, $body) {
 			$this->initialize(func_get_args());
-			$this->statement = "INSERT INTO Reviews (authorUID, accountUID, emoji, review) VALUES (:authorUID, :accountUID, :emoji, :body)";
+			$this->statement = "INSERT INTO Reviews (authorUID, accountUID, emoji, body) VALUES (:authorUID, :accountUID, :emoji, :body)";
 		}
 	}
 

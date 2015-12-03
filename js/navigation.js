@@ -1,4 +1,4 @@
-$("#mobile").hover(
+$("#phone").hover(
   //Mouse In
   function() {
     $("#hamburger ul").show();

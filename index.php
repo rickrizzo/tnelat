@@ -52,7 +52,7 @@
     try {
       $conn = new PDO("mysql:host=localhost;dbname=tnelat;", $user, $password);
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql= "INSERT INTO reviews (username, skills, emoji, review) VALUES ('test', 'test', '😍', 'test');";
+      //$sql= "INSERT INTO reviews (username, skills, emoji, review) VALUES ('test', 'test', '😍', 'test');";
       $conn->exec($sql);
     } catch(PDOException $e) {     
       echo $e->getMessage();
