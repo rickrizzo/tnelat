@@ -2,11 +2,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<?php include '../components/css.php'; ?>
+  <?php include 'components/css.php'; ?>
 </head>
 <body id="spage">
 	<!--Navigation Bar-->
-	<?php include '../components/navigation.php'; ?>
+	<?php include 'components/navigation.php'; ?>
 
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -41,7 +41,7 @@
 	<!--Form-->
 
 	 <section class="container" >
-   <form class= "log"  method="POST" action="signup.php" style= " margin-left: auto; margin-right: auto; margin-top: 100px; border: double; width: 600px">
+   <form class= "log"  method="POST" action="signup.php" style= " margin-left: auto; margin-right: auto; margin-top: 100px; border: double; width: 70%; min-width: 500px; padding: 10px">
       <div class="container">
         <font color="white"> <h2>Sign Up </h2><p> Already a user? <a href="login.php"><b>Login here</b></a></p></font>
         <p><input  type="text" id="first_name" name="first_name" value="" placeholder="First Name"> <b>Enter your first name</b></p> 
@@ -69,7 +69,7 @@
  </script>
 
 	<!--Resouces-->
-	<?php include '../components/scripts.php'; ?>
+	<?php include 'components/scripts.php'; ?>
 
 </body>
 </html>
