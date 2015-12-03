@@ -17,7 +17,7 @@
     echo "<h1 class='jumbotron'>" . $name . "</h1>";
 
     //Submit Review
-    echo "<button onclick=''>Submit Review</button>";
+    echo "<a class='btn' href='/tnelat/writereview/" . $UID . "'>Review This Person</a>";
 
     echo "<section><h2>Reviews</h2>";
     foreach ($reviews as $review) {

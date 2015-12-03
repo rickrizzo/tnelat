@@ -21,8 +21,8 @@
   });
 
   //View Reviews
-  $app->get('/reviews', function() {
-    include "pages/reviews.php";
+  $app->get('/user', function() {
+    include "pages/findPeople.php";
   });
 
   //User Profile
