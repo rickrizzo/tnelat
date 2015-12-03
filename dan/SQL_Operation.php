@@ -52,7 +52,7 @@
 					$rows = $query->fetchAll();
 					return $rows;
 				}
-				catch (\PDOExecption $e){
+				catch (PDOExecption $e){
 					return [];
 				}
 			}
