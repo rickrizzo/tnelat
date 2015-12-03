@@ -16,7 +16,7 @@
   });
 
   //New Review
-  $app->get('/review', function() {
+  $app->get('/writereview', function() {
     include "pages/writeReview.php";
   });
 
@@ -46,7 +46,7 @@
     try {
       $conn = new PDO("mysql:host=localhost;dbname=tnelat;", $user, $password);
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql= "INSERT INTO reviews (name, skills, emoji, review) VALUES ('test', 'test', 'test', 'test');";
+      $sql= "INSERT INTO reviews (name, skills, emoji, review) VALUES ('test', 'test', '😍', 'test');";
       $conn->exec($sql);
     } catch(PDOException $e) {     
       echo $e->getMessage();
