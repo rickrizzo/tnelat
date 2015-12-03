@@ -31,17 +31,17 @@
       //Create Review Table
       $reviews = "CREATE TABLE IF NOT EXISTS reviews(" .
         "RID INT AUTO_INCREMENT, " .
-        "UID int, " .
+        "authorUID int, " .
+        "accountUID int, " .
         "skills varchar(191) NOT NULL, " .
         "emoji varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL, " .
         "review varchar(1000) NOT NULL, " .
-        "FOREIGN KEY(UID) REFERENCES users(UID), " .
         "PRIMARY KEY (RID));";
       $conn->exec($reviews);
 
       //Sample Data
       $conn->exec("INSERT IGNORE INTO users (firstname, lastname, username, pass, email, mobile, salt) VALUE ('dick', 'plotka', 'dickp', 'password', 'plotka@gmail.com', '2034554422', 'test');");
-      $conn->exec("INSERT IGNORE INTO reviews (UID, skills, emoji, review) VALUE ('1', 'karate', '0', 'p good');");
+      $conn->exec("INSERT IGNORE INTO reviews (authorUID, accountUID, skills, emoji, review) VALUE ('1', '2', 'karate', '0', 'p good');");
 
     } catch(PDOException $e) {     
       echo $e->getMessage();

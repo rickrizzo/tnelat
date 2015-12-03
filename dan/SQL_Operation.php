@@ -1,8 +1,11 @@
 <?php
+	
+	require 'components/connector.php';
 	abstract class SQL_Operation {
 
 		protected function initialize ($vals) {	
-			$this->pdo = new PDO("mysql:host=localhost;dbname=tnelat;charset=utf8;", "root");
+			global $host, $user, $password;
+			$this->pdo = new PDO("mysql:host=localhost;dbname=tnelat;charset=utf8;", $user, $password);
 			$this->statement = '';
 
 			// For each property in the constructor...
