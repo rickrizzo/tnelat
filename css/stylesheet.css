@@ -12,6 +12,7 @@
 	- Pages
 	  - Home
 	  - Login
+	  - Signup
 	  - Profile
 	- Forms
 	- Footer
@@ -41,26 +42,6 @@ body {
 	.pagewidth {
 		width: 80%;
 	}
-}
-/* Different page styling */
-.signup {
-	background: #EE4B3E;
-	background-size: cover;
-}
-#spage {
-	background:url(https://madisonoakley.files.wordpress.com/2012/12/moorland-rd-office-artwork.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-#lpage {
-	background-image: url(https://madisonoakley.files.wordpress.com/2012/12/moorland-rd-office-artwork.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-#writepage {
-	background-image: url(http://www.collegebound.net/blog/wp-content/uploads/2011/10/shutterstock_85474711.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
 }
 
 /* Components */
@@ -251,6 +232,17 @@ main {
 #loginsubmit.btn {
 	margin: 0 auto;
 }
+
+/* - Sign Up */
+#signup {
+	margin-top: 10em;
+	padding: 1em;
+	background-color: #F2F2F3;
+	margin-top: 10em;
+	background-color: #cccccd;
+	border-radius: 5px;
+}
+
 
 /* - Profile */
 #profile .jumbotron {
