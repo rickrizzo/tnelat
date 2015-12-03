@@ -45,7 +45,7 @@
 			// Execute and return the output of the query
 			if ($query->execute()) {
 				if ($rows = $query->fetchAll()) {
-					return $rows[0];
+					return $rows;
 				}
 				else {
 					return [];
@@ -81,14 +81,14 @@
 	class RemoveReview extends SQL_Operation {
 		public function __construct($CID) {
 			$this->initialize(func_get_args());
-			$this->statement = "DELETE FROM Reviews WHERE CID = :CID";
+			$this->statement = "DELETE FROM Reviews WHERE RID = :RID";
 		}
 	}
 
 	class GetNextReviews extends SQL_Operation {
 		public function __construct($max) {
 			$this->initialize(func_get_args());
-			$this->statement = "SELECT TOP :max * FROM Reviews";
+			$this->statement = "SELECT * FROM Reviews LIMIT :max";
 		}
 	}
 
@@ -116,7 +116,7 @@
 	class GetNextUsers extends SQL_Operation {
 		public function __construct($max) {
 			$this->initialize(func_get_args());
-			$this->statement = "SELECT TOP :max * FROM Users";
+			$this->statement = "SELECT * FROM Users LIMIT :max";
 		}
 	}
 

@@ -57,11 +57,18 @@
       </div>
     </section>
 
-    <?php
+    <table background-color='white'>
+      <?php
+        include 'SQL_Operation.php';
+        $users = (new GetNextUsers(10))->execute();
+        foreach ($users as $user) {
+          var_dump($users);
+          exit;
+          echo '<tr><td>' . $user['username'] . '</td></tr>'; 
+        }
+      ?>
+    </table>
 
-
-    ?>
-    
   	<!--Resouces-->
   	<?php include '../components/scripts.php'; ?>
 
