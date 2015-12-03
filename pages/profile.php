@@ -16,7 +16,7 @@
       //Variables
       $userdata = (new GetUser($UID))->execute();
       $name = ucfirst($userdata[0][1]) . " " . ucfirst($userdata[0][2]);
-      $reviews = (new GetReviewsAbout($UID + 1))->execute();
+      $reviews = (new GetReviewsAbout($UID))->execute();
 
       //Title
       echo "<!DOCTYPE html><html><head><title>" . $name . "</title></head>";
