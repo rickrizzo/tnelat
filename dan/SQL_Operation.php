@@ -95,14 +95,14 @@
 	class GetReviewsBy extends SQL_Operation {
 		public function __construct($UID) {
 			$this->initialize(func_get_args());
-			$this->statement = "SELECT * FROM Users INNER JOIN Reviews WHERE authorUID = :UID";
+			$this->statement = "SELECT * FROM Reviews WHERE authorUID = :UID";
 		}
 	}
 
 	class GetReviewsAbout extends SQL_Operation {
 		public function __construct($UID) {
 			$this->initialize(func_get_args());
-			$this->statement = "SELECT * FROM Users INNER JOIN Reviews WHERE accountUID = :UID";
+			$this->statement = "SELECT * FROM Reviews WHERE accountUID = :UID";
 		}
 	}
 
@@ -110,6 +110,13 @@
 		public function __construct($UID) {
 			$this->initialize(func_get_args());
 			$this->statement = "SELECT * FROM Users WHERE UID = :UID";
+		}
+	}
+
+	class GetNextUsers extends SQL_Operation {
+		public function __construct($max) {
+			$this->initialize(func_get_args());
+			$this->statement = "SELECT TOP :max * FROM Users";
 		}
 	}
 

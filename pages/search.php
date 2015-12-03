@@ -1,10 +1,3 @@
-<?php
-  session_start();
-  if (isset($_SESSION['session_id'])) {
-    header("Location: ../index.php");
-  }
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -46,30 +39,14 @@
   </head>
 
   <body>
-
-    <form class= "log"  method="post" action="login.php" style="margin-left: auto; margin-right: auto; margin-top: 150px; border: double; width: 380px">
    
     <div class="container">
-      <h2><font color="white">Login </h2>
-      <h5>Don't have an account? <b><a href="signup.php"> Sign up here. </a></b></h5>
-    </font></div>
+      <font color="white">
+        <h2>User Search</h2>
+      </font>
+    </div>
 
-    <fieldset>
-      <section class="container" >
-        <div class="login" >
-          <form method="post" action="index.html">
-            <p><input id="username" type="text" name="username" value="" placeholder="Username or Email" required></p>
-            <p><input id="password" type="password" name="password" value="" placeholder="Password" required></p>
-        
-            <p class="submit"><input id="login" type="button" name="commit" value="Login"></p>
-          </form>
-        </div>
 
-        <div class="login-help">
-          <p><font color="white">Forgot your password? <a href="index.php">Click here to reset it</a>.</p>
-        </div>
-      </section>
-    </form>
     <script src='../dan/Post.js'></script>
     <script>
       function myFunction() {
