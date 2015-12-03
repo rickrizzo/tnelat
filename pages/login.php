@@ -20,6 +20,7 @@
     <section class="log">
       <div class="pagewidth">
         <h2><font color="white">Login </h2>
+        <h5>Don't have an account? <b><a href="/tnelat/signup"> Sign up here. </a></b></h5>
         </font>
       </div>
       <fieldset>
@@ -32,14 +33,14 @@
             </article>
           </div>
           <div class="login-help">
-            <p><font color="white">Forgot your password? <a href="index.php">Click here to reset it</a>.</p>
+            <!--<p><font color="white">Forgot your password? <a href="#">Click here to reset it</a>.</p>-->
           </div>
         </section>
       </fieldset>
     </section>
 
     <!--Javascript-->
-    <script src='../dan/Post.js'></script>
+    <script src='/tnelat/dan/Post.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
     <script>
       function myFunction() {
@@ -47,7 +48,7 @@
       }
 
       $('#login').click(function() {
-          var PostReq = new Post('../dan/authentication.php');
+          var PostReq = new Post('/tnelat/dan/authentication.php');
           PostReq.addParamsById('username', 'password');
           PostReq.set_callback( function(val) {
             parent.window.location.reload();
