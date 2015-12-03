@@ -37,8 +37,6 @@
         "PRIMARY KEY (id));";
       $conn->exec($reviews);
 
-    } catch(PDOException $e) {     
-      echo $e->getMessage();
     }
   }
 ?>
