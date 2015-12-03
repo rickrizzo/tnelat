@@ -43,6 +43,12 @@ body {
 		width: 80%;
 	}
 }
+input[type=text]{
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid;
+ }
+
 
 /* Components */
 /* - Button */
