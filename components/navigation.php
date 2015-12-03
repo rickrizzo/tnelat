@@ -1,4 +1,5 @@
 <nav class="pagewidth">
+	<?php $_SESSION['UID'] = "1"?>
 	<ul>
 		<span>
 			<a href="/tnelat"><li id="brand">tnelat</li></a>
