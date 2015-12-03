@@ -16,12 +16,7 @@
 		</div>
 
 		<!--New Review-->
-		<form action="api/review" method="post" class="pagewidth">
-			<!--Select Person-->
-			<fieldset id="person">
-				<legend>Person</legend>
-				<input type="text">
-			</fieldset>
+		<form action="api/review" method="post" class="pagewidth" id='write_review'>
 
 			<!--Select Skills-->
 			<fieldset id="skills">
@@ -34,17 +29,29 @@
 				<!--Emoji List-->
 				<ul></ul>
 			</fieldset>
+
 			<fieldset>
 				<legend>Your Review</legend>
-				<p>Why did you choose this emoji?</p>
-				<textarea name="" id="" cols="100" rows="10"></textarea>
+				<p>Describe your experience with this person:</p>
+				<textarea name="body" id="review_body" cols="100" rows="10"></textarea>
 			</fieldset>
-			<input type="submit">
+
+			<input type="submit" id="submit">
 		</form>
 	</main>
 
-	<!--Resouces-->
+	<!--Resources-->
 	<?php include 'components/scripts.php'; ?>
 	<script src="js/review.js"></script>
+	<script>
+		$('#submit').click( function() {
+			alert($('input[name=emoji]:checked', '#write_review').val());
+		});
+	</script>
+
 </body>
 </html>
+
+
+
+

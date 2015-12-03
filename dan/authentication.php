@@ -12,8 +12,10 @@
 
 		if ($salted_password == $user['password']) {
 			session_start();
-			$_SESSION['id'] = $vars['username'] . time();
-			header("Location: test.html");
+
+			// Initialize session parameters
+			$_SESSION['username'] = $vars['username'];
+ 			$_SESSION['id'] = $vars['username'] . time();
 		}
 		else {
 			echo ("\nInvalid username or password");

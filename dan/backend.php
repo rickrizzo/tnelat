@@ -57,8 +57,6 @@
 				var PostReq = new Post('authentication.php');
 				PostReq.addParamsById('u_name', 'u_pass');
 				PostReq.send();
-				//sql('add_comment', sender, recipient, rating, body);
-				//sql ('get_user_info', sender, verify_login)
 			});
 
 		</script>

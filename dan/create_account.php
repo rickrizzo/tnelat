@@ -15,9 +15,9 @@
             $salted_password = hash('sha256', $salt . $vars['password']);
             
             // Store the salt with the password, so we can apply it again and check the result
-            $user = new InsertUser($vars['username'], $vars['email'], $salted_password, $vars['first_name'],
-                                   $vars['last_name'], intval($vars['phone']), $salt);
-            $user->execute();
+            $user = (new InsertUser($vars['username'], $vars['email'], $salted_password, $vars['first_name'],
+                                   $vars['last_name'], intval($vars['phone']), $salt))->execute();
+            
             echo 'User ' . $vars['username'] . ' created successfully.';    
         }    		
   	}

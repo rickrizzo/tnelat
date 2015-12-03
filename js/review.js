@@ -5,7 +5,6 @@ $.getJSON('data/skills.json', function(data) {
   }
 });
 
-
 //Add Emojis
 $.getJSON('data/emoji.json', function(data) {
   for(var i = 0; i < data.emoji.length; i++) {
