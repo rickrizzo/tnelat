@@ -12,7 +12,7 @@
 	<main>
 		<!--Jumbotron-->
 		<div class="jumbotron pagewidth">
-		  <h1>New Review for <?php echo $id; ?></h1>
+		  <h1>New Review</h1>
 		</div>
 
 		<!--New Review-->
@@ -32,7 +32,7 @@
 			</fieldset>
 
 			<!--Submit Button-->
-			<input type="button" id="submit" value="Submit"> 
+			<a href="#" id="submit" class="btn">Submit</a>
 		</form>
 	</main>
 

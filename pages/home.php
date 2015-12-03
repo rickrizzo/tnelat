@@ -27,14 +27,14 @@
 	<section id="actions">
 		<div>
 			<img src="resources/review.png" alt="">
-			<a class="btn" href="review">Review Teammates</a>
+			<a class="btn" href="#">Review Teammates</a>
 			<article>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis libero blanditiis quo deleniti. Quisquam a esse numquam, nostrum dolorem, cum repellat. Assumenda magnam et non sed voluptatibus, nihil hic tempore.
 			</article>
 		</div>
 		<div>
 			<img src="resources/team.png" alt="">
-			<a class="btn" href="reviews">Find Teammates</a>
+			<a class="btn" href="/tnelat/user">Find Teammates</a>
 			<article>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis libero blanditiis quo deleniti. Quisquam a esse numquam, nostrum dolorem, cum repellat. Assumenda magnam et non sed voluptatibus, nihil hic tempore.
 			</article>

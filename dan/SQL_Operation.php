@@ -1,6 +1,6 @@
 <?php
 	
-	require '../components/connector.php';
+	require 'components/connector.php';
 	abstract class SQL_Operation {
 
 		protected function initialize ($vals) {	

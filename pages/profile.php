@@ -13,15 +13,15 @@
     $reviews = (new GetReviewsAbout($UID))->execute();
 
     //Title
-    echo "<!DOCTYPE html><html><head><title>" . $name . "</title></head><body>";
-    echo "<h1 class='jumbotron'>" . $name . "</h1>";
+    echo "<!DOCTYPE html><html><head><title>" . $name . "</title></head>";
+    echo "<body id='profile' class='pagewidth'><h1 class='jumbotron'>" . $name . "</h1>";
 
     //Submit Review
     echo "<a class='btn' href='/tnelat/writereview/" . $UID . "'>Review This Person</a>";
 
     echo "<section><h2>Reviews</h2>";
     foreach ($reviews as $review) {
-      echo '<div><script>$.getJSON("/tnelat/data/emoji.json", function(data) {$("article").html(data.emoji[' . $review['emoji'] . ']); });</script>';
+      echo '<div class="review"><script>$.getJSON("/tnelat/data/emoji.json", function(data) {$("article").html(data.emoji[' . $review['emoji'] . ']); });</script>';
       echo "<article></article>";
       echo "<p>" . $review['review']. "</p></div>";
     }

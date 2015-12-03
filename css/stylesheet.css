@@ -11,6 +11,8 @@
 	- Main
 	- Pages
 	  - Home
+	  - Login
+	  - Profile
 	- Forms
 	- Footer
 	
@@ -50,10 +52,6 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
-.log {
-	background: #EE4B3E;
-	background-size: cover;
-}
 #lpage {
 	background-image: url(https://madisonoakley.files.wordpress.com/2012/12/moorland-rd-office-artwork.jpg);
 	background-size: cover;
@@ -68,6 +66,7 @@ body {
 /* Components */
 /* - Button */
 .btn {
+	max-width: 300px;
 	color: #F2F2F3;
 	border-radius: 5px;
 	padding: 1em;
@@ -77,15 +76,17 @@ body {
 	box-shadow: 0 2px 3px 2px rgba(0,0,0,0.6);
 	transition: 0.15s;
 }
+.btn:hover {
+	-webkit-box-shadow: 0 2px 3px 2px rgba(0,0,0,0);
+	-moz-box-shadow: 0 2px 3px 2px rgba(0,0,0,0);
+	box-shadow: 0 2px 3px 2px rgba(0,0,0,0);
+}
 a.btn{
 	text-decoration: none;
 }
 a.btn:hover{
 	background-color: #C33C31 !important;
 	color: #F2F2F3;
-	-webkit-box-shadow: 0 2px 3px 2px rgba(0,0,0,0);
-	-moz-box-shadow: 0 2px 3px 2px rgba(0,0,0,0);
-	box-shadow: 0 2px 3px 2px rgba(0,0,0,0);
 }
 
 /* - Jumbotron */
@@ -239,13 +240,43 @@ main {
 	}
 }
 /* - Login */
-.log {
-	margin-left: auto; 
-	margin-right: auto; 
-	margin-top: 150px; 
-	border: double; 
-	width: 380px;
+#login {
+	padding: 1em;
+	background-color: #F2F2F3;
+	text-align: center;
+	margin-top: 10em;
+	background-color: #cccccd;
+	border-radius: 5px;
 }
+#loginsubmit.btn {
+	margin: 0 auto;
+}
+
+/* - Profile */
+#profile .jumbotron {
+	margin-top: 2em;
+}
+#profile a {
+	float: right;
+	margin: 0 auto;
+}
+#profile .review {
+	min-width: 150px;
+	width: 30%;
+	margin-top: 1em;
+	margin-left: 1%;
+	text-align: center;
+	float: left;
+	border-radius: 5px;
+}
+#profile .review:hover {
+	color: #F2F2F3;
+	background-color: #EE4B3E;
+}
+#profile .review article{
+	font-size: 4em;
+}
+
 
 /* Forms */
 fieldset {
@@ -277,6 +308,11 @@ span.emoji:hover {
 	#rating li{
 		display: inline-block;
 	}
+}
+#submit {
+	display: block;
+	text-align: center;
+	margin: 0 auto;
 }
 
 /* Footer */

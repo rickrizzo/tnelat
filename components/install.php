@@ -39,8 +39,8 @@
       $conn->exec($reviews);
 
       //Sample Data
-      //$conn->exec("INSERT IGNORE INTO users (firstname, lastname, username, pass, email, mobile, salt) VALUE ('dick', 'plotka', 'dickp', 'password', 'plotka@gmail.com', '2034554422', 'test');");
-      //$conn->exec("INSERT IGNORE INTO reviews (authorUID, accountUID, emoji, review) VALUE ('2', '1', '0', 'p good');");
+      $conn->exec("INSERT IGNORE INTO users (firstname, lastname, username, pass, email, mobile, salt) VALUE ('richard', 'plotka', 'dickp', 'password', 'plotka@gmail.com', '2034554422', 'test');");
+      $conn->exec("INSERT IGNORE INTO reviews (authorUID, accountUID, emoji, review) VALUE ('2', '1', '0', 'p good');");
 
     } catch(PDOException $e) {     
       echo $e->getMessage();
