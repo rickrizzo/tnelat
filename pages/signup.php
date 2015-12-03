@@ -1,5 +1,5 @@
 <?php
-require 'components/connector.php';
+require '../components/connector.php';
   try {
       $database= 'tnelat';
       // connect to the database and create Users table
@@ -80,20 +80,15 @@ require 'components/connector.php';
 <html>
 <head>
 	<meta charset="utf-8">
-	<?php include 'components/css.php'; ?>
+	<?php include '../components/css.php'; ?>
 </head>
 <body id="spage">
 	<!--Navigation Bar-->
-	<?php include 'components/navigation.php'; ?>
+	<?php include '../components/navigation.php'; ?>
 
-	<!--About-->
-	<div class="container">
-		
-	</div>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
   <style>
   label {
     display: inline-block; width: 5em;
@@ -135,14 +130,13 @@ require 'components/connector.php';
         <p><input type="text" name="email" value="" placeholder="Email Address"> <b>Enter your email address</b></p>
         <p><input type="text" name="mobile" value="" placeholder="Phone Number"> Enter a reachable phone number</p>
         <p class="submit"><input type="submit" name="commit" value="Create Account"><i> * items in bold are required</i></p>
-      </form>
-    </div>
-	</div>	
+      </div>
+    </form>
   </section>
  
 
 	<!--Resouces-->
-	<?php include 'components/scripts.php'; ?>
+	<?php include '../components/scripts.php'; ?>
 
 </body>
 </html>
