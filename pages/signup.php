@@ -43,9 +43,9 @@
       PostReq.set_callback( function (ret) {
         $('#error').html(ret);
       });
-      /*PostReq.set_callback( function(val) {
+      PostReq.set_callback( function(val) {
         parent.window.location.reload();
-      });*/
+      });
       PostReq.send();     
     });
  </script>

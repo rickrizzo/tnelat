@@ -13,7 +13,7 @@
 
     $name = ucfirst($userdata[0]['first_name']) . " " . ucfirst($userdata[0]['last_name']);
     $reviews = (new GetReviewsAbout($UID))->execute();
-
+    
     //Title
     echo "<!DOCTYPE html><html><head><title>" . $name . "</title></head>";
     echo "<body id='profile' class='pagewidth'><h1 class='jumbotron'>" . $name . "</h1>";
@@ -23,6 +23,7 @@
 
     echo "<section><h2>Reviews</h2>";
     foreach ($reviews as $review) {
+      var_dump($review['emoji']);
       echo '<div class="review"><script>$.getJSON("/tnelat/data/emoji.json", function(data) {$("article").html(data.emoji[' . $review['emoji'] . ']); });</script>';
       echo "<article></article>";
       echo "<p>" . $review['body']. "</p></div>";

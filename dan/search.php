@@ -21,13 +21,17 @@
     }
     .container{
       color:white;
+      padding-left: 40px;
     }
     .log {
       margin-left: auto; 
       margin-right: auto; 
       margin-top: 150px; 
-      border: double; 
+      padding: 1px;
       width: 70%;
+      background-color: #EE4B3E;
+      border-radius: 5px;
+      -webkit-box-shadow: 0 2px 3px 2px rgba(0,0,0,0.6);
     }
     .center {
       margin-left: auto; 
@@ -52,7 +56,7 @@
       width: 210px;
     }
     .user_small {
-
+      vertical-align: top;
     }
     .profile_picture {
       padding: 15px;
@@ -93,7 +97,7 @@
         foreach ($users as $user) {
           echo ('<tr><td class="user_small">
                     <img src=https://lh3.googleusercontent.com/-mLGBxfgzyHI/AAAAAAAAAAI/AAAAAAAAADg/00zpJ3q4oL0/s120-c/photo.jpg" class="profile_picture">
-                    <div style="display: inline-block;">
+                    <div style="display: inline-block; vertical-align: top; padding-top: 40pxdp">
                       <a href="../user/' . $user['UID'] . '" style="display: inline-block;"><b>' . $user['username'] . '</b></a></br>
                       <div style="display: inline-block;">' . $user['first_name'] . ' ' . $user['last_name'] . '</div></br>
                       <div style="display: inline-block;">' . $user['email'] . '</div>
