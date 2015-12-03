@@ -20,7 +20,6 @@
     <section class="log">
       <div class="pagewidth">
         <h2><font color="white">Login </h2>
-        <h5>Don't have an account? <b><a href="signup.php"> Sign up here. </a></b></h5>
         </font>
       </div>
       <fieldset>
