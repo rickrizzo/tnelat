@@ -238,6 +238,14 @@ main {
 		width: 33%;
 	}
 }
+/* - Login */
+.log {
+	margin-left: auto; 
+	margin-right: auto; 
+	margin-top: 150px; 
+	border: double; 
+	width: 380px;
+}
 
 /* Forms */
 fieldset {
