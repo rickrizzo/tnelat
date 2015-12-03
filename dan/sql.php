@@ -84,7 +84,12 @@
 	// the parameters of that function. That function is executed and its
 	// output is echoed back to the client.
 
+	function test($one, $two, $three) {
+		var_dump(func_get_args());
+	}
+
 	if (isset($_POST['request'])) {
+
 		$request = $_POST['request'];
 		$args = get_defined_vars()['_POST'];
 		unset($args['request']);

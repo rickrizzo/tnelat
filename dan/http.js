@@ -1,5 +1,5 @@
 function post(file, body, callback, args) {
-	if (!callback) { callback = default_callback; }
+	if (!callback) { callback = function (response) { console.log(response); } }
 	xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() { 
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
@@ -10,7 +10,16 @@ function post(file, body, callback, args) {
 	xmlhttp.send(body);
 }
 
-function get(file, body, callback) {
+function form_query_string () {
+	var ret = '';
+	var elementIDs = arguments;
+	for (var x = 0; x < elementIDs.length; x++) {
+		ret += elementIDs[x] + '=' + $('#' + elementIDs[x])[0].value + '&';
+	} 
+	return ret.substring(0, ret.length - 1);
+}
+
+/*function get(file, body, callback) {
 	query_string = file + '?' + body
 	if (!callback) { callback = default_callback; }
 	xmlhttp = new XMLHttpRequest();
@@ -21,15 +30,10 @@ function get(file, body, callback) {
 	xmlhttp.open('GET', query_string, true);
 	xmlhttp.send();
 }
-
-function default_callback(response) {
-	console.log(response);
-	$('#response').html(response);
-}
+*/
 
 function sql() {
 	args = Array.prototype.slice.call(arguments);
-	callback = null;
 	if (typeof args[args.length-1] == 'function')
 		{ callback = args.pop(); }
 
@@ -37,5 +41,10 @@ function sql() {
 		args[i] = 'arg' + i + '=' + args[i];
 	}
 	var query = 'request=' + args.join('&');
-	post('sql.php', query, callback);
+	post('.php', query, function(val) { console.log(val) });
 }
+
+
+
+
+
