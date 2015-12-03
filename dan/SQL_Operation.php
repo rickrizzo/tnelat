@@ -71,31 +71,31 @@
 		}
 	}
 
-	class AddComment extends SQL_Operation {
-		public function __construct($authorUID, $accountUID, $rating, $body) {
+	class AddReview extends SQL_Operation {
+		public function __construct($authorUID, $accountUID, $emoji, $body) {
 			$this->initialize(func_get_args());
-			$this->statement = "INSERT INTO Comments (authorUID, accountUID, rating, body) VALUES (:authorUID, :accountUID, :rating, :body)";
+			$this->statement = "INSERT INTO Reviews (authorUID, accountUID, emoji, body) VALUES (:authorUID, :accountUID, :emoji, :body)";
 		}
 	}
 
-	class RemoveComment extends SQL_Operation {
+	class RemoveReview extends SQL_Operation {
 		public function __construct($CID) {
 			$this->initialize(func_get_args());
-			$this->statement = "DELETE FROM Comments WHERE CID = :CID";
+			$this->statement = "DELETE FROM Reviews WHERE CID = :CID";
 		}
 	}
 
-	class GetCommentsBy extends SQL_Operation {
+	class GetReviewsBy extends SQL_Operation {
 		public function __construct($UID) {
 			$this->initialize(func_get_args());
-			$this->statement = "SELECT * FROM Users INNER JOIN Comments WHERE authorUID = :UID";
+			$this->statement = "SELECT * FROM Users INNER JOIN Reviews WHERE authorUID = :UID";
 		}
 	}
 
-	class GetCommentsAbout extends SQL_Operation {
+	class GetReviewsAbout extends SQL_Operation {
 		public function __construct($UID) {
 			$this->initialize(func_get_args());
-			$this->statement = "SELECT * FROM Users INNER JOIN Comments WHERE accountUID = :UID";
+			$this->statement = "SELECT * FROM Users INNER JOIN Reviews WHERE accountUID = :UID";
 		}
 	}
 
