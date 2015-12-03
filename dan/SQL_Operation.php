@@ -1,11 +1,11 @@
 <?php
 	
-	require 'components/connector.php';
+	//require '../components/connector.php';
 	abstract class SQL_Operation {
 
 		protected function initialize ($vals) {	
 			global $host, $user, $password;
-			$this->pdo = new PDO("mysql:host=localhost;dbname=tnelat;charset=utf8;", $user, $password);
+			$this->pdo = new PDO("mysql:host=localhost;dbname=tnelat;charset=utf8;", 'root', '');
 			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->statement = '';
 

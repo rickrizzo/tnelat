@@ -9,9 +9,7 @@
 
     //Variables
     $userdata = (new GetUser($UID))->execute();
-    echo $UID;
-    var_dump($userdata);
-    exit;
+
     $name = ucfirst($userdata[0]['first_name']) . " " . ucfirst($userdata[0]['last_name']);
     $reviews = (new GetReviewsAbout($UID))->execute();
 

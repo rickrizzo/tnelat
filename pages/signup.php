@@ -21,14 +21,14 @@
       <div class="container">
 
         <font color="white"> <h2>Sign Up </h2><p> Already a user? <a href="login.php"><b>Login here</b></a></p>
-        <p><input type="text" id="first_name" name="first_name" value="" placeholder="First Name">  Enter your first name*</input></p> 
-        <p><input type="text" id="last_name" name="last_name" value="" placeholder="Last Name">  Enter your last name*</input></p>
-        <p><input type="text" id="username" name="username" value="" placeholder="Username">  Create a username*</input></p>
-        <p><input type="password" id="password" name="password" value="" placeholder="Password">  Create a password*</input></p>
+        <p><input type="text" id="first_name" name="first_name" value="" placeholder="First Name">Enter your first name*</input></p> 
+        <p><input type="text" id="last_name" name="last_name" value="" placeholder="Last Name">Enter your last name*</input></p>
+        <p><input type="text" id="username" name="username" value="" placeholder="Username">Create a username*</input></p>
+        <p><input type="password" id="password" name="password" value="" placeholder="Password">Create a password*</input></p>
         <p><input type="password" id="password_confirm" name="password_confirm" value="" placeholder="Re-Type Password">Re-type your password*</input></p>
-        <p><input type="text" id="email" name="email" value="" placeholder="Email Address">  Enter your email address*</input></p>
-        <p><input type="text" id="phone" name="phone" value="" placeholder="Phone Number">  Enter a reachable phone number</input></p>
-        <p class="submit"><input type="button" id="submit" name="submit" value="Create Account"><i> * items required</i></input></p>
+        <p><input type="text" id="email" name="email" value="" placeholder="Email Address">Enter your email address*</input></p>
+        <p><input type="text" id="phone" name="email" value="" placeholder="Email Address">Enter your email address*</input></p>
+        <p class="submit"><input type="button" id="submit" name="submit" value="Create Account"><i>* items required</i></input></p>
 
         <p id="error"> </p>
       </div>
