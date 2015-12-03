@@ -8,10 +8,6 @@
 	<!--Navigation Bar-->
 	<?php include 'components/navigation.php'; ?>
 
-	<!--Main-->
-	<form action="">
-		
-	</form>
 
 	<!--JavaScript-->
 	<?php include 'components/scripts.php'; ?>
