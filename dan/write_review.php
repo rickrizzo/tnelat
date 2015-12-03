@@ -11,10 +11,7 @@
 
 		$vars = process_request($_POST);
 
-		$authorUID = (new GetUserByUsername($vars['author']))->execute()['UID'];
-		$accountUID = (new GetUserByUsername($vars['account']))->execute()['UID'];
-
-		$review = (new AddReview($authorUID, $accountUID, $vars['emoji'], $vars['body']))->execute();
+		$review = (new AddReview($vars['author'], $vars['account'], $vars['emoji'], $vars['body']))->execute();
 		echo('Review submitted');
 	}
 ?>

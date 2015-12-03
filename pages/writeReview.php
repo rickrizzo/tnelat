@@ -12,30 +12,26 @@
 	<main>
 		<!--Jumbotron-->
 		<div class="jumbotron pagewidth">
-		  <h1>New Review for <?php function getName($id) { return $id; } echo getName($id); ?></h1>
+		  <h1>New Review for <?php echo $id; ?></h1>
 		</div>
 
 		<!--New Review-->
 		<form method="post" class="pagewidth" id='write_review'>
 
-			<!--Select Skills-->
-			<!--<fieldset id="skills">
-				<legend>Skills</legend>
-			</fieldset>-->
-
 			<!--Select Emoji-->
 			<fieldset id="rating">
-				<legend>Vibe</legend>
-				<!--Emoji List-->
+				<legend>Emoji</legend>
 				<ul></ul>
 			</fieldset>
 
+			<!--Your Review-->
 			<fieldset>
 				<legend>Your Review</legend>
 				<p>Describe your experience with this person:</p>
 				<textarea name="body" id="review_body" cols="100" rows="10"></textarea>
 			</fieldset>
 
+			<!--Submit Button-->
 			<input type="button" id="submit" value="Submit"> 
 		</form>
 	</main>
@@ -48,11 +44,11 @@
 	<script>
 
 		$('#submit').click( function() {
-			var PostReq = new Post('dan/write_review.php');
+			var PostReq = new Post('/tnelat/dan/write_review.php');
 			var emoji = $('input[name=emoji]:checked', '#write_review').val();
 
-			PostReq.addParamByPair('account', <?php echo getName($id) ?>);
-			PostReq.addParamByPair('author', <?php $_SESSION['username']?>);
+			PostReq.addParamByPair('account', <?php echo $id; ?>);
+			PostReq.addParamByPair('author', <?php echo 1; ?>);
 			PostReq.addParamByPair('emoji', emoji);
 			PostReq.addParamById('review_body');
 			

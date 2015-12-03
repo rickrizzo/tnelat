@@ -2,7 +2,11 @@
 	<ul>
 		<span>
 			<a href="/tnelat"><li id="brand">tnelat</li></a>
-			<a href="/tnelat/reviews"><li>Find</li></a>
+			<?php
+				if(isset($_SESSION['username'])) {
+					echo '<a href="/tnelat/user/"><li>Find</li></a>';
+				}
+			?>
 		</span>
 		<span id="right-menu">
 			<?php

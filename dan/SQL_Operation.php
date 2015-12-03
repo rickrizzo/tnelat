@@ -6,6 +6,7 @@
 		protected function initialize ($vals) {	
 			global $host, $user, $password;
 			$this->pdo = new PDO("mysql:host=localhost;dbname=tnelat;charset=utf8;", $user, $password);
+			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->statement = '';
 
 			// For each property in the constructor...
@@ -77,7 +78,7 @@
 	class AddReview extends SQL_Operation {
 		public function __construct($authorUID, $accountUID, $emoji, $body) {
 			$this->initialize(func_get_args());
-			$this->statement = "INSERT INTO Reviews (authorUID, accountUID, emoji, body) VALUES (:authorUID, :accountUID, :emoji, :body)";
+			$this->statement = "INSERT INTO Reviews (authorUID, accountUID, emoji, review) VALUES (:authorUID, :accountUID, :emoji, :body)";
 		}
 	}
 
