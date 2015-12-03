@@ -14,8 +14,10 @@
 			session_start();
 
 			// Initialize session parameters
-			$_SESSION['username'] = $vars['username'];
- 			$_SESSION['id'] = $vars['username'] . time();
+			$_SESSION['username'] = $user['username'];
+ 			$_SESSION['session_id'] = $user['username'] . time();
+ 			$_SESSION['UID'] = $user['UID'];
+ 			echo ('Logged in successfully');
 		}
 		else {
 			echo ("\nInvalid username or password");

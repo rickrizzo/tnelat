@@ -2,7 +2,7 @@
 	//Test Session
 	//Delete this later...
 	//session_start();
-	$_SESSION['username'] = "balls";
+
 ?>
 <nav class="pagewidth">
 	<ul>

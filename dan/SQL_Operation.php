@@ -85,6 +85,13 @@
 		}
 	}
 
+	class GetNextReviews extends SQL_Operation {
+		public function __construct($max) {
+			$this->initialize(func_get_args());
+			$this->statement = "SELECT TOP :max * FROM Reviews";
+		}
+	}
+
 	class GetReviewsBy extends SQL_Operation {
 		public function __construct($UID) {
 			$this->initialize(func_get_args());
