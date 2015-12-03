@@ -43,25 +43,25 @@ body {
 /* Different page styling */
 .signup {
 	background: #EE4B3E;
-	background-size: 100%;
+	background-size: cover;
 }
 #spage {
 	background:url(https://madisonoakley.files.wordpress.com/2012/12/moorland-rd-office-artwork.jpg);
-	background-size: 100%;
+	background-size: cover;
 	background-repeat: no-repeat;
 }
 .log {
 	background: #EE4B3E;
-	background-size: 100%;
+	background-size: cover;
 }
 #lpage {
 	background-image: url(https://madisonoakley.files.wordpress.com/2012/12/moorland-rd-office-artwork.jpg);
-	background-size: 100%;
+	background-size: cover;
 	background-repeat: no-repeat;
 }
 #writepage {
 	background-image: url(http://www.collegebound.net/blog/wp-content/uploads/2011/10/shutterstock_85474711.jpg);
-	background-size: 100%;
+	background-size: cover;
 	background-repeat: no-repeat;
 }
 
@@ -141,24 +141,7 @@ nav a{
 }
 #right-menu {
 	float: right;
-	display: none;
-}
-#mobile {
-	float: right;
-	display: block;
-}
-#hamburger ul {
-	display: none;
-	width: 2em;
-}
-#hamburger li {
-	padding: 0.5em 0;
-	display: inline;
-	float: right;
-}
-#hamburger li:hover {
-	background-color: #EE4B3E;
-	color: #F2F2F3
+	/*display: none;*/
 }
 @media (min-width: 600px) {
 	nav {

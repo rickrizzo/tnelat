@@ -29,15 +29,19 @@
       $conn->exec($users);
 
       //Create Review Table
-      /* Add foreing key for users */
       $reviews = "CREATE TABLE IF NOT EXISTS reviews(" .
-        "id INT AUTO_INCREMENT, " .
-        "username varchar(191) NOT NULL, " .
+        "RID INT AUTO_INCREMENT, " .
+        "username varchar(100), " .
         "skills varchar(191) NOT NULL, " .
         "emoji varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL, " .
         "review varchar(1000) NOT NULL, " .
-        "PRIMARY KEY (id)) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;";
+        "FOREIGN KEY(username) REFERENCES users(username), " .
+        "PRIMARY KEY (RID));";
       $conn->exec($reviews);
+
+      //Sample Data
+      $conn->exec("INSERT IGNORE INTO users (firstname, lastname, username, pass, email, mobile, salt) VALUE ('dick', 'plotka', 'dickp', 'password', 'plotka@gmail.com', '2034554422', 'test');");
+      $conn->exec("INSERT IGNORE INTO reviews (username, skills, emoji, review) VALUE ('dickp', 'karate', '0', 'p good');");
 
     } catch(PDOException $e) {     
       echo $e->getMessage();
