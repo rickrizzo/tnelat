@@ -12,7 +12,7 @@
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       //Create Database
-      $conn->exec("CREATE DATABASE IF NOT EXISTS tnelat CHARACTER SET utf8mb4 COLLATE utf8mb4_bin");
+      $conn->exec("CREATE DATABASE IF NOT EXISTS tnelat CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
       $conn->exec("USE tnelat");
 
       //Create User Table
@@ -32,11 +32,11 @@
       /* Add foreing key for users */
       $reviews = "CREATE TABLE IF NOT EXISTS reviews(" .
         "id INT AUTO_INCREMENT, " .
-        "username varchar(200) NOT NULL, " .
-        "skills varchar(200) NOT NULL, " .
-        "emoji varchar(25) NOT NULL, " .
+        "username varchar(191) NOT NULL, " .
+        "skills varchar(191) NOT NULL, " .
+        "emoji varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL, " .
         "review varchar(1000) NOT NULL, " .
-        "PRIMARY KEY (id));";
+        "PRIMARY KEY (id)) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;";
       $conn->exec($reviews);
 
     } catch(PDOException $e) {     

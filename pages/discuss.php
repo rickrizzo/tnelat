@@ -1,8 +1,3 @@
-<?php
-  //include 'connector.php';
-  //echo "Let's start!";
-?>
-
 <!DOCTYPE html>
 <html>
 <head>

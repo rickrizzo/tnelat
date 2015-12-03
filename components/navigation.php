@@ -1,3 +1,7 @@
+<?php
+	session_start();
+	$_SESSION['username'] = "steven";
+?>
 <nav class="pagewidth">
 	<ul>
 		<span>
@@ -5,9 +9,14 @@
 			<a href="reviews"><li>Find</li></a>
 		</span>
 		<span id="right-menu">
-			<li>About</li>
-			<a href="/tnelat/login"><li>Login</li></a>
-			<a href="/tnelat/signup"><li>Sign Up</li></a>
+			<?php
+				if(isset($_SESSION['username'])) {
+					echo '<a href="user/' . $_SESSION['username'] . '"><li>' . $_SESSION['username'] . '</li></a>';
+				} else {
+					echo '<a href="login"><li>Login</li></a>' .
+						'<a href="signup"><li>Sign Up</li></a>';
+				}
+			?>
 		</span>
 	</ul>
 </nav>

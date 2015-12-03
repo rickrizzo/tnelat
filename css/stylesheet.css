@@ -9,8 +9,8 @@
 	- Navigation
 	- Header
 	- Main
-	- Sections
-	  - Actions
+	- Pages
+	  - Home
 	- Forms
 	- Footer
 	
@@ -220,8 +220,8 @@ main {
 	}
 }
 
-/* Sections */
-/* - Actions */
+/* Pages */
+/* - Home */
 #actions {
 	background-color: #F2F2F3;
 	min-height: 600px;

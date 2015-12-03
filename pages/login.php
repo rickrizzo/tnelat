@@ -111,8 +111,8 @@
   <section class="container" >
     <div class="login" >
       <form method="post" action="index.html">
-        <p><input type="text" name="username" value="" placeholder="Username or Email"></p>
-        <p><input type="password" name="password" value="" placeholder="Password"></p>
+        <p><input type="text" name="username" value="" placeholder="Username or Email" required></p>
+        <p><input type="password" name="password" value="" placeholder="Password" required></p>
     
         <p class="submit"><input type="submit" name="commit" value="login"></p>
       </form>
