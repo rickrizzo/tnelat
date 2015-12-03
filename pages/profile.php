@@ -15,15 +15,15 @@
 
       //Variables
       $userdata = (new GetUser($UID))->execute();
-      $name = ucfirst($userdata[0][1]) . " " . ucfirst($userdata[0][2]);
+      $name = ucfirst($userdata[0]['firstname']) . " " . ucfirst($userdata[0]['lastname']);
       $reviews = (new GetReviewsAbout($UID))->execute();
 
       //Title
       echo "<!DOCTYPE html><html><head><title>" . $name . "</title></head>";
       echo "<body><h1 class='jumbotron'>" . $name . "</h1><section><h2>Reviews</h2>";
-      echo '<script>$.getJSON("/tnelat/data/emoji.json", function(data) {$("article").html(data.emoji[' . $reviews[0][4] . ']); });</script>';
+      echo '<script>$.getJSON("/tnelat/data/emoji.json", function(data) {$("article").html(data.emoji[' . $reviews[0]['emoji'] . ']); });</script>';
       echo "<article></article>";
-      echo "<p>" . $reviews[0][5]. "</p>";
+      echo "<p>" . $reviews[0]['review']. "</p>";
       echo "</section></body></html>";
     } catch (Exception $e) {
       echo "Error: " . $e->getMessage();
