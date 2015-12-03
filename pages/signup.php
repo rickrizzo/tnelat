@@ -43,7 +43,7 @@
 	 <section class="container" >
    <form class= "log"  method="POST" action="signup.php" style= " margin-left: auto; margin-right: auto; margin-top: 100px; border: double; width: 70%; min-width: 500px; padding: 10px">
       <div class="container">
-        <font color="white"> <h2>Sign Up </h2><p> Already a user? <a href="login.php"><b>Login here</b></a></p></font>
+        <font color="white"> <h2>Sign Up </h2><p> Already a user? <a href="login.php"><b>Login here</b></a></p>
         <p><input  type="text" id="first_name" name="first_name" value="" placeholder="First Name"> <b>Enter your first name</b></p> 
         <p><input type="text" id="last_name" name="last_name" value="" placeholder="Last Name"> <b>Enter your last name</b></p>
         <p><input type="text" id="username" name="username" value="" placeholder="Username"> <b>Create a username</b></p>
@@ -52,15 +52,20 @@
         <p><input type="text" id="email" name="email" value="" placeholder="Email Address"> <b>Enter your email address</b></p>
         <p><input type="text" id="phone" name="phone" value="" placeholder="Phone Number"> Enter a reachable phone number</p>
         <p class="submit"><input type="button" id="submit" name="submit" value="Create Account"><i> * items in bold are required</i></p>
+        <p id="error"> </p>
+        </font>
       </div>
     </form>
   </section>
  
- <script src='../dan/Post.js'></script>
+ <script src='dan/Post.js'></script>
  <script>
     $('#submit').click(function() {
-      var PostReq = new Post('../dan/create_account.php');
+      var PostReq = new Post('dan/create_account.php');
       PostReq.addParamsById('username', 'password', 'password_confirm', 'first_name', 'last_name', 'email', 'phone');
+      PostReq.set_callback( function (ret) {
+        $('#error').html(ret);
+      });
       /*PostReq.set_callback( function(val) {
         parent.window.location.reload();
       });*/

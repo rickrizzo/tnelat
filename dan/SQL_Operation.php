@@ -48,10 +48,11 @@
 
 			// Execute and return the output of the query
 			if ($query->execute()) {
-				if ($rows = $query->fetchAll()) {
+				try {
+					$rows = $query->fetchAll();
 					return $rows;
 				}
-				else {
+				catch (\PDOExecption $e){
 					return [];
 				}
 			}
