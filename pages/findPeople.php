@@ -1,16 +1,16 @@
 <?php
-	require 'components/connector.php'
+	require '../components/connector.php'
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Find People</title>
-	<?php include 'components/css.php'; ?>
+	<?php include '../components/css.php'; ?>
 </head>
 <body>
 	<!--Navigation Bar-->
-	<?php include 'components/navigation.php'; ?>
+	<?php include '../components/navigation.php'; ?>
 
 	<!--Main-->
 	<h1 class="jumbotron"></h1>
@@ -30,6 +30,6 @@
 	?>
 	</section>
 	<!--JavaScript-->
-	<?php include 'components/scripts.php'; ?>
+	<?php include '../components/scripts.php'; ?>
 </body>
 </html>
