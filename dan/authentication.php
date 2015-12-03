@@ -5,7 +5,9 @@
 	if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 		$vars = process_request($_POST);
-		$user = (new GetUserByUsername($vars['username']))->execute();
+
+		$user = (new GetUserByUsername($vars['username']))->execute()[0];
+		var_dump($user);
 
 		// Salt the password
 		$salted_password = hash('sha256', $user['salt'] . $vars['password']);

@@ -41,6 +41,7 @@
 
     <!--Javascript-->
     <script src='../dan/Post.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
     <script>
       function myFunction() {
           document.getElementById("myForm").submit();
@@ -49,7 +50,7 @@
       $('#login').click(function() {
           var PostReq = new Post('../dan/authentication.php');
           PostReq.addParamsById('username', 'password');
-          PostReq.set_callback( function() {
+          PostReq.set_callback( function(val) {
             parent.window.location.reload();
           });
           PostReq.send();     

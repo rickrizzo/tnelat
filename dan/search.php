@@ -25,6 +25,19 @@
       border: double; 
       width: 80%;
     }
+    .center {
+      margin-left: auto; 
+      margin-right: auto; 
+      width: 80%;
+      border: double; 
+    }
+    td {
+      text-align: center;
+      width: 100%;
+    }
+    tr {
+      width: 100%;
+    }
 
     fieldset div {
       margin-bottom: 2em;
@@ -53,18 +66,20 @@
    
     <section class= "log" method="post">
       <div class="container">
-        <h2 class="center">User Search</h2>
+        <h2>User Search</h2>
       </div>
     </section>
 
-    <table background-color='white'>
+    <table background-color='white' class='center'>
       <?php
         include 'SQL_Operation.php';
         $users = (new GetNextUsers(10))->execute();
         foreach ($users as $user) {
-          var_dump($users);
-          exit;
-          echo '<tr><td>' . $user['username'] . '</td></tr>'; 
+          echo ('<tr><td> 
+                    <a href="../user/' . $user['UID'] . '"><b>' . $user['username'] . '</b></a>
+                    <div>' . $user['first_name'] . ' ' . $user['last_name'] . '</div>
+                    <hr>
+                </td></tr>'); 
         }
       ?>
     </table>
