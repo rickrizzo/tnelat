@@ -9,7 +9,6 @@
     include 'dan/SQL_Operation.php';
 
     //Connect to DB
-    $UID = 1;
     try {
       $conn = new PDO('mysql:host=localhost;dbname=tnelat;',$user, $password);
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
