@@ -23,16 +23,15 @@
       margin-right: auto; 
       margin-top: 150px; 
       border: double; 
-      width: 80%;
+      width: 70%;
     }
     .center {
       margin-left: auto; 
       margin-right: auto; 
-      width: 80%;
-      border: double; 
+      width: 70%;
     }
     td {
-      text-align: center;
+      text-align: left;
       width: 100%;
     }
     tr {
@@ -47,6 +46,19 @@
     }
     .ui-tooltip {
       width: 210px;
+    }
+    .user_small {
+
+    }
+    .profile_picture {
+      padding: 15px;
+      height: 150px;
+      width: 150px;
+      display: inline-block;
+    }
+    hr {
+      padding: 0px;
+      margin: 0px;
     }
     </style>
 
@@ -66,7 +78,7 @@
    
     <section class= "log" method="post">
       <div class="container">
-        <h2>User Search</h2>
+        <h2>Users</h2>
       </div>
     </section>
 
@@ -75,9 +87,13 @@
         include 'SQL_Operation.php';
         $users = (new GetNextUsers(10))->execute();
         foreach ($users as $user) {
-          echo ('<tr><td> 
-                    <a href="../user/' . $user['UID'] . '"><b>' . $user['username'] . '</b></a>
-                    <div>' . $user['first_name'] . ' ' . $user['last_name'] . '</div>
+          echo ('<tr><td class="user_small">
+                    <img src=https://lh3.googleusercontent.com/-mLGBxfgzyHI/AAAAAAAAAAI/AAAAAAAAADg/00zpJ3q4oL0/s120-c/photo.jpg" class="profile_picture">
+                    <div style="display: inline-block;">
+                      <a href="../user/' . $user['UID'] . '" style="display: inline-block;"><b>' . $user['username'] . '</b></a></br>
+                      <div style="display: inline-block;">' . $user['first_name'] . ' ' . $user['last_name'] . '</div></br>
+                      <div style="display: inline-block;">' . $user['email'] . '</div>
+                    </div>
                     <hr>
                 </td></tr>'); 
         }
