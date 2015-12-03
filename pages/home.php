@@ -13,7 +13,7 @@
 <body>
 
 	<!--Navigation-->
-	<?php //require 'components/navigation.php'; ?>
+	<?php require 'components/navigation.php'; ?>
 
 	<!--Header-->
 	<header>

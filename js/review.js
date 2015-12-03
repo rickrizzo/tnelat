@@ -1,12 +1,12 @@
-//Select Person
-$.getJSON('data/skills.json', function(data) {
+//Add Skills
+$.getJSON('/tnelat/data/skills.json', function(data) {
   for(var i = 0; i < data.skills.length; i++) {
     $('#skills').append('<input type="checkbox" name="skill" value="' + data.skills[i] + '">' + data.skills[i]);
   }
 });
 
 //Add Emojis
-$.getJSON('data/emoji.json', function(data) {
+$.getJSON('/tnelat/data/emoji.json', function(data) {
   for(var i = 0; i < data.emoji.length; i++) {
     //Append
     $('#rating ul').append('<li><span id="emoji' + i + '"class="emoji">' 

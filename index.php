@@ -16,8 +16,9 @@
   });
 
   //New Review
-  $app->get('/writereview', function() {
+  $app->get('/writereview/:id', function($id) {
     include "pages/writeReview.php";
+    getName($id);
   });
 
   //View Reviews

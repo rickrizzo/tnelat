@@ -12,16 +12,16 @@
 	<main>
 		<!--Jumbotron-->
 		<div class="jumbotron pagewidth">
-		  <h1>New Review</h1>
+		  <h1>New Review for <?php function getName($id) { return $id; } echo getName($id); ?></h1>
 		</div>
 
 		<!--New Review-->
 		<form method="post" class="pagewidth" id='write_review'>
 
 			<!--Select Skills-->
-			<fieldset id="skills">
+			<!--<fieldset id="skills">
 				<legend>Skills</legend>
-			</fieldset>
+			</fieldset>-->
 
 			<!--Select Emoji-->
 			<fieldset id="rating">
@@ -43,16 +43,16 @@
 	<!--Resources-->
 	<?php include 'components/scripts.php'; ?>
 
-	<script src="js/review.js"></script>
-	<script src='dan/Post.js'></script>
+	<script src="/tnelat/js/review.js"></script>
+	<script src='/tnelat/dan/Post.js'></script>
 	<script>
 
 		$('#submit').click( function() {
 			var PostReq = new Post('dan/write_review.php');
 			var emoji = $('input[name=emoji]:checked', '#write_review').val();
 
-			PostReq.addParamByPair('account', 'Rizzio');
-			PostReq.addParamByPair('author', 'MarthMarthMarth');
+			PostReq.addParamByPair('account', <?php echo getName($id) ?>);
+			PostReq.addParamByPair('author', <?php $_SESSION['username']?>);
 			PostReq.addParamByPair('emoji', emoji);
 			PostReq.addParamById('review_body');
 			

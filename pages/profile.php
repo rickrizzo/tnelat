@@ -13,8 +13,13 @@
     $reviews = (new GetReviewsAbout($UID))->execute();
 
     //Title
-    echo "<!DOCTYPE html><html><head><title>" . $name . "</title></head>";
-    echo "<body><h1 class='jumbotron'>" . $name . "</h1><section><h2>Reviews</h2>";
+    echo "<!DOCTYPE html><html><head><title>" . $name . "</title></head><body>";
+    echo "<h1 class='jumbotron'>" . $name . "</h1>";
+
+    //Submit Review
+    echo "<button onclick=''>Submit Review</button>";
+
+    echo "<section><h2>Reviews</h2>";
     foreach ($reviews as $review) {
       echo '<div><script>$.getJSON("/tnelat/data/emoji.json", function(data) {$("article").html(data.emoji[' . $review['emoji'] . ']); });</script>';
       echo "<article></article>";
