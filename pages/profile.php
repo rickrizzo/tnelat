@@ -22,12 +22,14 @@
     echo "<a class='btn' href='/tnelat/writereview/" . $UID . "'>Review This Person</a>";
 
     echo "<section><h2>Reviews</h2>";
+    $i = 0;
     foreach ($reviews as $review) {
-      var_dump($review['emoji']);
-      echo '<div class="review"><script>$.getJSON("/tnelat/data/emoji.json", function(data) {$("article").html(data.emoji[' . $review['emoji'] . ']); });</script>';
-      echo "<article></article>";
+      $i++;
+      echo "<div class='review'><article  id='"  . $i ."' ></article>";
+      echo '<script>$.getJSON("/tnelat/data/emoji.json", function(data) {$("#' . $i . '").html(data.emoji[' . $review["emoji"] . ']); console.log(data.emoji[' . $review['emoji'] . ']);});</script>';
       echo "<p>" . $review['body']. "</p></div>";
     }
     echo "</section></body></html>";
   }
 ?>
+

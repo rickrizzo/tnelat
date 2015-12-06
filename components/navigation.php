@@ -1,5 +1,5 @@
 <nav class="pagewidth">
-	<?php $_SESSION['UID'] = "1"?>
+
 	<ul>
 		<span>
 			<a href="/tnelat"><li id="brand">tnelat</li></a>
@@ -11,7 +11,7 @@
 		</span>
 		<span id="right-menu">
 			<?php
-				if(isset($_SESSION['UID'])) {
+				if(isset($_SESSION['UID']) and isset($_SESSION['username']) ) {
 					echo '<a href="/tnelat/user/' . $_SESSION['UID'] . '"><li>' . $_SESSION['username'] . '</li></a>';
 					echo '<a href="#" id="logout"><li>Log Out</li></a>';
 				} else {

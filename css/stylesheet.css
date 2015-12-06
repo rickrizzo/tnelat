@@ -44,10 +44,7 @@ body {
 	}
 }
 input[type=text]{
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid;
- }
+}
 
 
 /* Components */
@@ -106,27 +103,53 @@ nav {
 	-moz-box-shadow: 0 2px 3px 2px rgba(0,0,0,0.6);
 	box-shadow: 0 2px 3px 2px rgba(0,0,0,0.6);
 	font-size: 1.2em !important;
+	max-width: 1000px;
+	padding: 0px 25px 0px 25px;
 }
+
 nav ul {
-	margin: 0;
+	margin: 0px;
+	width: 100%;
+	padding: 0px;
 }
 nav li {
-	padding: 1em;
 	list-style: none;
 	display: inline-block;
-	transition: 0.15s;
+	transition: 0.15s ease;
+	vertical-align: top;
 }
 nav li:hover {
 	background-color: #F2F2F3;
-	color: #EE4B3E;
 }
+
 nav a{
+	display: block;
 	text-decoration: none;
 	color: #F2F2F3;
+	padding: 15px 20px 15px 20px;
 }
-#brand {
+
+menu {
+	margin: 0px;
+	padding: 0px;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.bold {
 	font-weight: bold;
 }
+
+.small {
+	font-size: 1em;
+}
+
 #right-menu {
 	float: right;
 	/*display: none;*/
@@ -176,6 +199,15 @@ header h1 {
 		padding-top: 30%;
 		font-size: 7em;	
 	}
+}
+
+.navlink {
+	transition: 0.15s ease;
+}
+
+
+.navlink:hover {
+	color: red;
 }
 
 /* Main */
