@@ -6,8 +6,16 @@
 
 		$vars = process_request($_POST);
 
-		$user = (new GetUserByUsername($vars['username']))->execute()[0];
-		var_dump($user);
+		if(!empty($user = (new GetUserByUsername($vars['username']))->execute())) {
+			$user = $user[0];
+		}
+		elseif (!empty($user = (new GetUserByEmail($vars['username']))->execute())) {
+			$user = $user[0];
+		}
+		else {
+			echo ("\n<span class='error'>Invalid username or password</span>");
+			exit;
+		}
 
 		// Salt the password
 		$salted_password = hash('sha256', $user['salt'] . $vars['password']);
@@ -16,7 +24,8 @@
 			login($user['username']);		
 		}
 		else {
-			echo ("\nInvalid username or password");
+			echo ("\n<span class='error'>Invalid username or password</span>");
+			exit;
 		}
 	}
 

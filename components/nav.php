@@ -1,11 +1,12 @@
 <nav class="pagewidth">
 	<ul>
-		<li>
+		<li class='float-left'>
 			<a href="/tnelat" class="navlink bold">tnelat</a>
 		</li>
 
 		<?php
-			if(isset($_SESSION['username'])) {
+			if(isset($_SESSION['session_id'])) {
+				echo '<li class="float-left"><a href="#" class="navlink small" id="profile">search</a></li>';
 				echo '<li class="float-right"><a href="#" class="navlink small" id="logout">logout</a></li>';
 				echo '<li class="float-right"><a href="#" class="navlink small" id="profile">' . $_SESSION['username'] .'</a></li>';
 			}
