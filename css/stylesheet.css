@@ -357,12 +357,17 @@ span.emoji:hover {
 	margin-bottom: 0px;
 }
 
+.error {
+	color: red;
+	font-weight: bold;
+}
+
 /* Footer */
 footer {
 	padding: 1em 0;
 	text-align: center;
 	background-color: #EE4B3E;
-	color: #F2F2F3;
+	color: #EE4B3E;
 }
 
 h5 {

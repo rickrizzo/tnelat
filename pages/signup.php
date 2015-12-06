@@ -12,6 +12,9 @@
   	 <fieldset id="signup" class="pagewidth" >
         <h2>Sign Up</h2>
         <h4>Already a user?&nbsp;&nbsp;<a href="login.php">Login here</a></h4>
+
+        <p id="error"> </p>
+
         <input type="text" id="first_name" name="first_name" value="" placeholder="First Name*">
         <input type="text" id="last_name" name="last_name" value="" placeholder="Last Name*">
         <input type="text" id="username" name="username" value="" placeholder="Username*">
@@ -19,22 +22,22 @@
         <input type="password" id="password_confirm" name="password_confirm" value="" placeholder="Re-Type Password*">
         <input type="text" id="email" name="email" value="" placeholder="Email Address*">
         <input type="text" id="phone" name="phone" value="" placeholder="Phone Number">
-        <span class="btn" id="loginsubmit" value="Login">Submit</span>
-        <h5 class="float-right">* fields required</h5>
+        <span class="btn" id="submit" value="Login">Submit</span>
 
-        <p id="error"> </p>
+        <h5 class="float-right">* fields required</h5>
     </fieldset>
    
    <script src='dan/Post.js'></script>
    <script>
       $('#submit').click(function() {
+        console.log("click");
         var PostReq = new Post('dan/create_account.php');
         PostReq.addParamsById('username', 'password', 'password_confirm', 'first_name', 'last_name', 'email', 'phone');
-        PostReq.set_callback( function (ret) {
-          $('#error').html(ret);
-        });
         PostReq.set_callback( function(val) {
-          parent.window.location.reload();
+          if (val != "User created successfully.")
+            $('#error').html(val);
+          else 
+            parent.window.location.reload();
         });
         PostReq.send();     
       });
