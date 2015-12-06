@@ -1,6 +1,6 @@
 <?php
-  	include 'SQL_Operation.php';
-    include 'formatting.php';
+  	include_once 'SQL_Operation.php';
+    include_once 'formatting.php';
 
   	if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $vars = process_request($_POST);
@@ -17,8 +17,13 @@
             // Store the salt with the password, so we can apply it again and check the result
             $user = (new InsertUser($vars['username'], $vars['email'], $salted_password, $vars['first_name'],
                                    $vars['last_name'], intval($vars['phone']), $salt))->execute();
-            
-            echo 'User created successfully.';    
+        
+            // Reset the post so we don't make a post request to authentication
+            $_SERVER['REQUEST_METHOD'] = null;
+            include $_SERVER['DOCUMENT_ROOT'] . "/tnelat/dan/authentication.php";
+            login($vars['username']);
+
+            echo 'User created successfully. Redirecting...';    
         }    		
   	}
 

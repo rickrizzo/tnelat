@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if (!empty($_SESSION['session_id']))
+    header('Location: /tnelat');
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,7 +19,7 @@
         <h2>Sign Up</h2>
         <h4>Already a user?&nbsp;&nbsp;<a href="/tnelat/pages/login.php">Login here</a></h4>
 
-        <p id="error"> </p>
+        <p id="response"> </p>
 
         <input type="text" id="first_name" name="first_name" value="" placeholder="First Name*">
         <input type="text" id="last_name" name="last_name" value="" placeholder="Last Name*">
@@ -34,10 +40,8 @@
         var PostReq = new Post('dan/create_account.php');
         PostReq.addParamsById('username', 'password', 'password_confirm', 'first_name', 'last_name', 'email', 'phone');
         PostReq.set_callback( function(val) {
-          if (val != "User created successfully.")
-            $('#error').html(val);
-          else 
-            parent.window.location.reload();
+          $('#response').html(val);
+          parent.window.location.reload();
         });
         PostReq.send();     
       });

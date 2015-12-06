@@ -1,6 +1,4 @@
 <?php
-	
-	//require '../components/connector.php';
 	abstract class SQL_Operation {
 
 		protected function initialize ($vals) {	
@@ -52,7 +50,7 @@
 					$rows = $query->fetchAll();
 					return $rows;
 				}
-				catch (PDOExecption $e){
+				catch (PDOException $e){
 					return [];
 				}
 			}

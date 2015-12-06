@@ -1,6 +1,14 @@
 <?php
 	if (session_status() != PHP_SESSION_ACTIVE)
 		session_start();
+
+	$SQL_Operation = $_SERVER['DOCUMENT_ROOT'] . '/tnelat/dan/SQL_Operation.php';
+	$formatting = $_SERVER['DOCUMENT_ROOT'] . '/tnelat/dan/formatting.php';
+
+	if (!file_exists($SQL_Operation))
+		require_once $SQL_Operation;
+	if (!file_exists($formatting))
+		require_once $formatting;
 ?>
 
 <!-- Set up base path for HTML elements -->
