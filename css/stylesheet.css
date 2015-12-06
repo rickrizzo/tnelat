@@ -50,7 +50,7 @@ input[type=text]{
 /* Components */
 /* - Button */
 .btn {
-	max-width: 300px;
+	max-width: 150px;
 	color: #F2F2F3;
 	border-radius: 5px;
 	padding: 1em;
@@ -59,6 +59,7 @@ input[type=text]{
 	-moz-box-shadow: 0 2px 3px 2px rgba(0,0,0,0.6);
 	box-shadow: 0 2px 3px 2px rgba(0,0,0,0.6);
 	transition: 0.15s;
+	display: block;
 }
 .btn:hover {
 	-webkit-box-shadow: 0 2px 3px 2px rgba(0,0,0,0);
@@ -67,6 +68,7 @@ input[type=text]{
 }
 a.btn{
 	text-decoration: none;
+	margin:auto;
 }
 a.btn:hover{
 	background-color: #C33C31 !important;
@@ -205,7 +207,6 @@ header h1 {
 	transition: 0.15s ease;
 }
 
-
 .navlink:hover {
 	color: red;
 }
@@ -222,11 +223,11 @@ main {
 
 /* Pages */
 /* - Home */
-#actions {
+#details {
 	background-color: #F2F2F3;
 	min-height: 600px;
 }
-#actions img {
+#details img {
 	display: block;
 	margin: 0 auto 2em auto;
 	height: 80%;
@@ -239,18 +240,18 @@ main {
 	-moz-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.5);
 	box-shadow: 0 1px 1px 1px rgba(0,0,0,0.5);
 }
-#actions div {
+#details div {
 	text-align: center;
 	width: 100%;
 	display: block;
 	padding-top: 2em;
 }
-#actions div article {
+#details div article {
 	margin: 1.5em 0;
 	padding: 1em;
 }
 @media (min-width: 600px) {
-	#actions div {
+	#details div {
 		float: left;
 		width: 33%;
 	}
@@ -308,12 +309,22 @@ main {
 /* Forms */
 fieldset {
 	border: 0;
+	padding-top: 15px;
 	text-align: center;
 }
 fieldset legend {
 	font-size: 2em;
 	color: #EE4B3E;
 }
+
+fieldset input {
+	width: 15em;
+	height: 2em;
+	font-size: 15px;
+	display: block;
+	margin: 5px auto 10px auto;
+}
+
 #rating ul {
 	margin: 0;
 	padding: 0;
@@ -342,10 +353,18 @@ span.emoji:hover {
 	margin: 0 auto;
 }
 
+.small_header {
+	margin-bottom: 0px;
+}
+
 /* Footer */
 footer {
 	padding: 1em 0;
 	text-align: center;
 	background-color: #EE4B3E;
 	color: #F2F2F3;
+}
+
+h5 {
+	margin: 0px;
 }

@@ -13,8 +13,8 @@
 			</div>
 		</header>
 		
-		<!--Actions-->
-		<section id="actions">
+		<!--Details-->
+		<section id="details">
 
 			<?php include $_SERVER['DOCUMENT_ROOT'] . "/tnelat/components/nav.php"; ?>
 
