@@ -6,7 +6,7 @@
 	<body>
 
 		<!--Header-->
-		<header>
+		<header class='home'>
 			<div>
 				<h1>tnelat</h1>
 				<h4>Find the team you need</h4>
