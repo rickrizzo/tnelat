@@ -19,7 +19,7 @@
   
         <main>
             <header class="profile" style='width:100%; overflow:auto'>
-              <img height='100px' width='100px' src='https://lh3.googleusercontent.com/-mLGBxfgzyHI/AAAAAAAAAAI/AAAAAAAAADg/00zpJ3q4oL0/s120-c/photo.jpg'>
+              <img height='100px' width='100px' class='profile_pic' src='https://lh3.googleusercontent.com/-mLGBxfgzyHI/AAAAAAAAAAI/AAAAAAAAADg/00zpJ3q4oL0/s120-c/photo.jpg'>
               <?php echo("<span style='float: left; text-align: left; margin-left: 15px'>
                             <h2 class='jumbotron'>" . $name . "</h2>
                             <h4>" . $user['username'] . "</h4>
