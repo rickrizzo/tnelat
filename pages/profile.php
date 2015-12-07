@@ -19,6 +19,15 @@
         <main class='profile_display'>
           <?php profile_bar($user, null); ?>
           
+          <?php
+            if ($_SESSION['UID'] == $user['UID'])
+              echo 
+                '<form action="/tnelat/dan/upload.php" id="upload" method="post" enctype="multipart/form-data">
+                    <h5>Profile Picture:</h5></br>
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                </form>';
+          ?>
+
           <h2>Reviews</h2>
           <?php
             $i = 0;
@@ -34,5 +43,11 @@
           ?>
         </main>
       </section>
+
+      <script>
+      document.getElementById("fileToUpload").onchange = function() {
+        document.getElementById("upload").submit();
+      };
+      </script>
   </body>
 </html> 

@@ -13,10 +13,15 @@
 		$name = ucfirst($user_object['first_name']) . "&nbsp;&nbsp;" . ucfirst($user_object['last_name']);
 		$element = '';
 
+		$profile_picture = "/tnelat/profile_pictures/" . $user_object['UID'];
+
+		if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $profile_picture))
+			$profile_picture = "/tnelat/resources/no_image.jpg";
+
 		if (!is_null($link)) {
 			$element = '
 				<a class="profile profile_link" href="' . $link . ' ">
-					<img height="100px" width="100px" class="profile_pic" src="https://lh3.googleusercontent.com/-mLGBxfgzyHI/AAAAAAAAAAI/AAAAAAAAADg/00zpJ3q4oL0/s120-c/photo.jpg">
+					<img id="profile_pic" height="100px" width="100px" class="profile_pic" src="' . $profile_picture . '">
 					<span class="details">
 						<h2 class="jumbotron">' . $name . '</h2>
 						<h4>' . $user_object['username'] . '</h4>
@@ -30,7 +35,7 @@
 		else {
 			$element = '
 				<section class="profile profile_static">
-					<img height="100px" width="100px" class="profile_pic" src="https://lh3.googleusercontent.com/-mLGBxfgzyHI/AAAAAAAAAAI/AAAAAAAAADg/00zpJ3q4oL0/s120-c/photo.jpg">
+					<img height="100px" width="100px" class="profile_pic" src="' . $profile_picture . '">
 					<span class="details">
 						<h2 class="jumbotron">' . $name . '</h2>
 						<h4>' . $user_object['username'] . '</h4>
