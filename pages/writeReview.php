@@ -35,19 +35,6 @@
 				<textarea name="body" id="review_body" cols="100" rows="10" placeholder="Write review here..." required></textarea>
 			</fieldset>
 
-			<!--Catagory-->
-			<fieldset>
-				<legend>Catagory</legend>
-				<p>Catagorize the capacity in which you worked with this person</p>
-				<select name="category" id="category" required>
-					<option selected="selected"></option>
-					<option value="coding">Coding</option>
-					<option value="design">Design</option>
-					<option value="database">Database</option>
-					<option value="business">Business</option>
-				</select>
-			</fieldset>
-
 			<!--Submit Button-->
 			<a href="#" id="submit" class="btn">Submit</a>
 		</form>
@@ -64,7 +51,6 @@
 			var PostReq = new Post('/tnelat/dan/write_review.php');
 			var emoji = $('input[name=emoji]:checked', '#write_review').val();
 
-			//Catch errors
 			if(emoji == undefined) {
 				alert("Please pick an emoji");
 				return;
@@ -74,15 +60,13 @@
 				return;
 			}
 
-			//Post parameters
+
 			PostReq.addParamByPair('account', <?php echo $id; ?>);
-			PostReq.addParamByPair('author', <?php echo $_SESSION['UID']; ?>);
+			PostReq.addParamByPair('author', <?php echo 1; ?>);
 			PostReq.addParamByPair('emoji', emoji);
 			PostReq.addParamById('review_body');
 			
-			//Submit and redirect
 			PostReq.send();
-			parent.window.location.replace('/tnelat/pages/profile.php?UID=' + <?php echo $id ?>);
 		});
 	</script>
 
