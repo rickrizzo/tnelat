@@ -6,11 +6,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<?php include 'components/css.php'; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/tnelat/components/page_resources.php"; ?>
 </head>
 <body>
 	<!--Navigation Bar-->
-	<?php include 'components/navigation.php'; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/tnelat/components/nav.php"; ?>
 
 	<!--Review-->
 	<main>
@@ -32,7 +32,7 @@
 			<fieldset>
 				<legend>Your Review</legend>
 				<p>Describe your experience with this person:</p>
-				<textarea name="body" id="review_body" cols="100" rows="10"></textarea>
+				<textarea name="body" id="review_body" cols="100" rows="10" placeholder="Write review here..." required></textarea>
 			</fieldset>
 
 			<!--Submit Button-->
@@ -50,6 +50,16 @@
 		$('#submit').click( function() {
 			var PostReq = new Post('/tnelat/dan/write_review.php');
 			var emoji = $('input[name=emoji]:checked', '#write_review').val();
+
+			if(emoji == undefined) {
+				alert("Please pick an emoji");
+				return;
+			}
+			if($("#review_body").val() == "") {
+				alert("Please write a review");
+				return;
+			}
+
 
 			PostReq.addParamByPair('account', <?php echo $id; ?>);
 			PostReq.addParamByPair('author', <?php echo 1; ?>);

@@ -43,9 +43,6 @@ body {
 		width: 80%;
 	}
 }
-input[type=text]{
-}
-
 
 /* Components */
 /* - Button */
@@ -79,12 +76,9 @@ a.btn:hover{
 .jumbotron {
 	font-size: 1em;
 	text-align: center;
-	padding: 0px 0px 5px 0px;
+	background-color: #cccccd;
+	padding-bottom: 5px;
 	border-radius: 5px;
-	display: inline-block;
-	float: left;
-	margin: 0px;
-
 }
 
 @media (min-width: 600px) {
@@ -108,11 +102,10 @@ nav {
 	max-width: 1000px;
 	padding: 0px 25px 0px 25px;
 }
-
 nav ul {
-	margin: 0px;
+	margin: 0;
 	width: 100%;
-	padding: 0px;
+	padding: 0;
 }
 nav li {
 	list-style: none;
@@ -130,31 +123,30 @@ nav a{
 	color: #F2F2F3;
 	padding: 15px 20px 15px 20px;
 }
-
-menu {
-	margin: 0px;
-	padding: 0px;
+.navlink {
+	transition: 0.15s ease;
 }
-
+.navlink:hover {
+	color: red;
+}
+menu {
+	margin: 0;
+	padding: 0;
+}
 .float-left {
 	float: left;
 }
-
 .float-right {
 	float: right;
 }
-
 .bold {
 	font-weight: bold;
 }
-
 .small {
 	font-size: 1em;
 }
-
 #right-menu {
 	float: right;
-	/*display: none;*/
 }
 
 .message {
@@ -181,8 +173,6 @@ menu {
 	background-size: cover;
 
 }
-
-
 header div {
 
 	height: 300px;
@@ -210,18 +200,10 @@ header h1 {
 	}
 }
 
-.navlink {
-	transition: 0.15s ease;
-}
-
-.navlink:hover {
-	color: red;
-}
-
 .foot_holder {
 	position: absolute;
 	bottom: 25px;
-	left: 0px;
+	left: 0;
 	width:100%;
 }
 
@@ -232,17 +214,14 @@ sidebar {
 	float: left;
 }
 
-img.profile_pic {
-	display: inline-block;
-	float: left;
-}
-
 /* Main */
 .profile_display {
 	position: relative;
 	min-height: 450px;
-	display: inline-block;
-	width: 100%;
+}
+main {
+	padding-top: 3em;
+	min-height: 450px;
 }
 @media (min-width: 600px) {
 	.profile_display {
@@ -327,21 +306,25 @@ img.profile_pic {
 	float: right;
 	margin: 0 auto;
 }
-#profile .review {
+.review {
 	min-width: 150px;
-	width: 30%;
+	width: 33%;
 	margin-top: 1em;
-	margin-left: 1%;
 	text-align: center;
 	float: left;
 	border-radius: 5px;
 }
-#profile .review:hover {
+div.review:hover {
 	color: #F2F2F3;
 	background-color: #EE4B3E;
 }
-#profile .review article{
+div.review article{
 	font-size: 4em;
+}
+img.profile_pic {
+	display: inline-block;
+	float: left;
+	border-radius: 100%;
 }
 
 
@@ -417,9 +400,17 @@ a.profile {
 	text-align: left;
 	margin-left: 15px;
 }
-
+.profile_link{
+	-webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.5);
+	box-shadow: 0 1px 1px 1px rgba(0,0,0,0.5);
+	transition: 0.2s;
+}
 .profile_link:hover {
 	background-color: #A2A2A6;
+	-webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0);
+	-moz-box-shadow: 0 1px 1px 1px rgba(0,0,0,0);
+	box-shadow: 0 1px 1px 1px rgba(0,0,0,0);
 }
 
 /* Footer */
