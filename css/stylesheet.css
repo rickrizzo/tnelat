@@ -79,7 +79,6 @@ a.btn:hover{
 .jumbotron {
 	font-size: 1em;
 	text-align: center;
-	background-color: #cccccd;
 	padding: 0px 0px 5px 0px;
 	border-radius: 5px;
 	display: inline-block;
@@ -239,14 +238,14 @@ img.profile_pic {
 }
 
 /* Main */
-main {
+.profile_display {
 	position: relative;
 	min-height: 450px;
 	display: inline-block;
 	width: 100%;
 }
 @media (min-width: 600px) {
-	main {
+	.profile_display {
 	}
 }
 
@@ -402,6 +401,27 @@ span.emoji:hover {
 	font-weight: bold;
 }
 
+.profile { 
+	overflow:auto;
+	padding: 10px;
+	border-bottom: 1px solid grey;
+	display: block;
+}
+
+a.profile {
+	color: inherit;
+}
+
+.profile .details {
+	float: left; 
+	text-align: left;
+	margin-left: 15px;
+}
+
+.profile_link:hover {
+	background-color: #A2A2A6;
+}
+
 /* Footer */
 footer {
 	padding: 1em 0;
@@ -420,4 +440,5 @@ h5 {
 
 hr {
 	display: block;
+	margin: 2px;
 }
