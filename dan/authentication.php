@@ -39,6 +39,6 @@
 		$_SESSION['username'] = $user['username'];
 		$_SESSION['session_id'] = $user['username'] . time();
 		$_SESSION['UID'] = $user['UID'];
-		echo ('Logged in successfully</br>');
+		echo ('SUCCESS');
 	}
 ?>
