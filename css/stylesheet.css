@@ -218,6 +218,9 @@ sidebar {
 .profile_display {
 	position: relative;
 	min-height: 450px;
+	height: 100%;
+	clear:both;
+	display:table;
 }
 main {
 	padding-top: 3em;
@@ -314,6 +317,9 @@ main {
 	float: left;
 	border-radius: 5px;
 }
+div.review {
+	height: 150px;
+}
 div.review:hover {
 	color: #F2F2F3;
 	background-color: #EE4B3E;
@@ -346,7 +352,14 @@ fieldset input {
 	display: block;
 	margin: 5px auto 10px auto;
 }
-
+#review_body {
+	border-radius: 5px;
+}
+#reviewSubmit {
+	float: right;
+	position: relative;
+	top: 40px;
+}
 #rating ul {
 	margin: 0;
 	padding: 0;
@@ -387,7 +400,7 @@ span.emoji:hover {
 .profile { 
 	overflow:auto;
 	padding: 10px;
-	border-bottom: 1px solid grey;
+	border-bottom: 1px solid gray;
 	display: block;
 }
 
