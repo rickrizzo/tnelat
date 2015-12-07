@@ -35,10 +35,8 @@
           var PostReq = new Post('/tnelat/dan/authentication.php');
           PostReq.addParamsById('username', 'password');
           PostReq.set_callback( function(val) {
-            if (val == 'SUCCESS')
-              parent.window.location.reload();
-            else
-              $('#response').html(val);   
+            $('#response').html(val)
+            parent.window.location.reload();
           });
           PostReq.send();     
       });
