@@ -21,23 +21,21 @@
 
         <p id="response"> </p>
 
-        <input type="text" id="first_name" name="first_name" value="" placeholder="First Name*">
-        <input type="text" id="last_name" name="last_name" value="" placeholder="Last Name*">
-        <input type="text" id="username" name="username" value="" placeholder="Username*">
-        <input type="password" id="password" name="password" value="" placeholder="Password*">
-        <input type="password" id="password_confirm" name="password_confirm" value="" placeholder="Re-Type Password*">
-        <input type="text" id="email" name="email" value="" placeholder="Email Address*">
-        <input type="text" id="phone" name="phone" value="" placeholder="Phone Number">
+        <input type="text" id="first_name" name="first_name" value="" placeholder="First Name*" required>
+        <input type="text" id="last_name" name="last_name" value="" placeholder="Last Name*" required>
+        <input type="text" id="username" name="username" value="" placeholder="Username*" required>
+        <input type="password" id="password" name="password" value="" placeholder="Password*" required>
+        <input type="password" id="password_confirm" name="password_confirm" value="" placeholder="Re-Type Password*" required>
+        <input type="text" id="email" name="email" value="" placeholder="Email Address*" required>
+        <input type="text" id="phone" name="phone" value="" placeholder="Phone Number" required>
         <span class="btn" id="submit" value="Login">Submit</span>
 
         <h5 class="float-right">* fields required</h5>
     </fieldset>
    
-   <script src='dan/Post.js'></script>
    <script>
       $('#submit').click(function() {
-        console.log("click");
-        var PostReq = new Post('dan/create_account.php');
+        var PostReq = new Post('/tnelat/dan/create_account.php');
         PostReq.addParamsById('username', 'password', 'password_confirm', 'first_name', 'last_name', 'email', 'phone');
         PostReq.set_callback( function(val) {
           $('#response').html(val);
