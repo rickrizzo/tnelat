@@ -35,11 +35,14 @@
               $i++;
               echo "<div class='review'><article  id='"  . $i ."' ></article>";
               echo '<script>$.getJSON("/tnelat/data/emoji.json", function(data) {$("#' . $i . '").html(data.emoji[' . $review["emoji"] . ']); console.log(data.emoji[' . $review['emoji'] . ']);});</script>';
-              echo "<p>" . $review['body']. "</p></div>";
+              echo "<p>" . $review['body']. "</p>";
+              if ($_SESSION['UID'] == $user['UID']);
+                echo "<a href='#' id='remove'> Remove </a>";
+              echo ("</div>");
             }
             if ($i==0)
               echo ('<span class="message">This user has no reviews (yet!)</span>');
-              echo ('<span><a class="btn foot_holder" href="/tnelat/writereview/' . $user_object['UID'] . '">Review This Person</a></span>');
+              echo ('<span><a class="btn foot_holder" href="/tnelat/writereview/' . $_GET['UID'] . '">Review This Person</a></span>');
           ?>
         </main>
       </section>
@@ -48,6 +51,11 @@
       document.getElementById("fileToUpload").onchange = function() {
         document.getElementById("upload").submit();
       };
+      </script>
+      <script>
+      $("#remove").click(function() {
+        <?php new RemoveReview(1).execute() ?>
+      });
       </script>
   </body>
 </html> 
