@@ -346,7 +346,11 @@ fieldset input {
 	display: block;
 	margin: 5px auto 10px auto;
 }
-
+#reviewSubmit {
+	float: right;
+	position: relative;
+	top: 40px;
+}
 #rating ul {
 	margin: 0;
 	padding: 0;
@@ -387,7 +391,7 @@ span.emoji:hover {
 .profile { 
 	overflow:auto;
 	padding: 10px;
-	border-bottom: 1px solid grey;
+	border-bottom: 1px solid gray;
 	display: block;
 }
 
