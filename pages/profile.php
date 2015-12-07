@@ -39,7 +39,7 @@
             }
             if ($i==0)
               echo ('<span class="message">This user has no reviews (yet!)</span>');
-            //echo ('<span><a class="btn foot_holder" href="/tnelat/writereview/' . $user_object['UID'] . '">Review This Person</a></span>');
+              echo ('<span><a class="btn foot_holder" href="/tnelat/writereview/' . $user_object['UID'] . '">Review This Person</a></span>');
           ?>
         </main>
       </section>

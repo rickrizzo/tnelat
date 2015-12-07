@@ -26,11 +26,8 @@
 						<h2 class="jumbotron">' . $name . '</h2>
 						<h4>' . $user_object['username'] . '</h4>
 						<h4>' . $user_object['email'] .  '</h4>
-					</span>';
-			if(strpos($_SERVER['REQUEST_URI'], 'profile') !== false) {
-				$element .= '<a id="reviewSubmit" class="btn" href="/tnelat/writereview/' . $user_object['UID'] . '">Review This Person</a>';
-			}
-			$element .= '</a>';
+					</span>
+				</a>';
 		}
 		else {
 			$element = '
@@ -40,11 +37,8 @@
 						<h2 class="jumbotron">' . $name . '</h2>
 						<h4>' . $user_object['username'] . '</h4>
 						<h4><a href="mailto:' . $user_object['email'] .  '">' . $user_object['email'] . '</a></h4>
-					</span>';
-			if(strpos($_SERVER['REQUEST_URI'], 'profile') !== false) {
-				$element .= '<a id="reviewSubmit" class="btn" href="/tnelat/writereview/' . $user_object['UID'] . '">Review This Person</a>';
-			}
-			$element .= '</section>';
+					</span>
+				</section>';
 		}
 
 		/*	echo ('<section class="profile profile_link">');
