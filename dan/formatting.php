@@ -27,7 +27,12 @@
 						<h4>' . $user_object['username'] . '</h4>
 						<h4>' . $user_object['email'] .  '</h4>
 					</span>
+<<<<<<< HEAD
 				</a>';
+=======
+				</a>
+			';
+>>>>>>> parent of 81a5fc6... Button Tweak
 		}
 		else {
 			$element = '
@@ -38,7 +43,12 @@
 						<h4>' . $user_object['username'] . '</h4>
 						<h4><a href="mailto:' . $user_object['email'] .  '">' . $user_object['email'] . '</a></h4>
 					</span>
+<<<<<<< HEAD
 				</section>';
+=======
+				</section>
+			';
+>>>>>>> parent of 81a5fc6... Button Tweak
 		}
 
 		/*	echo ('<section class="profile profile_link">');

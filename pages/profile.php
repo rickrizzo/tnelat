@@ -39,7 +39,12 @@
             }
             if ($i==0)
               echo ('<span class="message">This user has no reviews (yet!)</span>');
+<<<<<<< HEAD
               echo ('<span><a class="btn foot_holder" href="/tnelat/writereview/' . $user_object['UID'] . '">Review This Person</a></span>');
+=======
+            //Submit Review
+            echo ('<span class="foot_holder"><a class="btn foot" href="/tnelat/writereview/' . $user['UID'] . '">Review This Person</a></span>')
+>>>>>>> parent of 81a5fc6... Button Tweak
           ?>
         </main>
       </section>
