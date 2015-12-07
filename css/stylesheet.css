@@ -418,6 +418,10 @@ a.profile {
 	margin-left: 15px;
 }
 
+.profile_static {
+	background-color: #A2A2A6;
+}
+
 .profile_link:hover {
 	background-color: #A2A2A6;
 }

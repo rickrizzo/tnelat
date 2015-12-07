@@ -13,7 +13,7 @@
 		$name = ucfirst($user_object['first_name']) . "&nbsp;&nbsp;" . ucfirst($user_object['last_name']);
 		$element = '';
 
-		if (isset($link)) {
+		if (!is_null($link)) {
 			$element = '
 				<a class="profile profile_link" href="' . $link . ' ">
 					<img height="100px" width="100px" class="profile_pic" src="https://lh3.googleusercontent.com/-mLGBxfgzyHI/AAAAAAAAAAI/AAAAAAAAADg/00zpJ3q4oL0/s120-c/photo.jpg">
@@ -27,7 +27,7 @@
 		}
 		else {
 			$element = '
-				<section class="profile profile_link">
+				<section class="profile profile_static">
 					<img height="100px" width="100px" class="profile_pic" src="https://lh3.googleusercontent.com/-mLGBxfgzyHI/AAAAAAAAAAI/AAAAAAAAADg/00zpJ3q4oL0/s120-c/photo.jpg">
 					<span class="details">
 						<h2 class="jumbotron">' . $name . '</h2>
