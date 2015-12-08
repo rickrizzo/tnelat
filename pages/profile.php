@@ -12,7 +12,7 @@
     <?php
       if ($_SESSION['UID'] == $user['UID'])
         echo 
-          '<form action="/tnelat/dan/upload.php" id="upload" method="post" enctype="multipart/form-data">
+          '<form action="/tnelat/handlers/upload.php" id="upload" method="post" enctype="multipart/form-data">
               <h5>Profile Picture:</h5></br>
               <input type="file" name="fileToUpload" id="fileToUpload">
           </form>';

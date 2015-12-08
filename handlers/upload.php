@@ -33,7 +33,7 @@
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         if(!isset($_SESSION)) 
           session_start();
-        header('Location: /tnelat/pages/profile.php?UID=' . $_SESSION['UID']);
+        header('Location: /tnelat?src=profile&UID=' . $_SESSION['UID']);
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     } else {
         echo "Sorry, there was an error uploading your file.";

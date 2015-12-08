@@ -1,7 +1,6 @@
-
 <?php
-	include 'SQL_Operation.php';
-	include 'formatting.php';
+	include '../components/SQL_Operation.php';
+	include '../components/formatting.php';
 	session_start();
 
 	if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {

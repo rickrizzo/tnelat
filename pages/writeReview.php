@@ -40,7 +40,7 @@
 </main>
 <script>
 	$('#submitReview').click( function() {
-	  var PostReq = new Post('/tnelat/dan/write_review.php');
+	  var PostReq = new Post('/tnelat/handlers/write_review.php');
 	  var emoji = $('input[name=emoji]:checked', '#write_review').val();
 
 	  //Catch errors
@@ -62,6 +62,6 @@
 	  
 	  //Submit and redirect
 	  PostReq.send();
-	  parent.window.location.replace('/tnelat?src=profile&UID=' + <?php echo $_GET['UID'] ?>);
+	  //parent.window.location.replace('/tnelat?src=profile&UID=' + <?php echo $_GET['UID'] ?>);
 	});
 </script>

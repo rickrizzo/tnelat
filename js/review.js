@@ -1,9 +1,9 @@
 //Add Skills
-$.getJSON('/tnelat/data/skills.json', function(data) {
+/*$.getJSON('/tnelat/data/skills.json', function(data) {
   for(var i = 0; i < data.skills.length; i++) {
     $('#skills').append('<input type="checkbox" name="skill" value="' + data.skills[i] + '">' + data.skills[i]);
   }
-});
+});*/
 
 //Add Emojis
 $.getJSON('/tnelat/data/emoji.json', function(data) {
