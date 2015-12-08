@@ -12,9 +12,14 @@
 				exit;
 		}
 
+		//Error Handling
 		$vars = process_request($_POST);
 
-		$review = (new AddReview($vars['author'], $vars['account'], $vars['emoji'], $vars['body']))->execute();
-		echo('Review submitted');
+		if($vars['emoji'] == 'undefined' || $vars['body'] == '') {
+			echo("Error: Please fill out all fields");
+		} else {
+			$review = (new AddReview($vars['author'], $vars['account'], $vars['emoji'], $vars['body'])/*, $vars['category']*/)->execute();
+			echo('Review submitted');
+		}
 	}
 ?>

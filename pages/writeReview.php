@@ -79,6 +79,7 @@
 			PostReq.addParamByPair('author', <?php echo $_SESSION['UID']; ?>);
 			PostReq.addParamByPair('emoji', emoji);
 			PostReq.addParamById('review_body');
+			//PostReq.addParamById('category');
 			
 			//Submit and redirect
 			PostReq.send();
