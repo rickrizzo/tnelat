@@ -1,11 +1,10 @@
 <?php
-	
-	//require '../components/connector.php';
 	abstract class SQL_Operation {
 
-		protected function initialize ($vals) {	
-			global $host, $user, $password;
-			$this->pdo = new PDO("mysql:host=localhost;dbname=tnelat;charset=utf8;", 'root', '');
+		protected function initialize ($vals) {
+			require "../components/connector.php";
+			//global $host, $user, $password;
+			$this->pdo = new PDO("mysql:host=$host;dbname=tnelat;charset=utf8;", $user, $password);
 			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->statement = '';
 
@@ -52,7 +51,7 @@
 					$rows = $query->fetchAll();
 					return $rows;
 				}
-				catch (PDOExecption $e){
+				catch (PDOException $e){
 					return [];
 				}
 			}

@@ -1,28 +1,44 @@
 <?php
-	include 'SQL_Operation.php';
-	include 'formatting.php';
+	include_once 'SQL_Operation.php';
+    include_once 'formatting.php';
 
 	if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 		$vars = process_request($_POST);
 
-		$user = (new GetUserByUsername($vars['username']))->execute()[0];
-		var_dump($user);
+		if(!empty($user = (new GetUserByUsername($vars['username']))->execute())) {
+			$user = $user[0];
+		}
+		elseif (!empty($user = (new GetUserByEmail($vars['username']))->execute())) {
+			$user = $user[0];
+		}
+		else {
+			echo ("\n<span class='error'>Invalid username or password</span>");
+			exit;
+		}
 
 		// Salt the password
 		$salted_password = hash('sha256', $user['salt'] . $vars['password']);
 
 		if ($salted_password == $user['password']) {
-			session_start();
-
-			// Initialize session parameters
-			$_SESSION['username'] = $user['username'];
- 			$_SESSION['session_id'] = $user['username'] . time();
- 			$_SESSION['UID'] = $user['UID'];
- 			echo ('Logged in successfully');
+			login($user['username']);		
 		}
 		else {
-			echo ("\nInvalid username or password");
+			echo ("\n<span class='error'>Invalid username or password</span>");
+			exit;
 		}
+	}
+
+	function login($username) {
+
+		$user = (new GetUserByUsername($username))->execute()[0];
+
+		// Initialize session parameters
+		if(session_status() != PHP_SESSION_ACTIVE)
+			session_start();
+		$_SESSION['username'] = $user['username'];
+		$_SESSION['session_id'] = $user['username'] . time();
+		$_SESSION['UID'] = $user['UID'];
+		echo ('SUCCESS');
 	}
 ?>

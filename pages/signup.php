@@ -1,57 +1,51 @@
+<?php
+  session_start();
+  if (!empty($_SESSION['session_id']))
+    header('Location: /tnelat');
+?>
+
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-  <?php include 'components/css.php'; ?>
-</head>
-<body id="spage">
-	<!--Navigation Bar-->
-	<?php include 'components/navigation.php'; ?>
+  <head>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/tnelat/components/page_resources.php"; ?>
+  </head>
 
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-</head>
-</body>
- 
+  <body>
+  	<!--Navigation Bar-->
+  	<?php include $_SERVER['DOCUMENT_ROOT'] . "/tnelat/components/nav.php"; ?>
 
-	<!--Form-->
-	 <section id="signup" class="pagewidth" >
-   <form class= "log"  method="POST" action="signup.php" >
-      <div class="container">
+  	<!--Form-->
+  	 <fieldset id="signup" class="pagewidth" >
+        <h2>Sign Up</h2>
+        <h4>Already a user?&nbsp;&nbsp;<a href="/tnelat/pages/login.php">Login here</a></h4>
 
-        <font color="white"> <h2>Sign Up </h2><p> Already a user? <a href="login.php"><b>Login here</b></a></p>
-        <p><input type="text" id="first_name" name="first_name" value="" placeholder="First Name">Enter your first name*</input></p> 
-        <p><input type="text" id="last_name" name="last_name" value="" placeholder="Last Name">Enter your last name*</input></p>
-        <p><input type="text" id="username" name="username" value="" placeholder="Username">Create a username*</input></p>
-        <p><input type="password" id="password" name="password" value="" placeholder="Password">Create a password*</input></p>
-        <p><input type="password" id="password_confirm" name="password_confirm" value="" placeholder="Re-Type Password">Re-type your password*</input></p>
-        <p><input type="text" id="email" name="email" value="" placeholder="Email Address">Enter your email address*</input></p>
-        <p><input type="text" id="phone" name="phone" value="" placeholder="Phone Number">Enter your phone number</input></p>
-        <p class="submit"><input type="button" id="submit" name="submit" value="Create Account"><i>* items required</i></input></p>
+        <p id="response"> </p>
 
-        <p id="error"> </p>
-      </div>
-    </form>
-  </section>
- 
- <script src='dan/Post.js'></script>
- <script>
-    $('#submit').click(function() {
-      var PostReq = new Post('dan/create_account.php');
-      PostReq.addParamsById('username', 'password', 'password_confirm', 'first_name', 'last_name', 'email', 'phone');
-      PostReq.set_callback( function (ret) {
-        $('#error').html(ret);
+        <input type="text" id="first_name" name="first_name" value="" placeholder="First Name*" required>
+        <input type="text" id="last_name" name="last_name" value="" placeholder="Last Name*" required>
+        <input type="text" id="username" name="username" value="" placeholder="Username*" required>
+        <input type="password" id="password" name="password" value="" placeholder="Password*" required>
+        <input type="password" id="password_confirm" name="password_confirm" value="" placeholder="Re-Type Password*" required>
+        <input type="text" id="email" name="email" value="" placeholder="Email Address*" required>
+        <input type="text" id="phone" name="phone" value="" placeholder="Phone Number" required>
+        <span class="btn" id="submit" value="Login">Submit</span>
+
+        <h5 class="float-right">* fields required</h5>
+    </fieldset>
+   
+   <script>
+      $('#submit').click(function() {
+        var PostReq = new Post('/tnelat/dan/create_account.php');
+        PostReq.addParamsById('username', 'password', 'password_confirm', 'first_name', 'last_name', 'email', 'phone');
+        PostReq.set_callback( function(val) {
+          $('#response').html(val);
+          if(val.indexOf("successful") != -1) {
+            parent.window.location.reload();
+          }
+        });
+        PostReq.send();     
       });
-      PostReq.set_callback( function(val) {
-        parent.window.location.reload();
-      });
-      PostReq.send();     
-    });
- </script>
+   </script>
 
-	<!--Resouces-->
-	<?php include 'components/scripts.php'; ?>
-
-</body>
+  </body>
 </html>
