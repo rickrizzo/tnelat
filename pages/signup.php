@@ -1,23 +1,15 @@
 <?php
-  session_start();
   if (!empty($_SESSION['session_id']))
     header('Location: /tnelat');
 ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/tnelat/components/page_resources.php"; ?>
-  </head>
-
-  <body>
   	<!--Navigation Bar-->
   	<?php include $_SERVER['DOCUMENT_ROOT'] . "/tnelat/components/nav.php"; ?>
 
   	<!--Form-->
   	 <fieldset id="signup" class="pagewidth" >
         <h2>Sign Up</h2>
-        <h4>Already a user?&nbsp;&nbsp;<a href="/tnelat/pages/login.php">Login here</a></h4>
+        <h4>Already a user?&nbsp;&nbsp;<a href="/tnelat?src=login">Login here</a></h4>
 
         <p id="response"> </p>
 
@@ -46,6 +38,3 @@
         PostReq.send();     
       });
    </script>
-
-  </body>
-</html>
