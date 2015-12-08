@@ -37,27 +37,25 @@
   //Routing
   if(!isset($_GET["src"])) {
     include "pages/home.php";  
-  } else {
-    if($_GET["src"] == "search") {
-      include "pages/search.php";
-    }
-    if($_GET["src"] == "login") {
-      include "pages/login.php";
-    }
-    if($_GET["src"] == "signup") {
-      include "pages/signup.php";
-    }
-    if($_GET["src"] == "profile") {
-      include "pages/profile.php";
-    }
-    if($_GET["src"] == "review") {
-      include "pages/writeReview.php";
-    }
+  }
+  if(isset($_GET["src"]) && $_GET["src"] == "search") {
+    include "pages/search.php";
+  }
+  if(isset($_GET["src"]) && $_GET["src"] == "login") {
+    include "pages/login.php";
+  }
+  if(isset($_GET["src"]) && $_GET["src"] == "signup") {
+    include "pages/signup.php";
+  }
+  if(isset($_GET["src"]) && $_GET["src"] == "profile") {
+    include "pages/profile.php";
+  }
+  if(isset($_GET["src"]) && $_GET["src"] == "review") {
+    include "pages/writeReview.php";
   }
 ?>
   <!--Scripts-->
   <script type="text/javascript" src="js/login.js"></script>
-  <script type="text/javascript" src="js/logout.js"></script>
   <script type="text/javascript" src="js/frontpage.js"></script>
   <script type="text/javascript" src="js/review.js"></script>
 </body>
