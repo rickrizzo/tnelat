@@ -6,24 +6,14 @@
 
 		<?php
 			if(isset($_SESSION['session_id'])) {
-				echo '<li class="float-left"><a href="/tnelat/pages/search.php" class="navlink small" id="profile">search</a></li>';
+				echo '<li class="float-left"><a href="/tnelat?src=search" class="navlink small" id="profile">search</a></li>';
 				echo '<li class="float-right"><a href="#" class="navlink small" id="logout">logout</a></li>';
-				echo '<li class="float-right"><a href="/tnelat/pages/profile.php?UID=' . $_SESSION['UID'] . '" class="navlink small" id="profile">' . $_SESSION['username'] . '</a></li>';
+				echo '<li class="float-right"><a href="/tnelat?src=profile&UID=' . $_SESSION['UID'] . '" class="navlink small" id="profile">' . $_SESSION['username'] . '</a></li>';
 			}
 			else {
-				echo '<li class="float-right"><a href="pages/login.php" class="navlink small">login</a></li>';
-				echo '<li class="float-right"><a href="pages/signup.php" class="navlink small">signup</a></li>';
+				echo '<li class="float-right"><a href="/tnelat?src=login" class="navlink small">login</a></li>';
+				echo '<li class="float-right"><a href="/tnelat?src=signup" class="navlink small">signup</a></li>';
 			}
 		?>
 	</ul>
 </nav>
-
-<script>
-	$('#logout').click( function() {
-		var PostReq = new Post('/tnelat/dan/logout.php');
-		PostReq.set_callback( function () {
-			window.location.replace('/tnelat/') 
-		}); 
-		PostReq.send();
-	});
-</script>

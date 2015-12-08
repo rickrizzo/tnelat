@@ -1,16 +1,8 @@
 <?php
-  session_start();
   if (!empty($_SESSION['session_id']))
     header('Location: /tnelat');
 ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/tnelat/components/page_resources.php"; ?>
-  </head>
-
-  <body>
   	<!--Navigation Bar-->
   	<?php include $_SERVER['DOCUMENT_ROOT'] . "/tnelat/components/nav.php"; ?>
 
@@ -46,6 +38,3 @@
         PostReq.send();     
       });
    </script>
-
-  </body>
-</html>
