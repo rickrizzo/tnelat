@@ -11,6 +11,7 @@
     session_start();
   }
 ?>
+<!--HTML Header-->
 <!DOCTYPE html>
 <html lang="en">
 <head>

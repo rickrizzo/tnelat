@@ -9,7 +9,7 @@
   	<!--Form-->
   	 <fieldset id="signup" class="pagewidth" >
         <h2>Sign Up</h2>
-        <h4>Already a user?&nbsp;&nbsp;<a href="/tnelat/pages/login.php">Login here</a></h4>
+        <h4>Already a user?&nbsp;&nbsp;<a href="/tnelat?src=login">Login here</a></h4>
 
         <p id="response"> </p>
 
