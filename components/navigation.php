@@ -12,7 +12,7 @@
 		<span id="right-menu">
 			<?php
 				if(isset($_SESSION['UID'])) {
-					echo '<a href="/tnelat/user/' . $_SESSION['UID'] . '"><li>' . $_SESSION['username'] . '</li></a>';
+					echo '<a href="/tnelat/user/' . $_SESSION['UID'] . '"><li>'. $_SESSION['username'] . '</li></a>';
 					echo '<a href="#" id="logout"><li>Log Out</li></a>';
 				} else {
 					echo '<a href="/tnelat/login"><li>Login</li></a>' .
