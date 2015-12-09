@@ -35,6 +35,7 @@
         "accountUID int, " .
         "emoji varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL, " .
         "body varchar(1000) NOT NULL, " .
+        "rating int NOT NULL," .
         //"category varchar(100) NOT NULL, " .
         "PRIMARY KEY (RID));";
       $conn->exec($reviews);

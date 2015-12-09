@@ -18,27 +18,29 @@
 		if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $profile_picture))
 			$profile_picture = "/tnelat/resources/no_image.jpg";
 
-		if (!is_null($link)) {
+		if (isset($link)) {
 			$element = '
 				<a class="profile profile_link" href="' . $link . ' ">
-					<img id="profile_pic" height="100px" width="100px" class="profile_pic" src="' . $profile_picture . '">
+					<img height="100px" width="100px" class="profile_pic" src="https://lh3.googleusercontent.com/-mLGBxfgzyHI/AAAAAAAAAAI/AAAAAAAAADg/00zpJ3q4oL0/s120-c/photo.jpg">
 					<span class="details">
 						<h2 class="jumbotron">' . $name . '</h2>
 						<h4>' . $user_object['username'] . '</h4>
 						<h4>' . $user_object['email'] .  '</h4>
 					</span>
-				</a>';
+				</a>
+			';
 		}
 		else {
 			$element = '
-				<section class="profile profile_static">
-					<img height="100px" width="100px" class="profile_pic" src="' . $profile_picture . '">
+				<section class="profile profile_link">
+					<img height="100px" width="100px" class="profile_pic" src="https://lh3.googleusercontent.com/-mLGBxfgzyHI/AAAAAAAAAAI/AAAAAAAAADg/00zpJ3q4oL0/s120-c/photo.jpg">
 					<span class="details">
 						<h2 class="jumbotron">' . $name . '</h2>
 						<h4>' . $user_object['username'] . '</h4>
 						<h4><a href="mailto:' . $user_object['email'] .  '">' . $user_object['email'] . '</a></h4>
 					</span>
-				</section>';
+				</section>
+			';
 		}
 
 		/*	echo ('<section class="profile profile_link">');

@@ -6,6 +6,7 @@
   }
   
   $target_dir = $_SERVER['DOCUMENT_ROOT'] . "/tnelat/data/profile_pictures/" . $_SESSION['UID'];
+
   $target_file = $target_dir;
   $uploadOk = 1;
   $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
