@@ -12,13 +12,8 @@
 			}
 			//If Not Logged In
 			else {
-<<<<<<< HEAD
 				echo '<li class="float-right"><a href="/tnelat?src=login" class="navlink small">login</a></li>';
 				echo '<li class="float-right"><a href="/tnelat?src=signup" class="navlink small">signup</a></li>';
-=======
-				echo '<li class="float-right"><a href="/tnelat/pages/login.php" class="navlink small">login</a></li>';
-				echo '<li class="float-right"><a href="/tnelat/pages/signup.php" class="navlink small">signup</a></li>';
->>>>>>> DansBranch
 			}
 		?>
 	</ul>
