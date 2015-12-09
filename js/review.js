@@ -9,8 +9,12 @@ $.getJSON('/tnelat/data/skills.json', function(data) {
 $.getJSON('/tnelat/data/emoji.json', function(data) {
   for(var i = 0; i < data.emoji.length; i++) {
     //Append
-    $('#rating ul').append('<li><span id="emoji' + i + '"class="emoji">' 
-      + data.emoji[i] + '<p><input type="radio" name="emoji" value="' + i + '"></p></li>');
+    $('#rating ul').append(
+      '<li class="emoji_item">' +
+          '<span id="emoji' + i + '"class="emoji">'+ data.emoji[i] + '</span>' +
+          '<input type="radio" class="emoji_select" name="emoji" value="' + i + '">' +
+      '</li>'
+    );
   }
   $('#rating ul li').each(function(index) {
     $(this).click(function() {

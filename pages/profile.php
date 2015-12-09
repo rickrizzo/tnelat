@@ -19,6 +19,19 @@
         <main class='profile_display'>
           <?php profile_bar($user, null); ?>
           
+          <?php
+            if ($_SESSION['UID'] == $user['UID'])
+              echo 
+                '<form action="/tnelat/dan/upload.php" id="upload" method="post" enctype="multipart/form-data">
+<<<<<<< HEAD
+                    <h5>Profile Picture:</h5>&nbsp;<input type="file" name="fileToUpload" id="fileToUpload">
+=======
+                    <h5>Profile Picture:</h5></br>
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+>>>>>>> origin/master
+                </form>';
+          ?>
+
           <h2>Reviews</h2>
           <?php
             $i = 0;
@@ -26,14 +39,75 @@
               $i++;
               echo "<div class='review'><article  id='"  . $i ."' ></article>";
               echo '<script>$.getJSON("/tnelat/data/emoji.json", function(data) {$("#' . $i . '").html(data.emoji[' . $review["emoji"] . ']); console.log(data.emoji[' . $review['emoji'] . ']);});</script>';
-              echo "<p>" . $review['body']. "</p></div>";
+              echo "<p>" . $review['body']. "</p>";
+              if ($_SESSION['UID'] == $user['UID']);
+                echo "<a href='#' id='remove'> Remove </a>";
+              echo ("</div>");
             }
             if ($i==0)
               echo ('<span class="message">This user has no reviews (yet!)</span>');
-            //Submit Review
-            echo ('<span class="foot_holder"><a class="btn foot" href="/tnelat/writereview/' . $user['UID'] . '">Review This Person</a></span>')
+<<<<<<< HEAD
+
+            if ($_SESSION['UID'] != $user['UID']) {
+              $written_already = false;
+              foreach($reviews as $review) {
+                var_dump($review);
+                
+                if ($review['authorUID'] == $_SESSION['UID']) {
+                  $written_already = true;
+                  break;
+                }
+              }
+
+              if (!$written_already)
+               echo ('<span class="footer"><a class="btn foot_holder" href="/tnelat/pages/writereview.php?UID=' . $user['UID'] . '">Review This Person</a></span>');
+              else
+                echo ('<span class="footer"><a class="disabled_btn foot_holder">User Already Reviewed</a></span>');
+            }
+             
+=======
+              echo ('<span><a class="btn foot_holder" href="/tnelat/writereview/' . $_GET['UID'] . '">Review This Person</a></span>');
+>>>>>>> origin/master
           ?>
         </main>
       </section>
+
+      <script>
+<<<<<<< HEAD
+
+      /*$(document).ready(function () {
+          $('#fileToUpload').on('submit', function(e) {
+              e.preventDefault();
+              $.ajax({
+                  url : $(this).attr('action') || window.location.pathname,
+                  type: "GET",
+                  data: $(this).serialize(),
+                  success: function (data) {
+                      $("#form_output").html(data);
+                  },
+                  error: function (jXHR, textStatus, errorThrown) {
+                      alert(errorThrown);
+                  }
+              });
+          });
+      });*/
+
+      var element = document.getElementById("fileToUpload");
+      if (element != null) {      
+        document.getElementById("fileToUpload").onchange = function() {
+          document.getElementById("upload").submit();
+        };
+      }
+=======
+      document.getElementById("fileToUpload").onchange = function() {
+        document.getElementById("upload").submit();
+      };
+      </script>
+      <script>
+      $("#remove").click(function() {
+        <?php new RemoveReview(1).execute() ?>
+      });
+>>>>>>> origin/master
+      </script>
   </body>
 </html> 

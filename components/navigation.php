@@ -1,5 +1,4 @@
 <nav class="pagewidth">
-
 	<ul>
 		<span>
 			<a href="/tnelat"><li id="brand">tnelat</li></a>
@@ -15,8 +14,8 @@
 					echo '<a href="/tnelat/user/' . $_SESSION['UID'] . '"><li>' . $_SESSION['username'] . '</li></a>';
 					echo '<a href="#" id="logout"><li>Log Out</li></a>';
 				} else {
-					echo '<a href="/tnelat/login"><li>Login</li></a>' .
-						'<a href="/tnelat/signup"><li>Sign Up</li></a>';
+					echo '<a href="login"><li>Login</li></a>' .
+						'<a href="signup"><li>Sign Up</li></a>';
 				}
 			?>
 		</span>
