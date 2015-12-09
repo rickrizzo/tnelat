@@ -21,7 +21,7 @@
 		if (isset($link)) {
 			$element = '
 				<a class="profile profile_link" href="' . $link . ' ">
-					<img height="100px" width="100px" class="profile_pic" src="https://lh3.googleusercontent.com/-mLGBxfgzyHI/AAAAAAAAAAI/AAAAAAAAADg/00zpJ3q4oL0/s120-c/photo.jpg">
+					<img height="100px" width="100px" class="profile_pic" src="' . $profile_picture . '">
 					<span class="details">
 						<h2 class="jumbotron">' . $name . '</h2>
 						<h4>' . $user_object['username'] . '</h4>
@@ -33,7 +33,7 @@
 		else {
 			$element = '
 				<section class="profile profile_link">
-					<img height="100px" width="100px" class="profile_pic" src="https://lh3.googleusercontent.com/-mLGBxfgzyHI/AAAAAAAAAAI/AAAAAAAAADg/00zpJ3q4oL0/s120-c/photo.jpg">
+					<img height="100px" width="100px" class="profile_pic" src="' . $profile_picture . '">
 					<span class="details">
 						<h2 class="jumbotron">' . $name . '</h2>
 						<h4>' . $user_object['username'] . '</h4>

@@ -4,15 +4,7 @@
   $name = ucfirst($user['first_name']) . "&nbsp;&nbsp;" . ucfirst($user['last_name']);
   $reviews = (new GetReviewsAbout($_GET['UID']))->execute();
 ?>
-    
-<?php
-  if ($_SESSION['UID'] == $user['UID'])
-    echo 
-      '<form action="/tnelat/handlers/upload.php" id="upload" method="post" enctype="multipart/form-data">
-          <h5>Profile Picture:</h5></br>
-          <input type="file" name="fileToUpload" id="fileToUpload">
-      </form>';
-?>
+
 <section class="pagewidth login">
   <main class='profile_display'>
     <?php profile_bar($user, null); ?>
@@ -20,9 +12,8 @@
     <?php
       if ($_SESSION['UID'] == $user['UID'])
         echo 
-          '<form action="/tnelat/dan/upload.php" id="upload" method="post" enctype="multipart/form-data">
+          '<form action="/tnelat/handlers/upload.php" id="upload" method="post" enctype="multipart/form-data">
               <h5>Profile Picture:</h5>&nbsp;<input type="file" name="fileToUpload" id="fileToUpload">
-              <input type="file" name="fileToUpload" id="fileToUpload">
           </form>';
     ?>
 

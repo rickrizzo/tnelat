@@ -1,5 +1,5 @@
 <?php
-	require_once '../components/SQL_Operation.php';
+	require_once  $_SERVER['DOCUMENT_ROOT'] . '/tnelat/components/SQL_Operation.php';
 	if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 		//$vars = process_request($_POST);
@@ -37,6 +37,6 @@
 		$_SESSION['username'] = $user['username'];
 		$_SESSION['session_id'] = $user['username'] . time();
 		$_SESSION['UID'] = $user['UID'];
-		echo ('Logged in successfully</br>');
+		echo ('SUCCESS');
 	}
 ?>
