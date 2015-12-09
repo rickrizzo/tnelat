@@ -12,17 +12,13 @@
 	function profile_bar($user_object, $link) {
 		$name = ucfirst($user_object['first_name']) . "&nbsp;&nbsp;" . ucfirst($user_object['last_name']);
 		$element = '';
-<<<<<<< HEAD
+
 		$profile_picture = "/tnelat/data/profile_pictures/" . $user_object['UID'];
 
 		if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $profile_picture))
 			$profile_picture = "/tnelat/resources/no_image.jpg";
 
-		if (!is_null($link)) {
-=======
-
 		if (isset($link)) {
->>>>>>> origin/DansBranch
 			$element = '
 				<a class="profile profile_link" href="' . $link . ' ">
 					<img height="100px" width="100px" class="profile_pic" src="https://lh3.googleusercontent.com/-mLGBxfgzyHI/AAAAAAAAAAI/AAAAAAAAADg/00zpJ3q4oL0/s120-c/photo.jpg">

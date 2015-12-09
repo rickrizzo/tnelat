@@ -240,15 +240,9 @@ header h1 {
 
 .footer {
 	position: absolute;
-<<<<<<< HEAD
 	bottom: 0px;
 	left: 0px;
 	width: 100%;
-=======
-	bottom: 25px;
-	left: 0px;
-	width:100%;
->>>>>>> origin/DansBranch
 }
 
 sidebar {
@@ -261,10 +255,7 @@ sidebar {
 img.profile_pic {
 	display: inline-block;
 	float: left;
-<<<<<<< HEAD
 	border-radius: 100%;
-=======
->>>>>>> origin/DansBranch
 }
 
 /* Main */
@@ -461,7 +452,6 @@ a.profile {
 	background-color: #A2A2A6;
 }
 
-<<<<<<< HEAD
 #upload {
 	float: left;
 	text-align: left;
@@ -472,9 +462,6 @@ a.profile {
 	display: inline-block;
 }
 
-
-=======
->>>>>>> origin/DansBranch
 /* Footer */
 footer {
 	padding: 1em 0;

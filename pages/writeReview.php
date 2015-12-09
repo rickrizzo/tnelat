@@ -51,7 +51,6 @@
 			<fieldset>
 				<h4 class='small_header'>Your Review</h2>
 				<p>Describe your experience with this person:</p>
-<<<<<<< HEAD
 				<textarea name="body" id="review_body" cols="100" rows="10" placeholder="Write review here..." required></textarea>
 			</fieldset>
 
@@ -85,14 +84,12 @@
 					<option value="database">Database</option>
 					<option value="business">Business</option>
 				</select>
-=======
 				<textarea name="body" id="review_body" cols="100" rows="10"></textarea>
->>>>>>> origin/DansBranch
+
 			</fieldset>
 
 			<!--Submit Button-->
 			<a href="#" id="submit" class="btn">Submit</a>
-<<<<<<< HEAD
 
 		</main>
 

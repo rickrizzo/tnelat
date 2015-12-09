@@ -19,27 +19,15 @@
         <main class='profile_display'>
           <?php profile_bar($user, null); ?>
           
-<<<<<<< HEAD
           <?php
             if ($_SESSION['UID'] == $user['UID'])
               echo 
                 '<form action="/tnelat/dan/upload.php" id="upload" method="post" enctype="multipart/form-data">
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <h5>Profile Picture:</h5>&nbsp;<input type="file" name="fileToUpload" id="fileToUpload">
-=======
-                    <h5>Profile Picture:</h5></br>
                     <input type="file" name="fileToUpload" id="fileToUpload">
->>>>>>> origin/master
-=======
-                    <h5>Profile Picture:</h5></br>
-                    <input type="file" name="fileToUpload" id="fileToUpload">
->>>>>>> origin/DansBranch
                 </form>';
           ?>
 
-=======
->>>>>>> origin/DansBranch
           <h2>Reviews</h2>
           <?php
             $i = 0;
@@ -51,7 +39,6 @@
             }
             if ($i==0)
               echo ('<span class="message">This user has no reviews (yet!)</span>');
-<<<<<<< HEAD
 
             if ($_SESSION['UID'] != $user['UID']) {
               $written_already = false;
@@ -72,39 +59,5 @@
           ?>
         </main>
       </section>
-
-      <script>
-
-      /*$(document).ready(function () {
-          $('#fileToUpload').on('submit', function(e) {
-              e.preventDefault();
-              $.ajax({
-                  url : $(this).attr('action') || window.location.pathname,
-                  type: "GET",
-                  data: $(this).serialize(),
-                  success: function (data) {
-                      $("#form_output").html(data);
-                  },
-                  error: function (jXHR, textStatus, errorThrown) {
-                      alert(errorThrown);
-                  }
-              });
-          });
-      });*/
-
-      var element = document.getElementById("fileToUpload");
-      if (element != null) {      
-        document.getElementById("fileToUpload").onchange = function() {
-          document.getElementById("upload").submit();
-        };
-      }
-      </script>
-=======
-            //Submit Review
-            echo ('<span class="foot_holder"><a class="btn foot" href="/tnelat/writereview/' . $user['UID'] . '">Review This Person</a></span>')
-          ?>
-        </main>
-      </section>
->>>>>>> origin/DansBranch
   </body>
 </html> 
