@@ -4,6 +4,23 @@
 
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
+=======
+<head>
+	<meta charset="utf-8">
+	<?php include 'components/css.php'; ?>
+</head>
+<body>
+	<!--Navigation Bar-->
+	<?php include 'components/navigation.php'; ?>
+
+	<!--Review-->
+	<main>
+		<!--Jumbotron-->
+		<div class="jumbotron pagewidth">
+		  <h1>New Review</h1>
+		</div>
+>>>>>>> origin/DansBranch
 
 	<head>
 	<?php include $_SERVER['DOCUMENT_ROOT'] . "/tnelat/components/page_resources.php"; ?>
@@ -34,6 +51,7 @@
 			<fieldset>
 				<h4 class='small_header'>Your Review</h2>
 				<p>Describe your experience with this person:</p>
+<<<<<<< HEAD
 				<textarea name="body" id="review_body" cols="100" rows="10" placeholder="Write review here..." required></textarea>
 			</fieldset>
 
@@ -67,10 +85,14 @@
 					<option value="database">Database</option>
 					<option value="business">Business</option>
 				</select>
+=======
+				<textarea name="body" id="review_body" cols="100" rows="10"></textarea>
+>>>>>>> origin/DansBranch
 			</fieldset>
 
 			<!--Submit Button-->
 			<a href="#" id="submit" class="btn">Submit</a>
+<<<<<<< HEAD
 
 		</main>
 
@@ -116,4 +138,30 @@
 			});
 		</script>
 	</body>
+=======
+		</form>
+	</main>
+
+	<!--Resources-->
+	<?php include 'components/scripts.php'; ?>
+
+	<script src="/tnelat/js/review.js"></script>
+	<script src='/tnelat/dan/Post.js'></script>
+	<script>
+
+		$('#submit').click( function() {
+			var PostReq = new Post('/tnelat/dan/write_review.php');
+			var emoji = $('input[name=emoji]:checked', '#write_review').val();
+
+			PostReq.addParamByPair('account', <?php echo $id; ?>);
+			PostReq.addParamByPair('author', <?php echo 1; ?>);
+			PostReq.addParamByPair('emoji', emoji);
+			PostReq.addParamById('review_body');
+			
+			PostReq.send();
+		});
+	</script>
+
+</body>
+>>>>>>> origin/DansBranch
 </html>

@@ -43,6 +43,9 @@ body {
 		width: 80%;
 	}
 }
+input[type=text]{
+}
+
 
 /* Components */
 /* - Button */
@@ -91,9 +94,12 @@ a.btn:hover{
 .jumbotron {
 	font-size: 1em;
 	text-align: center;
-	background-color: #cccccd;
-	padding-bottom: 5px;
+	padding: 0px 0px 5px 0px;
 	border-radius: 5px;
+	display: inline-block;
+	float: left;
+	margin: 0px;
+
 }
 
 @media (min-width: 600px) {
@@ -117,10 +123,11 @@ nav {
 	max-width: 1000px;
 	padding: 0px 25px 0px 25px;
 }
+
 nav ul {
-	margin: 0;
+	margin: 0px;
 	width: 100%;
-	padding: 0;
+	padding: 0px;
 }
 nav li {
 	list-style: none;
@@ -138,30 +145,31 @@ nav a{
 	color: #F2F2F3;
 	padding: 15px 20px 15px 20px;
 }
-.navlink {
-	transition: 0.15s ease;
-}
-.navlink:hover {
-	color: red;
-}
+
 menu {
-	margin: 0;
-	padding: 0;
+	margin: 0px;
+	padding: 0px;
 }
+
 .float-left {
 	float: left;
 }
+
 .float-right {
 	float: right;
 }
+
 .bold {
 	font-weight: bold;
 }
+
 .small {
 	font-size: 1em;
 }
+
 #right-menu {
 	float: right;
+	/*display: none;*/
 }
 
 .message {
@@ -188,8 +196,10 @@ menu {
 	background-size: cover;
 
 }
+
+
 header div {
-	width: 300px;
+
 	height: 300px;
 	border-radius: 50%;
 	background-color: #EE4B3E;
@@ -215,6 +225,14 @@ header h1 {
 	}
 }
 
+.navlink {
+	transition: 0.15s ease;
+}
+
+.navlink:hover {
+	color: red;
+}
+
 .foot_holder {
 	position: relative;
 	margin: auto;
@@ -222,9 +240,15 @@ header h1 {
 
 .footer {
 	position: absolute;
+<<<<<<< HEAD
 	bottom: 0px;
 	left: 0px;
 	width: 100%;
+=======
+	bottom: 25px;
+	left: 0px;
+	width:100%;
+>>>>>>> origin/DansBranch
 }
 
 sidebar {
@@ -237,20 +261,18 @@ sidebar {
 img.profile_pic {
 	display: inline-block;
 	float: left;
+<<<<<<< HEAD
 	border-radius: 100%;
+=======
+>>>>>>> origin/DansBranch
 }
 
 /* Main */
 .profile_display {
 	position: relative;
 	min-height: 450px;
-	height: 100%;
-	clear:both;
-	display:table;
-}
-main {
-	padding-top: 3em;
-	min-height: 450px;
+	display: inline-block;
+	width: 100%;
 }
 @media (min-width: 600px) {
 	.profile_display {
@@ -333,28 +355,21 @@ main {
 	float: right;
 	margin: 0 auto;
 }
-.review {
+#profile .review {
 	min-width: 150px;
-	width: 33%;
+	width: 30%;
 	margin-top: 1em;
+	margin-left: 1%;
 	text-align: center;
 	float: left;
 	border-radius: 5px;
 }
-div.review {
-	height: 150px;
-}
-div.review:hover {
+#profile .review:hover {
 	color: #F2F2F3;
 	background-color: #EE4B3E;
 }
-div.review article{
+#profile .review article{
 	font-size: 4em;
-}
-img.profile_pic {
-	display: inline-block;
-	float: left;
-	border-radius: 100%;
 }
 
 
@@ -376,14 +391,7 @@ fieldset input {
 	display: block;
 	margin: 5px auto 10px auto;
 }
-#review_body {
-	border-radius: 5px;
-}
-#reviewSubmit {
-	float: right;
-	position: relative;
-	top: 40px;
-}
+
 #rating ul {
 	margin: 10px 0px 0px 0px;
 	padding: 0;
@@ -435,7 +443,7 @@ fieldset input {
 .profile { 
 	overflow:auto;
 	padding: 10px;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid grey;
 	display: block;
 }
 
@@ -448,16 +456,12 @@ a.profile {
 	text-align: left;
 	margin-left: 15px;
 }
-.profile_static {
-	background-color: #A2A2A6;
-}
-.profile_link{
 
-}
 .profile_link:hover {
 	background-color: #A2A2A6;
 }
 
+<<<<<<< HEAD
 #upload {
 	float: left;
 	text-align: left;
@@ -469,12 +473,14 @@ a.profile {
 }
 
 
+=======
+>>>>>>> origin/DansBranch
 /* Footer */
 footer {
 	padding: 1em 0;
 	text-align: center;
 	background-color: #EE4B3E;
-	color: #F2F2F3;
+	color: #EE4B3E;
 }
 
 h4 {
@@ -484,7 +490,6 @@ h4 {
 h5 {
 	display: inline-block;
 	margin: 0px;
-	display: inline-block;
 }
 
 hr {

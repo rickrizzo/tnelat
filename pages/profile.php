@@ -19,6 +19,7 @@
         <main class='profile_display'>
           <?php profile_bar($user, null); ?>
           
+<<<<<<< HEAD
           <?php
             if ($_SESSION['UID'] == $user['UID'])
               echo 
@@ -37,6 +38,8 @@
                 </form>';
           ?>
 
+=======
+>>>>>>> origin/DansBranch
           <h2>Reviews</h2>
           <?php
             $i = 0;
@@ -44,13 +47,11 @@
               $i++;
               echo "<div class='review'><article  id='"  . $i ."' ></article>";
               echo '<script>$.getJSON("/tnelat/data/emoji.json", function(data) {$("#' . $i . '").html(data.emoji[' . $review["emoji"] . ']); console.log(data.emoji[' . $review['emoji'] . ']);});</script>';
-              echo "<p>" . $review['body']. "</p>";
-              if ($_SESSION['UID'] == $user['UID']);
-                echo "<a href='#' id='remove'> Remove </a>";
-              echo ("</div>");
+              echo "<p>" . $review['body']. "</p></div>";
             }
             if ($i==0)
               echo ('<span class="message">This user has no reviews (yet!)</span>');
+<<<<<<< HEAD
 
             if ($_SESSION['UID'] != $user['UID']) {
               $written_already = false;
@@ -98,5 +99,12 @@
         };
       }
       </script>
+=======
+            //Submit Review
+            echo ('<span class="foot_holder"><a class="btn foot" href="/tnelat/writereview/' . $user['UID'] . '">Review This Person</a></span>')
+          ?>
+        </main>
+      </section>
+>>>>>>> origin/DansBranch
   </body>
 </html> 
