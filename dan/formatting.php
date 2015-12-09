@@ -12,12 +12,7 @@
 	function profile_bar($user_object, $link) {
 		$name = ucfirst($user_object['first_name']) . "&nbsp;&nbsp;" . ucfirst($user_object['last_name']);
 		$element = '';
-
-<<<<<<< HEAD
-		$profile_picture = "/tnelat/profile_pictures/" . $user_object['UID'];
-=======
 		$profile_picture = "/tnelat/data/profile_pictures/" . $user_object['UID'];
->>>>>>> origin/master
 
 		if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $profile_picture))
 			$profile_picture = "/tnelat/resources/no_image.jpg";

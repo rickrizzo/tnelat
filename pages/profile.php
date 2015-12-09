@@ -24,11 +24,16 @@
               echo 
                 '<form action="/tnelat/dan/upload.php" id="upload" method="post" enctype="multipart/form-data">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <h5>Profile Picture:</h5>&nbsp;<input type="file" name="fileToUpload" id="fileToUpload">
 =======
                     <h5>Profile Picture:</h5></br>
                     <input type="file" name="fileToUpload" id="fileToUpload">
 >>>>>>> origin/master
+=======
+                    <h5>Profile Picture:</h5></br>
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+>>>>>>> origin/DansBranch
                 </form>';
           ?>
 
@@ -46,7 +51,6 @@
             }
             if ($i==0)
               echo ('<span class="message">This user has no reviews (yet!)</span>');
-<<<<<<< HEAD
 
             if ($_SESSION['UID'] != $user['UID']) {
               $written_already = false;
@@ -64,16 +68,11 @@
               else
                 echo ('<span class="footer"><a class="disabled_btn foot_holder">User Already Reviewed</a></span>');
             }
-             
-=======
-              echo ('<span><a class="btn foot_holder" href="/tnelat/writereview/' . $_GET['UID'] . '">Review This Person</a></span>');
->>>>>>> origin/master
           ?>
         </main>
       </section>
 
       <script>
-<<<<<<< HEAD
 
       /*$(document).ready(function () {
           $('#fileToUpload').on('submit', function(e) {
@@ -98,16 +97,6 @@
           document.getElementById("upload").submit();
         };
       }
-=======
-      document.getElementById("fileToUpload").onchange = function() {
-        document.getElementById("upload").submit();
-      };
-      </script>
-      <script>
-      $("#remove").click(function() {
-        <?php new RemoveReview(1).execute() ?>
-      });
->>>>>>> origin/master
       </script>
   </body>
 </html> 
