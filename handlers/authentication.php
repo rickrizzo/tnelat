@@ -1,15 +1,13 @@
 <?php
-	include_once 'SQL_Operation.php';
-    include_once 'formatting.php';
-
+	require_once '../components/SQL_Operation.php';
 	if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
-		$vars = process_request($_POST);
+		//$vars = process_request($_POST);
 
-		if(!empty($user = (new GetUserByUsername($vars['username']))->execute())) {
+		if(!empty($user = (new GetUserByUsername($_POST['username']))->execute())) {
 			$user = $user[0];
 		}
-		elseif (!empty($user = (new GetUserByEmail($vars['username']))->execute())) {
+		elseif (!empty($user = (new GetUserByEmail($_POST['username']))->execute())) {
 			$user = $user[0];
 		}
 		else {
@@ -18,7 +16,7 @@
 		}
 
 		// Salt the password
-		$salted_password = hash('sha256', $user['salt'] . $vars['password']);
+		$salted_password = hash('sha256', $user['salt'] . $_POST['password']);
 
 		if ($salted_password == $user['password']) {
 			login($user['username']);		

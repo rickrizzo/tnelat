@@ -1,27 +1,24 @@
 <?php
-  	include_once 'SQL_Operation.php';
-    include_once 'formatting.php';
+  	require_once '../components/SQL_Operation.php';
 
   	if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-        $vars = process_request($_POST);
-
-        if ( validateNewUser($vars['username'], $vars['password'], $vars['password_confirm'], 
-                              $vars['email'], $vars['first_name'], $vars['last_name'], $vars['phone']) ) {
+        if ( validateNewUser($_POST['username'], $_POST['password'], $_POST['password_confirm'], 
+                              $_POST['email'], $_POST['first_name'], $_POST['last_name'], $_POST['phone']) ) {
 
             // Generate a random salt
             $salt = hash('sha256', uniqid(mt_rand(), true));      
 
             // Apply salt before hashing
-            $salted_password = hash('sha256', $salt . $vars['password']);
+            $salted_password = hash('sha256', $salt . $_POST['password']);
             
             // Store the salt with the password, so we can apply it again and check the result
-            $user = (new InsertUser($vars['username'], $vars['email'], $salted_password, $vars['first_name'],
-                                   $vars['last_name'], intval($vars['phone']), $salt))->execute();
+            $user = (new InsertUser($_POST['username'], $_POST['email'], $salted_password, $_POST['first_name'],
+                                   $_POST['last_name'], intval($_POST['phone']), $salt))->execute();
         
             // Reset the post so we don't make a post request to authentication
             $_SERVER['REQUEST_METHOD'] = null;
-            include $_SERVER['DOCUMENT_ROOT'] . "/tnelat/dan/authentication.php";
-            login($vars['username']);
+            include $_SERVER['DOCUMENT_ROOT'] . "/tnelat/handlers/authentication.php";
+            login($_POST['username']);
 
             echo 'User created successfully. Redirecting...';    
         }    		

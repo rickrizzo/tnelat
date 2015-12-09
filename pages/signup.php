@@ -3,9 +3,6 @@
     header('Location: /tnelat');
 ?>
 
-<!--Navigation Bar-->
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/tnelat/components/nav.php"; ?>
-
 <!--Form-->
  <fieldset id="signup" class="pagewidth" >
   <h2>Sign Up</h2>
@@ -27,7 +24,7 @@
 
 <script>
   $('#submit').click(function() {
-    var PostReq = new Post('/tnelat/dan/create_account.php');
+    var PostReq = new Post('/tnelat/handlers/create_account.php');
     PostReq.addParamsById('username', 'password', 'password_confirm', 'first_name', 'last_name', 'email', 'phone');
     PostReq.set_callback( function(val) {
       $('#response').html(val);
