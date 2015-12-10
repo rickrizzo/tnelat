@@ -3,6 +3,7 @@
   $user = (new GetUser($_GET['UID']))->execute()[0];
   $name = ucfirst($user['first_name']) . "&nbsp;&nbsp;" . ucfirst($user['last_name']);
   $reviews = (new GetReviewsAbout($_GET['UID']))->execute();
+  $admin = (new GetUser($_SESSION['UID']))->execute()[0]['admin'];
 ?>
 
 <section class="pagewidth login">

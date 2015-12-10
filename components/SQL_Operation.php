@@ -70,7 +70,7 @@
 	class InsertUser extends SQL_Operation {
 		public function __construct($username, $password, $email, $first_name, $last_name, $phone, $salt) {
 			$this->initialize(func_get_args());
-			$this->statement = "INSERT INTO Users (username, email, password, first_name, last_name, phone, salt) VALUES (:username, :password, :email, :first_name, :last_name, :phone, :salt)";
+			$this->statement = "INSERT INTO Users (username, email, password, first_name, last_name, phone, salt, admin) VALUES (:username, :password, :email, :first_name, :last_name, :phone, :salt, 0)";
 		}
 	}
 

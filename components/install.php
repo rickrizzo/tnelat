@@ -24,7 +24,8 @@
         "password varchar(100) NOT NULL, " . 
         "email varchar(100) NOT NULL, " .
         "phone int(25), " .
-        "salt varchar(100) NOT NULL, ". 
+        "salt varchar(100) NOT NULL, ".
+        "admin int(1) NOT NULL, " .
         "PRIMARY KEY (UID));";
       $conn->exec($users);
 
