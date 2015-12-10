@@ -17,7 +17,7 @@
 	</div>
 	<div>
 		<img src="resources/team.png" alt="">
-		<a class="btn" href="#">Find Teammates</a>
+		<a class="btn" href="/tnelat?src=search">Find Teammates</a>
 		<article>
 			Need to get something done? Find your team here.
 		</article>

@@ -1,7 +1,7 @@
 <?php
   require_once "components/install.php";
   require_once "components/SQL_Operation.php";
-  require_once "dan/formatting.php";
+  require_once "components/formatting.php";
   
   //Installation
   install();
