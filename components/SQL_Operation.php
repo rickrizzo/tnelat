@@ -20,6 +20,14 @@
 			}
 		}
 
+		public final function order_by($value) {
+			if ($this->statement == '')
+				exit("<h1 style='color:red;'>FATAL ERROR: Initialize first</h1>");
+
+			$this->statement .= (' ORDER BY ' . $value);
+			echo ($this->statement);
+		}
+
 		public final function execute() {
 
 			// Find the properties of this object
@@ -116,10 +124,10 @@
 		}
 	}
 
-	class GetNextUsers extends SQL_Operation {
-		public function __construct($max) {
+	class GetUsers extends SQL_Operation {
+		public function __construct() {
 			$this->initialize(func_get_args());
-			$this->statement = "SELECT * FROM Users LIMIT :max";
+			$this->statement = "SELECT * FROM Users";
 		}
 	}
 

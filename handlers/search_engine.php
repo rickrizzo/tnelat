@@ -5,28 +5,30 @@
 	if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 		$vars = process_request($_POST);
+		$search_by = $vars['search_by'];
+		$search_term = $vars['search_term'];
+		$sort_by = $vars['sort_by'];
+		$order = $vars['order'];
 
-		if(!empty($user = (new GetUserByUsername($vars['username']))->execute())) {
-			$user = $user[0];
-		}
-		elseif (!empty($user = (new GetUserByEmail($vars['username']))->execute())) {
-			$user = $user[0];
-		}
-		else {
-			echo ("\n<span class='error'>Invalid username or password</span>");
-			exit;
+		$sort = $sort_by . ' ' . strtoupper($order);
+
+		switch($search_by) {
+			case('all'):
+				$user_request = new GetNextUsers(1000);
+				$user_request->order_by($sort);
+				$users = $user_request->execute();
+
+   			foreach ($users as $user) {
+      		profile_bar($user, '/tnelat?src=profile&UID=' . $user['UID']);
+      	}
+      	break;
 		}
 
-		// Salt the password
-		$salted_password = hash('sha256', $user['salt'] . $vars['password']);
+    /*}
+    else {
+    	echo('no');
+    }*/
 
-		if ($salted_password == $user['password']) {
-			login($user['username']);		
-		}
-		else {
-			echo ("\n<span class='error'>Invalid username or password</span>");
-			exit;
-		}
 	}
 
 	function login($username) {

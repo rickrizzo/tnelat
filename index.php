@@ -44,7 +44,6 @@
   }
 ?>
   <!--Scripts-->
-  <script type="text/javascript" src="js/login.js"></script>
   <script type="text/javascript" src="js/frontpage.js"></script>
   <script type="text/javascript" src="js/review.js"></script>
 

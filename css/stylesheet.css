@@ -483,3 +483,38 @@ hr {
 	display: block;
 	margin: 2px;
 }
+
+.search_menu {
+	border-bottom: 1px solid grey;
+}
+
+.search_menu section{
+	display: inline-block;
+	padding: 0px 10px 0px 10px;
+	width: 25%;
+}
+
+.search_menu h3 {
+	font-size: 12pt;
+}
+
+.search_menu select {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+#search_term, #sort_term {
+	width: 100px;
+}
+
+.search_menu #submit {
+	display: inline-block;
+}
+
+
+
+
+
+
+
+
