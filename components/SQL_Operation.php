@@ -82,9 +82,9 @@
 	}
 
 	class AddReview extends SQL_Operation {
-		public function __construct($authorUID, $accountUID, $emoji, $body) {
+		public function __construct($authorUID, $accountUID, $body, $rating, $emoji) {
 			$this->initialize(func_get_args());
-			$this->statement = "INSERT INTO Reviews (authorUID, accountUID, emoji, body) VALUES (:authorUID, :accountUID, :emoji, :body)";
+			$this->statement = "INSERT INTO Reviews (authorUID, accountUID, emoji, body, rating) VALUES (:authorUID, :accountUID, :emoji, :body, :rating)";
 		}
 	}
 
@@ -123,7 +123,7 @@
 		}
 	}
 
-	class GetUsers extends SQL_Operation {
+	class GetAllUsers extends SQL_Operation {
 		public function __construct() {
 			$this->initialize(func_get_args());
 			$this->statement = "SELECT * FROM Users";

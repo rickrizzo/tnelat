@@ -7,9 +7,10 @@
 
 //Add Emojis
 $.getJSON('/tnelat/data/emoji.json', function(data) {
+  console.log('call');
   for(var i = 0; i < data.emoji.length; i++) {
     //Append
-    $('#rating ul').append(
+    $('#emoji_select ul').append(
       '<li class="emoji_item">' +
           '<span id="emoji' + i + '"class="emoji">'+ data.emoji[i] + '</span>' +
           '<input type="radio" class="emoji_select" name="emoji" value="' + i + '">' +

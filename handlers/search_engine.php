@@ -16,7 +16,7 @@
 
 		switch($vars['search_by']) {
 			case('all'):
-				$request = new GetUsers();
+				$request = new GetAllUsers();
 				break;
 			case('first_name'):
 				$request = new GetUsersLikeFirstName($vars['search_term']);

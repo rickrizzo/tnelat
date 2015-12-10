@@ -41,7 +41,7 @@
         }
 
         if (!$written_already)
-         echo ('<span class="footer"><a class="btn foot_holder" href="/tnelat/pages/writereview.php?UID=' . $user['UID'] . '">Review This Person</a></span>');
+         echo ('<span class="footer"><a class="btn foot_holder" href="/tnelat/?src=writereview&UID=' . $user['UID'] . '">Review This Person</a></span>');
         else
           echo ('<span class="footer"><a class="disabled_btn foot_holder">User Already Reviewed</a></span>');
       }

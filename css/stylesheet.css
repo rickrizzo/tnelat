@@ -36,7 +36,7 @@ body {
 }
 .pagewidth {
 	max-width: 1000px;
-	margin: 0 auto; 
+	margin: 0px auto 60px auto; 
 }
 @media (min-width: 600px) {
 	.pagewidth {
@@ -383,17 +383,17 @@ fieldset input {
 	margin: 5px auto 10px auto;
 }
 
-#rating ul {
+#emoji_select ul {
 	margin: 10px 0px 0px 0px;
 	padding: 0;
 }
-#rating li{
+#emoji_select li{
 	list-style: none;
 	width: 100px;
 	text-align: bottom;
 	overflow: visible;
 }
-#rating li p {
+#emoji_select li p {
 	display: none;
 }
 .emoji {
@@ -411,7 +411,7 @@ fieldset input {
 	font-size: 5em;
 }*/
 @media (min-width: 600px) {
-	#rating li{
+	#emoji_select li{
 		display: inline-block;
 	}
 }

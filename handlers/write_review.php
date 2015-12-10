@@ -13,7 +13,7 @@
 
 		$vars = process_request($_POST);
 
-		$review = (new AddReview($vars['author'], $vars['account'], $vars['emoji'], $vars['body']))->execute();
+		$review = (new AddReview($vars['author'], $vars['account'],  $_POST['body'], $vars['rating'], $vars['emoji']))->execute();
 		echo('Review submitted');
 	}
 ?>
