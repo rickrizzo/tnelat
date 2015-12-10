@@ -10,6 +10,10 @@
 		$request = null;
 
 
+		if ($vars['search_by'] != 'all' and $vars['search_term'] == '')
+			exit('<p class="error">Please enter a search term</p>');
+
+
 		switch($vars['search_by']) {
 			case('all'):
 				$request = new GetUsers();
