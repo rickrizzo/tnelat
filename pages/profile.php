@@ -1,6 +1,7 @@
 <?php
   //Variables
   $user = (new GetUser($_GET['UID']))->execute()[0];
+  $admin = (new GetUser($_SESSION['UID']))->execute()[0]['admin'];
   $name = ucfirst($user['first_name']) . "&nbsp;&nbsp;" . ucfirst($user['last_name']);
   $reviews = (new GetReviewsAbout($_GET['UID']))->execute();
 ?>
@@ -15,6 +16,7 @@
           '<form action="/tnelat/handlers/upload.php" id="upload" method="post" enctype="multipart/form-data">
               <h5>Profile Picture:</h5>&nbsp;<input type="file" name="fileToUpload" id="fileToUpload">
           </form>';
+        echo '<script src="js/profile_upload.js"></script>';
     ?>
 
     <h2>Reviews</h2>
@@ -61,7 +63,3 @@
   });
 
 </script>
-
-
-
-
