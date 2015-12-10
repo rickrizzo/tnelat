@@ -4,7 +4,7 @@
 
 <main id="login" class="pagewidth">
 <!--New Review-->
-	<h2 class='small_header'>Review for <?php echo(ucfirst($user['username'])); ?> </h2>
+	<h2 class='small_header'>Review for <?php echo(ucfirst($user['first_name']) . ' ' . ucfirst($user['last_name'])); ?> </h2>
 
 	<!--Category-->
 	<fieldset>
@@ -76,8 +76,12 @@ $('#submit').click( function() {
 
 	var rating = document.getElementById("rating");
 	rating = rating.options[rating.selectedIndex].value;
-
 	PostReq.addParamByPair('rating', rating);
+
+	var category = document.getElementById("category");
+	category = category.options[category.selectedIndex].value;
+	PostReq.addParamByPair('category', category);
+
 	PostReq.addParamById('review_body');
 	
 	//Submit and redirect

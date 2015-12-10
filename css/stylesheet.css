@@ -240,7 +240,7 @@ header h1 {
 
 .footer {
 	position: absolute;
-	bottom: 0px;
+	bottom: -85px;
 	left: 0px;
 	width: 100%;
 }
@@ -299,6 +299,21 @@ img.profile_pic {
 	margin: 1.5em 0;
 	padding: 1em;
 }
+
+.profile .user_details {
+	float: left; 
+	text-align: left;
+	margin-left: 15px;
+}
+
+#account_details img {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	float: right;
+}
+
+
 @media (min-width: 600px) {
 	#details div {
 		float: left;
@@ -312,7 +327,6 @@ img.profile_pic {
 	margin-top: 10em;
 	background-color: #cccccd;
 	border-radius: 5px;
-
 }
 
 .login {
@@ -362,7 +376,6 @@ img.profile_pic {
 #profile .review article{
 	font-size: 4em;
 }
-
 
 /* Forms */
 fieldset {
@@ -442,11 +455,7 @@ a.profile {
 	color: inherit;
 }
 
-.profile .details {
-	float: left; 
-	text-align: left;
-	margin-left: 15px;
-}
+
 
 .profile_link:hover {
 	background-color: #A2A2A6;
@@ -511,10 +520,43 @@ hr {
 	display: inline-block;
 }
 
+.review {
+	height: 125px;
+	border-bottom: 1px solid grey;
+	padding-top: 10px;
+}
 
+.review_details {
+	float: left;
+	width: 150px;
+}
 
+.review_details img {
+	width: 15px;
+	height: 15px;
+}
 
+.review_details .category {
+	display: block;
+	margin-top: 5px;
+}
 
+.review_body {
+	float: left;
+	text-align: left;
+	width: calc(100% - 170px);
+	margin-top: 15px;
+}
+
+.emoji_detail {
+	font-size: 40pt;
+	display: block;
+	width: 100%;
+}
+
+.pad_bottom {
+	padding-bottom: 100px;
+}
 
 
 

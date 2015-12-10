@@ -82,9 +82,9 @@
 	}
 
 	class AddReview extends SQL_Operation {
-		public function __construct($authorUID, $accountUID, $body, $rating, $emoji) {
+		public function __construct($authorUID, $accountUID, $category, $body, $rating, $emoji) {
 			$this->initialize(func_get_args());
-			$this->statement = "INSERT INTO Reviews (authorUID, accountUID, emoji, body, rating) VALUES (:authorUID, :accountUID, :emoji, :body, :rating)";
+			$this->statement = "INSERT INTO Reviews (authorUID, accountUID, category, emoji, body, rating) VALUES (:authorUID, :accountUID, :category, :emoji, :body, :rating)";
 		}
 	}
 
@@ -162,9 +162,16 @@
 	}
 
 	class GetUserByEmail extends SQL_Operation {
-		public function __construct($email) {
+		public function __construct($email) { 
 			$this->initialize(func_get_args());
 			$this->statement = "SELECT * FROM Users WHERE email = :email";
+		}
+	}
+
+	class GetAverageRating extends SQL_Operation {
+		public function __construct($UID) {
+			$this->initialize(func_get_args());
+			$this->statement = "SELECT AVG(rating) AS AverageRating FROM Reviews WHERE accountUID = :UID";
 		}
 	}
 ?>

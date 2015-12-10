@@ -7,8 +7,7 @@
 
 //Add Emojis
 $.getJSON('/tnelat/data/emoji.json', function(data) {
-  console.log('call');
-  for(var i = 0; i < data.emoji.length; i++) {
+  for(var i = 1; i < data.emoji.length; i++) {
     //Append
     $('#emoji_select ul').append(
       '<li class="emoji_item">' +

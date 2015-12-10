@@ -5,8 +5,6 @@
 	if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 		$vars = process_request($_POST);
-
-		$sort = $vars['sort_by'] . ' ' . strtoupper($vars['order']);
 		$request = null;
 
 
@@ -29,25 +27,30 @@
 				break;
 		}
 
-		$request->order_by($sort);
-		$users = $request->execute();
-   	
-   	foreach (array_reverse($users) as $user) {
-      profile_bar($user, '/tnelat?src=profile&UID=' . $user['UID']);
-    }
+		if ($vars['sort_by'] != 'rating') {
+			$sort = $vars['sort_by'] . ' ' . strtoupper($vars['order']);
+			$request->order_by($sort);
+			$sorted_users = $request->execute();
+		}
+		else {
+			$users = $request->execute();
+			$sorted_indices = [];
+			foreach($users as $index=>$user) {
+				$sorted_indices[$index] = (new GetAverageRating($user['UID']))->execute()[0][0];
+			}
+			asort($sorted_indices);
 
-	}
+			$sorted_users = [];
+			foreach($sorted_indices as $index=>$rating) {
+				$sorted_users[] = $users[$index];
+			}
 
-	function login($username) {
+			if (strtoupper($vars['order'] == 'asc'))
+				$sorted_users = array_reverse($sorted_users);
+		}
 
-		$user = (new GetUserByUsername($username))->execute()[0];
-
-		// Initialize session parameters
-		if(session_status() != PHP_SESSION_ACTIVE)
-			session_start();
-		$_SESSION['username'] = $user['username'];
-		$_SESSION['session_id'] = $user['username'] . time();
-		$_SESSION['UID'] = $user['UID'];
-		echo ('SUCCESS');
+		foreach (array_reverse($sorted_users) as $user) {
+		     profile_bar($user, '/tnelat?src=profile&UID=' . $user['UID']);
+		}
 	}
 ?>

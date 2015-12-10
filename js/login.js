@@ -5,7 +5,7 @@ $('#loginsubmit').click(function() {
       if (val == 'SUCCESS')
         parent.window.location.reload();
       else
-        $('#response').html(val);   
+        $('#response').html(val);
     });
     PostReq.send();     
 });
