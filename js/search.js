@@ -7,7 +7,7 @@ $(document).ready(function() {
 			$('#search_term')[0].value = '';
 		}
 		else {
-			$('#search_term').attr('disabled', 'enabled');
+			$('#search_term').attr('disabled', false);
 			$('#search_term')[0].style.backgroundColor = '#FFFFFF';
 		}
 	});

@@ -22,8 +22,8 @@
 			</select>
 
 			<select id='order' name='order'>
-				<option value='ASC'>Ascending</option>
 				<option value='DESC'>Descending</option>
+				<option value='ASC'>Ascending</option>
 			</select>
 		</section>
 		<input type='button' value='Search' id='submit'>

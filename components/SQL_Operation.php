@@ -25,7 +25,6 @@
 				exit("<h1 style='color:red;'>FATAL ERROR: Initialize first</h1>");
 
 			$this->statement .= (' ORDER BY ' . $value);
-			echo ($this->statement);
 		}
 
 		public final function execute() {
@@ -131,10 +130,34 @@
 		}
 	}
 
+	class GetUsersLikeFirstName extends SQL_Operation {
+		public function __construct($first_name) {
+			$this->initialize(func_get_args());
+			$this->first_name = '%' . $this->first_name . '%';
+			$this->statement = "SELECT * FROM Users WHERE first_name LIKE :first_name";
+		}
+	}
+
+	class GetUsersLikeLastName extends SQL_Operation {
+		public function __construct($last_name) {
+			$this->initialize(func_get_args());
+			$this->last_name = '%' . $this->last_name . '%';
+			$this->statement = "SELECT * FROM Users WHERE last_name LIKE :last_name";
+		}
+	}
+
 	class GetUserByUsername extends SQL_Operation {
 		public function __construct($username) {
 			$this->initialize(func_get_args());
 			$this->statement = "SELECT * FROM Users WHERE username = :username";
+		}
+	}
+
+	class GetUsersLikeUsername extends SQL_Operation {
+		public function __construct($username) {
+			$this->initialize(func_get_args());
+			$this->username = '%' . $this->username . '%';
+			$this->statement = "SELECT * FROM Users WHERE username LIKE :username";
 		}
 	}
 

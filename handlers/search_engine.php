@@ -5,29 +5,32 @@
 	if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 		$vars = process_request($_POST);
-		$search_by = $vars['search_by'];
-		$search_term = $vars['search_term'];
-		$sort_by = $vars['sort_by'];
-		$order = $vars['order'];
 
-		$sort = $sort_by . ' ' . strtoupper($order);
+		$sort = $vars['sort_by'] . ' ' . strtoupper($vars['order']);
+		$request = null;
 
-		switch($search_by) {
+
+		switch($vars['search_by']) {
 			case('all'):
-				$user_request = new GetNextUsers(1000);
-				$user_request->order_by($sort);
-				$users = $user_request->execute();
-
-   			foreach ($users as $user) {
-      		profile_bar($user, '/tnelat?src=profile&UID=' . $user['UID']);
-      	}
-      	break;
+				$request = new GetUsers();
+				break;
+			case('first_name'):
+				$request = new GetUsersLikeFirstName($vars['search_term']);
+				break;
+			case('last_name'):
+				$request = new GetUsersLikeLastName($vars['search_term']);
+				break;
+			case('username'):
+				$request = new GetUsersLikeUsername($vars['search_term']);
+				break;
 		}
 
-    /*}
-    else {
-    	echo('no');
-    }*/
+		$request->order_by($sort);
+		$users = $request->execute();
+   	
+   	foreach (array_reverse($users) as $user) {
+      profile_bar($user, '/tnelat?src=profile&UID=' . $user['UID']);
+    }
 
 	}
 
