@@ -1,5 +1,17 @@
 <?php
 	$user = (new GetUser($_GET['UID']))->execute()[0];
+	$reviews = (new GetReviewsAbout($_GET['UID']))->execute();
+
+    $written_already = false;
+    foreach($reviews as $review) {          
+      if ($review['authorUID'] == $_SESSION['UID']) {
+        $written_already = true;
+        break;
+      }
+    }
+    if ($written_already) {
+    	header('Location: /tnelat/?src=profile&UID=' . $_GET['UID']);
+    }
 ?>
 
 <main id="login" class="pagewidth">
@@ -84,6 +96,8 @@ $('#submit').click( function() {
 
 	PostReq.addParamById('review_body');
 	
+	PostReq.set_callback(function () { parent.window.location.reload(); });
+
 	//Submit and redirect
 	PostReq.send();
 });
