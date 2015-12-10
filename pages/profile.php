@@ -1,9 +1,9 @@
 <?php
   //Variables
   $user = (new GetUser($_GET['UID']))->execute()[0];
+  $admin = (new GetUser($_SESSION['UID']))->execute()[0]['admin'];
   $name = ucfirst($user['first_name']) . "&nbsp;&nbsp;" . ucfirst($user['last_name']);
   $reviews = (new GetReviewsAbout($_GET['UID']))->execute();
-  $admin = (new GetUser($_SESSION['UID']))->execute()[0]['admin'];
 ?>
 
 <section class="pagewidth login">
@@ -16,6 +16,7 @@
           '<form action="/tnelat/handlers/upload.php" id="upload" method="post" enctype="multipart/form-data">
               <h5>Profile Picture:</h5>&nbsp;<input type="file" name="fileToUpload" id="fileToUpload">
           </form>';
+        echo '<script src="js/profile_upload.js"></script>';
     ?>
 
     <h2>Reviews</h2>
@@ -25,7 +26,11 @@
         $i++;
         echo "<div class='review'><article  id='"  . $i ."' ></article>";
         echo '<script>$.getJSON("/tnelat/data/emoji.json", function(data) {$("#' . $i . '").html(data.emoji[' . $review["emoji"] . ']); console.log(data.emoji[' . $review['emoji'] . ']);});</script>';
-        echo "<p>" . $review['body']. "</p></div>";
+        echo "<p>" . $review['body']. "</p>";
+        if($admin || $user['UID'] == $_SESSION['UID']) {
+          echo "<button id='delete' value=" .$review['RID'] . ">Delete</button>";
+        }
+        echo "</div>";
       }
       if ($i==0)
         echo ('<span class="message">This user has no reviews (yet!)</span>');
@@ -33,7 +38,7 @@
       if ($_SESSION['UID'] != $user['UID']) {
         $written_already = false;
         foreach($reviews as $review) {
-          var_dump($review);
+          //var_dump($review);
           
           if ($review['authorUID'] == $_SESSION['UID']) {
             $written_already = true;
@@ -50,7 +55,16 @@
   </main>
 </section>
 <script>
-  document.getElementById("fileToUpload").onchange = function() {
-    document.getElementById("upload").submit();
-  };
+  $('#delete').click(function() {
+    var PostReq = new Post('/tnelat/handlers/delete_review.php');
+    PostReq.addParamByPair("RID", $('#delete').val());
+    PostReq.set_callback(function(val) {
+      if(val == 'SUCCESS') {
+        parent.window.location.reload();
+      } else {
+        alert(val);
+      }
+    });
+    PostReq.send();
+  });
 </script>

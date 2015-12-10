@@ -88,8 +88,15 @@
 		}
 	}
 
+	class GetReview extends SQL_Operation {
+		public function __construct($RID) {
+			$this->initialize(func_get_args());
+			$this->statement = "SELECT * FROM Reviews WHERE RID = :RID";
+		}
+	}
+
 	class RemoveReview extends SQL_Operation {
-		public function __construct($CID) {
+		public function __construct($RID) {
 			$this->initialize(func_get_args());
 			$this->statement = "DELETE FROM Reviews WHERE RID = :RID";
 		}
