@@ -2,8 +2,7 @@
 	abstract class SQL_Operation {
 
 		protected function initialize ($vals) {
-			require "../components/connector.php";
-			//global $host, $user, $password;
+			require "components/connector.php";
 			$this->pdo = new PDO("mysql:host=$host;dbname=tnelat;charset=utf8;", $user, $password);
 			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->statement = '';
