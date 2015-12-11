@@ -1,4 +1,6 @@
 <?php
+    // This page is for the serverside operations required to create accounts.
+
   	require_once $_SERVER['DOCUMENT_ROOT'] . '/tnelat/components/SQL_Operation.php';
     require_once $_SERVER['DOCUMENT_ROOT'] . '/tnelat/components/formatting.php';
 

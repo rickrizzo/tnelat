@@ -1,4 +1,7 @@
 <?php
+	// This page is used for the various formatting across the website. See individual descriptions below.
+
+	// This takes the arguments of a Post request and lower cases them. Could be used for additional formatting in the future.
 	function process_request($req) {
 		$ret = [];
 		foreach ($req as $param_name => $param_val) {
@@ -9,6 +12,7 @@
 		return $ret;
 	}
 
+	// This outputs the "profile bar". It is the horizontal reference to a user seen on both the search and profile pages.
 	function profile_bar($user_object, $link) {
 		# Get Name
 		$name = ucfirst($user_object['first_name']) . "&nbsp;&nbsp;" . ucfirst($user_object['last_name']);
@@ -76,6 +80,7 @@
 		echo($element);
 	}
 
+	// This outputs the "review bar". It is a horizontal bar that contains the details of a given review. Seen on the profile page.
 	function review_bar($review_obj) {
 		$details = '<article class="review"><span class="review_details">';			
 

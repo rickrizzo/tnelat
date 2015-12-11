@@ -1,4 +1,11 @@
 <?php
+	// This page represents the framework for interacting with the database. Each subclass
+	// of SQL operation represents a distinct operation within the database. Instantiating
+	// a new one of these objects with the appropriate constructor variables prepares a 
+	// corresponding query. The query can have an order added to it if required, and then 
+	// the query is executed via the execute member function. The results of the query
+	// are then returned from this function.
+
 	abstract class SQL_Operation {
 
 		protected function initialize ($vals) {

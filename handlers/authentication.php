@@ -1,4 +1,6 @@
 <?php
+	// This page authenitcates users for login and signup purposes. 
+
 	require_once  $_SERVER['DOCUMENT_ROOT'] . '/tnelat/components/SQL_Operation.php';
 	require_once  $_SERVER['DOCUMENT_ROOT'] . '/tnelat/components/formatting.php';
 

@@ -1,3 +1,5 @@
+<!-- This is the html for the navigation bar, seen at the top of each page -->
+
 <nav class="pagewidth">
 	<ul>
 		<li class='float-left'>

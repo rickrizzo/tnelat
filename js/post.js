@@ -1,3 +1,9 @@
+// This file is a framework for making Post requests. Users can instantiate a new
+// Post object. They can then add key value pairs to the Post request using the
+// addParam... functions. A callback can be set using set_callback, and then 
+// 'send' executes the Post request. If no callback is set, the response will
+// be outputed to the console log.
+
 function Post (target, callback) {
 	this.target = target;
 	this.body = '';
