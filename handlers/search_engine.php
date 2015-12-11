@@ -1,4 +1,5 @@
 <?php
+	//Handles search requestss
 	require_once  $_SERVER['DOCUMENT_ROOT'] . '/tnelat/components/SQL_Operation.php';
 	require_once  $_SERVER['DOCUMENT_ROOT'] . '/tnelat/components/formatting.php';
 
@@ -7,11 +8,11 @@
 		$vars = process_request($_POST);
 		$request = null;
 
-
+		//Check terms
 		if ($vars['search_by'] != 'all' and $vars['search_term'] == '')
 			exit('<p class="error">Please enter a search term</p>');
 
-
+		//Handle variations
 		switch($vars['search_by']) {
 			case('all'):
 				$request = new GetAllUsers();
@@ -27,6 +28,7 @@
 				break;
 		}
 
+		//Organize Results
 		if ($vars['sort_by'] != 'rating') {
 			$sort = $vars['sort_by'] . ' ' . strtoupper($vars['order']);
 			$request->order_by($sort);

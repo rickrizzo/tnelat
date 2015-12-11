@@ -1,3 +1,4 @@
+<!--User profiles, containing reviews, ratings, and user data-->
 <?php
   //Variables
   if (count($user = (new GetUser($_GET['UID']))->execute()) > 0) {

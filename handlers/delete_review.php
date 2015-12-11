@@ -1,4 +1,5 @@
 <?php
+  //Remove review based upon review ID
   require_once  $_SERVER['DOCUMENT_ROOT'] . '/tnelat/components/SQL_Operation.php';
   if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     //Variables

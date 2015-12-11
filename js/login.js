@@ -1,3 +1,4 @@
+//Submit login information to server
 $('#loginsubmit').click(function() {
     var PostReq = new Post('/tnelat/handlers/authentication.php');
     PostReq.addParamsById('username', 'password');

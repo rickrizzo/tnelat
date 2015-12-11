@@ -1,4 +1,5 @@
 <?php
+	//Create review SQL Operation
 	include '../components/SQL_Operation.php';
 	include '../components/formatting.php';
 	session_start();
