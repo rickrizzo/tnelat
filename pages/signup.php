@@ -17,21 +17,8 @@
   <input type="password" id="password_confirm" name="password_confirm" value="" placeholder="Re-Type Password*" required>
   <input type="text" id="email" name="email" value="" placeholder="Email Address*" required>
   <input type="text" id="phone" name="phone" value="" placeholder="Phone Number" required>
-  <span class="btn" id="submit" value="Login">Submit</span>
+  <span class="btn" id="submitUser" value="Login">Submit</span>
 
   <h5 class="float-right">* fields required</h5>
 </fieldset>
-
-<script>
-  $('#submit').click(function() {
-    var PostReq = new Post('/tnelat/handlers/create_account.php');
-    PostReq.addParamsById('username', 'password', 'password_confirm', 'first_name', 'last_name', 'email', 'phone');
-    PostReq.set_callback( function(val) {
-      $('#response').html(val);
-      if(val.indexOf("successful") != -1) {
-        parent.window.location.reload();
-      }
-    });
-    PostReq.send();     
-  });
-</script>
+<script src="js/signup.js"></script>

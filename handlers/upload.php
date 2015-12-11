@@ -4,6 +4,9 @@
     echo 'Error. You are not logged in.';
     exit;
   }
+  if (!file_exists('path/to/directory')) {
+    mkdir($_SERVER['DOCUMENT_ROOT'] . "/tnelat/data/profile_pictures/", 0777, true);
+  }
   
   $target_dir = $_SERVER['DOCUMENT_ROOT'] . "/tnelat/data/profile_pictures/" . $_SESSION['UID'];
 
