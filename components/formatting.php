@@ -91,7 +91,16 @@
 			}
 		}
 
-		$details .= '<span class="category">' . ucfirst($review_obj['category']) . '</span></span>';
+		$details .= '<span class="category">' . ucfirst($review_obj['category']) . '</span>';
+
+		//Admin Features
+		if (count($admin = (new GetUser($_SESSION['UID']))->execute()) > 0) {
+    	$admin = $admin[0]['admin'];
+  	}	
+  	if($admin == 1) {
+  		$details .= "<button id='deleteReview' value='" . $review_obj['RID'] . "'>Delete</button>";
+  	}
+		$details .= '</span>';
 
 		$details .= '
 			<p class="review_body">' .

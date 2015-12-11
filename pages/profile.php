@@ -6,12 +6,6 @@
   else {
     exit ('Error. Please log in.');
   }
-  if (count($admin = (new GetUser($_SESSION['UID']))->execute()) > 0) {
-    $admin = $admin[0]['admin'];
-  }
-  else {
-     exit ('Error. Please log in.');
-  }
 
   $name = ucfirst($user['first_name']) . "&nbsp;&nbsp;" . ucfirst($user['last_name']);
   $reviews = (new GetReviewsAbout($_GET['UID']))->execute();
@@ -71,5 +65,15 @@
       });
     });
   });
-
+  $("#deleteReview").click(function() {
+    var PostReq = new Post('/tnelat/handlers/delete_review.php');
+    PostReq.addParamByPair('RID', $(this).val());
+    PostReq.set_callback(function(val) {
+      console.log(val);
+      if(val == "SUCCESS") {
+        parent.window.location.reload();
+      }
+    });
+    PostReq.send();
+  });
 </script>
