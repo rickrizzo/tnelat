@@ -1,3 +1,4 @@
+//Submit Review to server
 $('#submit').click( function() {
 	var PostReq = new Post('/tnelat/dan/write_review.php');
 	var emoji = $('input[name=emoji]:checked', '#write_review').val();

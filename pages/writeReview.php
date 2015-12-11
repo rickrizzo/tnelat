@@ -1,3 +1,4 @@
+<!--Submit review about user-->
 <?php
 	$user = (new GetUser($_GET['UID']))->execute()[0];
 	$reviews = (new GetReviewsAbout($_GET['UID']))->execute();

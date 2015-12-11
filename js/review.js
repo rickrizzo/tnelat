@@ -9,6 +9,7 @@ $.getJSON('/tnelat/data/emoji.json', function(data) {
       '</li>'
     );
   }
+  //Possible Ratins
   $('#rating ul li').each(function(index) {
     $(this).click(function() {
       $('input:radio[value="' + index + '"]').prop("checked", true);

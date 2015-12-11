@@ -1,9 +1,11 @@
 <?php 
+  //Uploads picture to the database
   session_start();
   if (!isset($_SESSION['UID'])) {
     echo 'Error. You are not logged in.';
     exit;
   }
+  //Create directory
   if (!file_exists('path/to/directory')) {
     mkdir($_SERVER['DOCUMENT_ROOT'] . "/tnelat/data/profile_pictures/", 0777, true);
   }
@@ -27,10 +29,12 @@
       }
   }
 
+  //Deletes duplicates
   if (file_exists($target_file)) {
     unlink($target_file);
   }
 
+  //Add File
   if ($uploadOk = 0) {
     echo ('Error uploading file');
   }

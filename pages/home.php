@@ -1,3 +1,4 @@
+<!--The home page of tnelat-->
 <!--Header-->
 <header class='home'>
 	<div>
@@ -8,6 +9,7 @@
 
 <!--Details-->
 <section id="details">
+	<!--Review Teammates-->
 	<div>
 		<img src="resources/review.png" alt="">
 		<a class="btn" href="#">Review Teammates</a>
@@ -15,6 +17,7 @@
 			Write reviews and contribute to the growing Tnelat community. Reward great partners and alert others to work styles that may potentially clash with their own.
 		</article>
 	</div>
+	<!--Search-->
 	<div>
 		<img src="resources/team.png" alt="">
 		<a class="btn" href="/tnelat?src=search">Find Teammates</a>
@@ -22,6 +25,7 @@
 			Need to get something done? Find your team here.
 		</article>
 	</div>
+	<!--About Tnelat-->
 	<div>
 		<img src="resources/learn.png" alt="">
 		<a class="btn" href="#">Learn More</a>
