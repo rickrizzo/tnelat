@@ -1,4 +1,7 @@
 <?php
+
+  // This page installs the database on the server if it is not already installed.
+
   require_once "connector.php";
 
   function install() {
