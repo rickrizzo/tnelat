@@ -3,9 +3,11 @@
 A web based application to rate/review peers  
 Created for Web Systems
 ##Installation
-To install tnelat on your local machine, download [Composer](https://getcomposer.org/download/ title="Composer") locally into the directory where you have cloned tnelat.  
-Once downlaoded, type the following command in the command line or terminal:  
+To install tnelat start by cloning or forking this repo onto your local apache server. You'll need Apache 2.2 or higher, MySQL installed on your machine, and PHP 5. Once cloned, you will need to make a `connector.php` file. Save this file in the components directory. The contents should look something like this:  
+`<?php  
+  $host = '<your-server-name>';   
+  $user ='<your-mysql-username>';     
+  $password = '<your-mysql-password>';   
+?>`
 
-`php composer.phar install`  
-
-You're ready to go!
+You're ready to go!  Go to the index.php file and see the site.
