@@ -8,6 +8,8 @@ To install tnelat start by cloning or forking this repo onto your local apache s
   $host = '<your-server-name>';   
   $user ='<your-mysql-username>';     
   $password = '<your-mysql-password>';   
-?>`
+?>`   
 
 You're ready to go!  Go to the index.php file and see the site.
+
+##[Repository Link](https://github.com/rickrizzo/tnelat)
